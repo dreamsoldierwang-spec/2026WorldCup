@@ -1,0 +1,25 @@
+# Netlify Configuration — 2026 World Cup Fan Site
+# Deploy from GitHub: https://github.com/dreamsoldierwang-spec/2026WorldCup
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Redirect /api/messages/* to the Netlify Function
+[[redirects]]
+  from = "/api/messages/*"
+  to = "/.netlify/functions/messages"
+  status = 200
+
+# SPA fallback — all non-file routes serve index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

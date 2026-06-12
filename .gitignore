@@ -6,3 +6,4 @@ generate_data.py
 fix_teams.py
 fix_knockout.py
 .DS_Store
+.netlify/

@@ -11,6 +11,7 @@
     "serve": "node server.cjs"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.9",
     "express": "^5.2.1",
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",
