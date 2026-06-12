@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/messages.json
+*.tmp
+generate_data.py
+fix_teams.py
+fix_knockout.py
+.DS_Store
