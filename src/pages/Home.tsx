@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Trophy, Users, Calendar, Star, ChevronRight, MapPin } from 'lucide-react';
+import { Trophy, Users, Calendar, Star, ChevronRight, MapPin, Clock } from 'lucide-react';
+import { schedule } from '../data/schedule';
+import { teams } from '../data/teams';
+import FlagImg from '../components/FlagImg';
 
 const storylines = [
   { emoji: '👑', title: '梅西最后一舞', desc: '39岁的卫冕冠军梅西，率领阿根廷冲击两连冠' },
@@ -22,6 +25,17 @@ const quickLinks = [
 ];
 
 export default function Home() {
+  // Get finished matches (most recent first)
+  const finishedMatches = schedule
+    .filter(m => m.status === 'finished')
+    .sort((a, b) => {
+      if (a.date !== b.date) return b.date.localeCompare(a.date);
+      return b.time.localeCompare(a.time);
+    })
+    .slice(0, 6);
+
+  const getTeam = (id: string) => teams.find(t => t.id === id);
+
   return (
     <div>
       {/* Hero Section */}
@@ -58,6 +72,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest Results */}
+      {finishedMatches.length > 0 && (
+        <section className="bg-gradient-to-r from-green-900 via-green-800 to-emerald-900 text-white">
+          <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-bold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                最新赛况
+              </h2>
+              <Link to="/schedule" className="text-sm text-green-300 hover:text-white transition-colors flex items-center gap-1">
+                全部赛程 <ChevronRight size={14} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              {finishedMatches.map((match) => {
+                const home = getTeam(match.homeTeamId);
+                const away = getTeam(match.awayTeamId);
+                return (
+                  <div key={match.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center gap-1.5">
+                    <div className="flex items-center gap-1 text-xs text-green-300">
+                      <span className="badge bg-white/10 text-white text-[10px]">{match.group}组</span>
+                      <span className="text-green-400">{match.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 w-full justify-center">
+                      <div className="flex flex-col items-center gap-0.5 flex-1">
+                        {home && <FlagImg team={home} size="sm" />}
+                        <span className="text-xs font-medium truncate max-w-[60px] text-center">{home?.nameZh || '?'}</span>
+                      </div>
+                      <span className="text-xl font-black text-wc-gold tabular-nums">
+                        {match.homeScore}-{match.awayScore}
+                      </span>
+                      <div className="flex flex-col items-center gap-0.5 flex-1">
+                        {away && <FlagImg team={away} size="sm" />}
+                        <span className="text-xs font-medium truncate max-w-[60px] text-center">{away?.nameZh || '?'}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Stats Bar */}
       <section className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">

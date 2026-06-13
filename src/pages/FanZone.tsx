@@ -26,15 +26,19 @@ export default function FanZone() {
   const [sortBy, setSortBy] = useState<'count' | 'group'>('count');
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState('');
+  const [sendSuccess, setSendSuccess] = useState(false);
 
   const handleSubmit = async () => {
     if (!message.trim()) return;
     setSending(true);
     setSendError('');
+    setSendSuccess(false);
     try {
       await addMessage(nickname, selectedTeams, message);
       setMessage('');
       setShowEmoji(false);
+      setSendSuccess(true);
+      setTimeout(() => setSendSuccess(false), 3000);
     } catch (e: any) {
       setSendError(e.message || '发送失败');
     } finally {
@@ -152,6 +156,11 @@ export default function FanZone() {
               {sendError && (
                 <div className="mb-3 p-2 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm flex items-center gap-2">
                   <AlertCircle size={14} /> {sendError}
+                </div>
+              )}
+              {sendSuccess && (
+                <div className="mb-3 p-2 rounded-lg bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 text-sm flex items-center gap-2">
+                  ✅ 留言发送成功！
                 </div>
               )}
 

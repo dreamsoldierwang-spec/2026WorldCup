@@ -67,7 +67,9 @@ export function useFanData() {
 
   const addMessage = useCallback(async (nickname: string, teamIds: string[], message: string) => {
     const newMsg = await apiPost(nickname, teamIds, message);
-    await refresh(); // Refresh full list from server
+    // Small delay to ensure Netlify Blobs write is synced before reading
+    await new Promise(r => setTimeout(r, 500));
+    await refresh();
     return newMsg;
   }, [refresh]);
 
