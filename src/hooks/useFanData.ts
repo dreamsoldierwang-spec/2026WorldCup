@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 
 export interface FanMessage {
   id: string;
@@ -8,7 +8,6 @@ export interface FanMessage {
   timestamp: number;
 }
 
-// API base: same origin (served by the same Express server)
 const API = '/api/messages';
 
 async function apiGet(): Promise<FanMessage[]> {
@@ -49,34 +48,70 @@ export function useFanData() {
   const [teamSupport, setTeamSupport] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const refreshTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  const updateFromMessages = useCallback((msgs: FanMessage[]) => {
+    setMessages(msgs);
+    setTeamSupport(calcTeamSupport(msgs));
+    setError(null);
+  }, []);
 
   const refresh = useCallback(async () => {
     try {
       const msgs = await apiGet();
-      setMessages(msgs);
-      setTeamSupport(calcTeamSupport(msgs));
-      setError(null);
+      updateFromMessages(msgs);
     } catch (e: any) {
       setError(e.message || '加载失败');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [updateFromMessages]);
 
   useEffect(() => { refresh(); }, [refresh]);
 
+  // Cleanup timer on unmount
+  useEffect(() => () => { if (refreshTimer.current) clearTimeout(refreshTimer.current); }, []);
+
   const addMessage = useCallback(async (nickname: string, teamIds: string[], message: string) => {
     const newMsg = await apiPost(nickname, teamIds, message);
-    // Small delay to ensure Netlify Blobs write is synced before reading
-    await new Promise(r => setTimeout(r, 500));
-    await refresh();
+
+    // Optimistic: immediately add to local state so user sees it right away
+    setMessages(prev => {
+      // Avoid duplicate if refresh already added it
+      if (prev.some(m => m.id === newMsg.id)) return prev;
+      return [newMsg, ...prev];
+    });
+    setTeamSupport(prev => {
+      const next = { ...prev };
+      newMsg.teamIds.forEach(tid => {
+        next[tid] = (next[tid] || 0) + 1;
+      });
+      return next;
+    });
+
+    // Background sync to catch concurrent messages from other users
+    if (refreshTimer.current) clearTimeout(refreshTimer.current);
+    refreshTimer.current = setTimeout(async () => {
+      try {
+        const msgs = await apiGet();
+        setMessages(msgs);
+        setTeamSupport(calcTeamSupport(msgs));
+      } catch {}
+    }, 2000);
+
     return newMsg;
-  }, [refresh]);
+  }, []);
 
   const deleteMessage = useCallback(async (id: string) => {
     await apiDelete(id);
-    await refresh();
-  }, [refresh]);
+    setMessages(prev => prev.filter(m => m.id !== id));
+    // Background sync
+    try {
+      const msgs = await apiGet();
+      setMessages(msgs);
+      setTeamSupport(calcTeamSupport(msgs));
+    } catch {}
+  }, []);
 
   return { messages, teamSupport, addMessage, deleteMessage, loading, error };
 }
