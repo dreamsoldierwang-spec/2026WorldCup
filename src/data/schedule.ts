@@ -67,9 +67,9 @@ export const schedule: Match[] = [
   },  {
     id: 'm005',
     stage: 'group',
-    date: '6月13日',
-    time: '09:00',
-    timeBeijing: '09:00 (北京时间)',
+    date: '6月15日',
+    time: '04:00',
+    timeBeijing: '04:00 (北京时间)',
     group: 'F',
     homeTeamId: 'ned',
     awayTeamId: 'jpn',

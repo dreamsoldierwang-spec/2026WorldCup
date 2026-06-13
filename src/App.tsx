@@ -11,6 +11,7 @@ import Stars from './pages/Stars';
 import Records from './pages/Records';
 import HostCities from './pages/HostCities';
 import FanZone from './pages/FanZone';
+import Scorers from './pages/Scorers';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/records" element={<Records />} />
             <Route path="/host-cities" element={<HostCities />} />
             <Route path="/fan-zone" element={<FanZone />} />
+            <Route path="/scorers" element={<Scorers />} />
           </Routes>
         </main>
         <Footer />

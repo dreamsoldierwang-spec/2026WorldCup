@@ -9,6 +9,7 @@ const navItems = [
   { path: '/schedule', label: '赛程', icon: '📅' },
   { path: '/stars', label: '球星', icon: '⭐' },
   { path: '/records', label: '纪录', icon: '🏆' },
+  { path: '/scorers', label: '射手榜', icon: '🎯' },
   { path: '/host-cities', label: '主办城市', icon: '🏟️' },
   { path: '/fan-zone', label: '球迷专区', icon: '💬' },
 ];
