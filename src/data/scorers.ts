@@ -27,6 +27,12 @@ export const scorers: Scorer[] = [
   // Canada 1-1 Bosnia
   { rank: 2, name: 'Cyle Larin', nameZh: '拉林', teamId: 'can', goals: 1, matches: 1, position: 'Forward' },
   { rank: 2, name: 'Stjepan Lukic', nameZh: '卢基奇', teamId: 'bih', goals: 1, matches: 1, position: 'Midfielder' },
+  // Switzerland 1-1 Qatar (6.14)
+  { rank: 2, name: 'Breel Embolo', nameZh: '恩博洛', teamId: 'sui', goals: 1, matches: 1, position: 'Forward' },
+  { rank: 2, name: 'Ahmed Hush', nameZh: '扈希', teamId: 'qat', goals: 1, matches: 1, position: 'Defender' },
+  // Brazil 1-1 Morocco (6.14)
+  { rank: 2, name: 'Vinicius Junior', nameZh: '维尼修斯', teamId: 'bra', goals: 1, matches: 1, position: 'Forward' },
+  { rank: 2, name: 'Mohammed Sabari', nameZh: '塞巴里', teamId: 'mar', goals: 1, matches: 1, position: 'Midfielder' },
 ];
 
 export function getScorerByTeam(teamId: string): Scorer[] {

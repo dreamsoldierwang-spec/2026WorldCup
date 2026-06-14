@@ -12,11 +12,12 @@ import Records from './pages/Records';
 import HostCities from './pages/HostCities';
 import FanZone from './pages/FanZone';
 import Scorers from './pages/Scorers';
+import News from './pages/News';
 
 export default function App() {
   return (
     <HashRouter>
-      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950">
+      <div className="min-h-screen flex flex-col bg-transparent">
         <Navbar />
         <main className="flex-1">
           <Routes>
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/host-cities" element={<HostCities />} />
             <Route path="/fan-zone" element={<FanZone />} />
             <Route path="/scorers" element={<Scorers />} />
+            <Route path="/news" element={<News />} />
           </Routes>
         </main>
         <Footer />

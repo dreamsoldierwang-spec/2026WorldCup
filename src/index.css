@@ -16,8 +16,30 @@
   }
 
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-wc-navy dark:text-gray-100;
     font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 25%, #f1f5f9 50%, #ecfdf5 75%, #f0fdf4 100%);
+    min-height: 100vh;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 50px, #166534 50px, #166534 51px),
+      repeating-linear-gradient(90deg, transparent 49.5%, #166534 49.5%, #166534 50.5%);
+  }
+  .dark body {
+    background: linear-gradient(135deg, #0a1f0a 0%, #0f172a 30%, #0a1f0a 60%, #0f172a 100%);
+  }
+  .dark body::before {
+    opacity: 0.03;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 50px, #22c55e 50px, #22c55e 51px),
+      repeating-linear-gradient(90deg, transparent 49.5%, #22c55e 49.5%, #22c55e 50.5%);
   }
 
   ::-webkit-scrollbar {
