@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { schedule } from '../data/schedule';
 import { teams } from '../data/teams';
+import { matchDetails } from '../data/matchDetails';
 import FlagImg from '../components/FlagImg';
+import MatchDetailModal from '../components/MatchDetailModal';
+import type { Match } from '../types';
 
 const storylines = [
   { emoji: '👑', title: '梅西最后一舞', desc: '39岁的卫冕冠军梅西，率领阿根廷冲击两连冠' },
@@ -24,6 +28,8 @@ const quickLinks = [
 ];
 
 export default function Home() {
+  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+
   // Get finished matches (most recent first)
   const finishedMatches = schedule
     .filter(m => m.status === 'finished')
@@ -181,7 +187,10 @@ export default function Home() {
                 const home = getTeam(match.homeTeamId);
                 const away = getTeam(match.awayTeamId);
                 return (
-                  <div key={match.id} className="comic-card bg-white/10 backdrop-blur-sm px-2 py-3 flex flex-col items-center gap-1.5">
+                  <div key={match.id}
+                    className={`comic-card bg-white/10 backdrop-blur-sm px-2 py-3 flex flex-col items-center gap-1.5 ${matchDetails[match.id] ? 'cursor-pointer hover:bg-white/20' : ''}`}
+                    onClick={() => matchDetails[match.id] && setSelectedMatch(match)}
+                  >
                     <div className="flex items-center gap-1 text-xs">
                       <span className="bg-[#FF2D55] text-white text-[10px] px-1.5 py-0.5 rounded font-bold">{match.group}组</span>
                       <span className="text-white/60 text-[10px]">{match.date}</span>
@@ -308,6 +317,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {selectedMatch && (
+        <MatchDetailModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
+      )}
     </div>
   );
 }
