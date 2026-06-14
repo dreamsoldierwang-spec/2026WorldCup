@@ -113,15 +113,28 @@ export const schedule: Match[] = [
     date: '6月14日',
     time: '09:00',
     timeBeijing: '09:00 (北京时间)',
-    group: 'E',
-    homeTeamId: 'ger',
-    awayTeamId: 'ecu',
-    stadium: 'NRG Stadium',
-    city: 'Houston',
-    cityZh: '休斯顿',
+    group: 'C',
+    homeTeamId: 'hai',
+    awayTeamId: 'sco',
+    stadium: 'Gillette Stadium',
+    city: 'Foxborough',
+    cityZh: '波士顿',
     status: 'scheduled' as const,
   },  {
     id: 'm009',
+    stage: 'group',
+    date: '6月14日',
+    time: '12:00',
+    timeBeijing: '12:00 (北京时间)',
+    group: 'D',
+    homeTeamId: 'aus',
+    awayTeamId: 'tur',
+    stadium: 'BC Place',
+    city: 'Vancouver',
+    cityZh: '温哥华',
+    status: 'scheduled' as const,
+  },  {
+    id: 'm010',
     stage: 'group',
     date: '6月15日',
     time: '03:00',
@@ -134,7 +147,7 @@ export const schedule: Match[] = [
     cityZh: '亚特兰大',
     status: 'scheduled' as const,
   },  {
-    id: 'm010',
+    id: 'm011',
     stage: 'group',
     date: '6月15日',
     time: '06:00',
@@ -147,7 +160,7 @@ export const schedule: Match[] = [
     cityZh: '波士顿',
     status: 'scheduled' as const,
   },  {
-    id: 'm011',
+    id: 'm012',
     stage: 'group',
     date: '6月15日',
     time: '09:00',
@@ -160,7 +173,7 @@ export const schedule: Match[] = [
     cityZh: '迈阿密',
     status: 'scheduled' as const,
   },  {
-    id: 'm012',
+    id: 'm013',
     stage: 'group',
     date: '6月16日',
     time: '03:00',
@@ -173,7 +186,7 @@ export const schedule: Match[] = [
     cityZh: '费城',
     status: 'scheduled' as const,
   },  {
-    id: 'm013',
+    id: 'm014',
     stage: 'group',
     date: '6月16日',
     time: '06:00',
@@ -186,7 +199,7 @@ export const schedule: Match[] = [
     cityZh: '迈阿密',
     status: 'scheduled' as const,
   },  {
-    id: 'm014',
+    id: 'm015',
     stage: 'group',
     date: '6月16日',
     time: '09:00',
@@ -199,7 +212,7 @@ export const schedule: Match[] = [
     cityZh: '亚特兰大',
     status: 'scheduled' as const,
   },  {
-    id: 'm015',
+    id: 'm016',
     stage: 'group',
     date: '6月17日',
     time: '03:00',
@@ -212,7 +225,7 @@ export const schedule: Match[] = [
     cityZh: '温哥华',
     status: 'scheduled' as const,
   },  {
-    id: 'm016',
+    id: 'm017',
     stage: 'group',
     date: '6月17日',
     time: '06:00',
@@ -225,7 +238,7 @@ export const schedule: Match[] = [
     cityZh: '波士顿',
     status: 'scheduled' as const,
   },  {
-    id: 'm017',
+    id: 'm018',
     stage: 'group',
     date: '6月17日',
     time: '09:00',
@@ -238,7 +251,7 @@ export const schedule: Match[] = [
     cityZh: '达拉斯',
     status: 'scheduled' as const,
   },  {
-    id: 'm018',
+    id: 'm019',
     stage: 'group',
     date: '6月18日',
     time: '03:00',
@@ -251,7 +264,7 @@ export const schedule: Match[] = [
     cityZh: '费城',
     status: 'scheduled' as const,
   },  {
-    id: 'm019',
+    id: 'm020',
     stage: 'group',
     date: '6月18日',
     time: '06:00',
@@ -264,7 +277,7 @@ export const schedule: Match[] = [
     cityZh: '亚特兰大',
     status: 'scheduled' as const,
   },  {
-    id: 'm020',
+    id: 'm021',
     stage: 'group',
     date: '6月18日',
     time: '09:00',
@@ -277,7 +290,7 @@ export const schedule: Match[] = [
     cityZh: '芝加哥',
     status: 'scheduled' as const,
   },  {
-    id: 'm021',
+    id: 'm022',
     stage: 'group',
     date: '6月19日',
     time: '03:00',
@@ -290,7 +303,7 @@ export const schedule: Match[] = [
     cityZh: '西雅图',
     status: 'scheduled' as const,
   },  {
-    id: 'm022',
+    id: 'm023',
     stage: 'group',
     date: '6月19日',
     time: '06:00',
@@ -303,7 +316,7 @@ export const schedule: Match[] = [
     cityZh: '堪萨斯城',
     status: 'scheduled' as const,
   },  {
-    id: 'm023',
+    id: 'm024',
     stage: 'group',
     date: '6月19日',
     time: '09:00',
@@ -316,7 +329,7 @@ export const schedule: Match[] = [
     cityZh: '墨西哥城',
     status: 'scheduled' as const,
   },  {
-    id: 'm024',
+    id: 'm025',
     stage: 'group',
     date: '6月20日',
     time: '03:00',
@@ -329,7 +342,7 @@ export const schedule: Match[] = [
     cityZh: '温哥华',
     status: 'scheduled' as const,
   },  {
-    id: 'm025',
+    id: 'm026',
     stage: 'group',
     date: '6月20日',
     time: '06:00',
@@ -342,7 +355,7 @@ export const schedule: Match[] = [
     cityZh: '萨波潘',
     status: 'scheduled' as const,
   },  {
-    id: 'm026',
+    id: 'm027',
     stage: 'group',
     date: '6月20日',
     time: '09:00',
@@ -355,7 +368,7 @@ export const schedule: Match[] = [
     cityZh: '蒙特雷',
     status: 'scheduled' as const,
   },  {
-    id: 'm027',
+    id: 'm028',
     stage: 'group',
     date: '6月21日',
     time: '03:00',
@@ -368,7 +381,7 @@ export const schedule: Match[] = [
     cityZh: '温哥华',
     status: 'scheduled' as const,
   },  {
-    id: 'm028',
+    id: 'm029',
     stage: 'group',
     date: '6月21日',
     time: '06:00',
@@ -381,7 +394,7 @@ export const schedule: Match[] = [
     cityZh: '洛杉矶',
     status: 'scheduled' as const,
   },  {
-    id: 'm029',
+    id: 'm030',
     stage: 'group',
     date: '6月21日',
     time: '09:00',
@@ -394,7 +407,7 @@ export const schedule: Match[] = [
     cityZh: '西雅图',
     status: 'scheduled' as const,
   },  {
-    id: 'm030',
+    id: 'm031',
     stage: 'group',
     date: '6月22日',
     time: '03:00',
@@ -407,7 +420,7 @@ export const schedule: Match[] = [
     cityZh: '旧金山湾区',
     status: 'scheduled' as const,
   },  {
-    id: 'm031',
+    id: 'm032',
     stage: 'group',
     date: '6月22日',
     time: '06:00',
@@ -420,7 +433,7 @@ export const schedule: Match[] = [
     cityZh: '纽约/新泽西',
     status: 'scheduled' as const,
   },  {
-    id: 'm032',
+    id: 'm033',
     stage: 'group',
     date: '6月22日',
     time: '09:00',
@@ -433,7 +446,7 @@ export const schedule: Match[] = [
     cityZh: '迈阿密',
     status: 'scheduled' as const,
   },  {
-    id: 'm033',
+    id: 'm034',
     stage: 'group',
     date: '6月23日',
     time: '03:00',
@@ -446,7 +459,7 @@ export const schedule: Match[] = [
     cityZh: '达拉斯',
     status: 'scheduled' as const,
   },  {
-    id: 'm034',
+    id: 'm035',
     stage: 'group',
     date: '6月23日',
     time: '06:00',
@@ -459,7 +472,7 @@ export const schedule: Match[] = [
     cityZh: '休斯顿',
     status: 'scheduled' as const,
   },  {
-    id: 'm035',
+    id: 'm036',
     stage: 'group',
     date: '6月23日',
     time: '09:00',
@@ -472,7 +485,7 @@ export const schedule: Match[] = [
     cityZh: '多伦多',
     status: 'scheduled' as const,
   },  {
-    id: 'm036',
+    id: 'm037',
     stage: 'group',
     date: '6月24日',
     time: '03:00',
@@ -485,7 +498,7 @@ export const schedule: Match[] = [
     cityZh: '堪萨斯城',
     status: 'scheduled' as const,
   },  {
-    id: 'm037',
+    id: 'm038',
     stage: 'group',
     date: '6月24日',
     time: '06:00',
@@ -498,7 +511,7 @@ export const schedule: Match[] = [
     cityZh: '旧金山湾区',
     status: 'scheduled' as const,
   },  {
-    id: 'm038',
+    id: 'm039',
     stage: 'group',
     date: '6月24日',
     time: '09:00',
@@ -511,7 +524,7 @@ export const schedule: Match[] = [
     cityZh: '洛杉矶',
     status: 'scheduled' as const,
   },  {
-    id: 'm039',
+    id: 'm040',
     stage: 'group',
     date: '6月25日',
     time: '03:00',
@@ -524,7 +537,7 @@ export const schedule: Match[] = [
     cityZh: '芝加哥',
     status: 'scheduled' as const,
   },  {
-    id: 'm040',
+    id: 'm041',
     stage: 'group',
     date: '6月25日',
     time: '03:00',
@@ -537,7 +550,7 @@ export const schedule: Match[] = [
     cityZh: '费城',
     status: 'scheduled' as const,
   },  {
-    id: 'm041',
+    id: 'm042',
     stage: 'group',
     date: '6月25日',
     time: '06:00',
@@ -550,7 +563,7 @@ export const schedule: Match[] = [
     cityZh: '波士顿',
     status: 'scheduled' as const,
   },  {
-    id: 'm042',
+    id: 'm043',
     stage: 'group',
     date: '6月25日',
     time: '06:00',
@@ -563,7 +576,7 @@ export const schedule: Match[] = [
     cityZh: '西雅图',
     status: 'scheduled' as const,
   },  {
-    id: 'm043',
+    id: 'm044',
     stage: 'group',
     date: '6月25日',
     time: '09:00',
@@ -576,7 +589,7 @@ export const schedule: Match[] = [
     cityZh: '亚特兰大',
     status: 'scheduled' as const,
   },  {
-    id: 'm044',
+    id: 'm045',
     stage: 'group',
     date: '6月25日',
     time: '09:00',
@@ -589,7 +602,7 @@ export const schedule: Match[] = [
     cityZh: '堪萨斯城',
     status: 'scheduled' as const,
   },  {
-    id: 'm045',
+    id: 'm046',
     stage: 'group',
     date: '6月26日',
     time: '03:00',
@@ -602,7 +615,7 @@ export const schedule: Match[] = [
     cityZh: '迈阿密',
     status: 'scheduled' as const,
   },  {
-    id: 'm046',
+    id: 'm047',
     stage: 'group',
     date: '6月26日',
     time: '03:00',
@@ -615,7 +628,7 @@ export const schedule: Match[] = [
     cityZh: '墨西哥城',
     status: 'scheduled' as const,
   },  {
-    id: 'm047',
+    id: 'm048',
     stage: 'group',
     date: '6月26日',
     time: '06:00',
@@ -628,7 +641,7 @@ export const schedule: Match[] = [
     cityZh: '费城',
     status: 'scheduled' as const,
   },  {
-    id: 'm048',
+    id: 'm049',
     stage: 'group',
     date: '6月26日',
     time: '06:00',
@@ -641,7 +654,7 @@ export const schedule: Match[] = [
     cityZh: '温哥华',
     status: 'scheduled' as const,
   },  {
-    id: 'm049',
+    id: 'm050',
     stage: 'round32',
     date: '6月28日',
     time: '03:00',
@@ -656,7 +669,7 @@ export const schedule: Match[] = [
     round: 'A组第1 vs 最佳小组第三(8)',
     matchNumber: 1,
   },  {
-    id: 'm050',
+    id: 'm051',
     stage: 'round32',
     date: '6月28日',
     time: '06:00',
@@ -671,7 +684,7 @@ export const schedule: Match[] = [
     round: 'B组第1 vs 最佳小组第三(7)',
     matchNumber: 2,
   },  {
-    id: 'm051',
+    id: 'm052',
     stage: 'round32',
     date: '6月28日',
     time: '09:00',
@@ -686,7 +699,7 @@ export const schedule: Match[] = [
     round: 'C组第1 vs F组第2',
     matchNumber: 3,
   },  {
-    id: 'm052',
+    id: 'm053',
     stage: 'round32',
     date: '6月29日',
     time: '03:00',
@@ -701,7 +714,7 @@ export const schedule: Match[] = [
     round: 'D组第1 vs E组第2',
     matchNumber: 4,
   },  {
-    id: 'm053',
+    id: 'm054',
     stage: 'round32',
     date: '6月29日',
     time: '06:00',
@@ -716,7 +729,7 @@ export const schedule: Match[] = [
     round: 'E组第1 vs D组第2',
     matchNumber: 5,
   },  {
-    id: 'm054',
+    id: 'm055',
     stage: 'round32',
     date: '6月29日',
     time: '09:00',
@@ -731,7 +744,7 @@ export const schedule: Match[] = [
     round: 'F组第1 vs C组第2',
     matchNumber: 6,
   },  {
-    id: 'm055',
+    id: 'm056',
     stage: 'round32',
     date: '6月30日',
     time: '03:00',
@@ -746,7 +759,7 @@ export const schedule: Match[] = [
     round: 'G组第1 vs L组第2',
     matchNumber: 7,
   },  {
-    id: 'm056',
+    id: 'm057',
     stage: 'round32',
     date: '6月30日',
     time: '06:00',
@@ -761,7 +774,7 @@ export const schedule: Match[] = [
     round: 'H组第1 vs J组第2',
     matchNumber: 8,
   },  {
-    id: 'm057',
+    id: 'm058',
     stage: 'round32',
     date: '6月30日',
     time: '09:00',
@@ -776,7 +789,7 @@ export const schedule: Match[] = [
     round: 'I组第1 vs K组第2',
     matchNumber: 9,
   },  {
-    id: 'm058',
+    id: 'm059',
     stage: 'round32',
     date: '7月1日',
     time: '03:00',
@@ -791,7 +804,7 @@ export const schedule: Match[] = [
     round: 'J组第1 vs H组第2',
     matchNumber: 10,
   },  {
-    id: 'm059',
+    id: 'm060',
     stage: 'round32',
     date: '7月1日',
     time: '06:00',
@@ -806,7 +819,7 @@ export const schedule: Match[] = [
     round: 'K组第1 vs I组第2',
     matchNumber: 11,
   },  {
-    id: 'm060',
+    id: 'm061',
     stage: 'round32',
     date: '7月1日',
     time: '09:00',
@@ -821,7 +834,7 @@ export const schedule: Match[] = [
     round: 'L组第1 vs G组第2',
     matchNumber: 12,
   },  {
-    id: 'm061',
+    id: 'm062',
     stage: 'round32',
     date: '7月2日',
     time: '03:00',
@@ -836,7 +849,7 @@ export const schedule: Match[] = [
     round: '小组第三(1) vs 小组第三(6)',
     matchNumber: 13,
   },  {
-    id: 'm062',
+    id: 'm063',
     stage: 'round32',
     date: '7月2日',
     time: '06:00',
@@ -851,7 +864,7 @@ export const schedule: Match[] = [
     round: '小组第三(2) vs 小组第三(5)',
     matchNumber: 14,
   },  {
-    id: 'm063',
+    id: 'm064',
     stage: 'round32',
     date: '7月3日',
     time: '03:00',
@@ -866,7 +879,7 @@ export const schedule: Match[] = [
     round: '小组第三(3) vs 小组第三(8)',
     matchNumber: 15,
   },  {
-    id: 'm064',
+    id: 'm065',
     stage: 'round32',
     date: '7月3日',
     time: '06:00',
@@ -881,7 +894,7 @@ export const schedule: Match[] = [
     round: '小组第三(4) vs 小组第三(7)',
     matchNumber: 16,
   },  {
-    id: 'm065',
+    id: 'm066',
     stage: 'round16',
     date: '7月4日',
     time: '03:00',
@@ -896,7 +909,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者1 vs 1/16决赛胜者16',
     matchNumber: 1,
   },  {
-    id: 'm066',
+    id: 'm067',
     stage: 'round16',
     date: '7月4日',
     time: '09:00',
@@ -911,7 +924,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者2 vs 1/16决赛胜者15',
     matchNumber: 2,
   },  {
-    id: 'm067',
+    id: 'm068',
     stage: 'round16',
     date: '7月5日',
     time: '03:00',
@@ -926,7 +939,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者3 vs 1/16决赛胜者14',
     matchNumber: 3,
   },  {
-    id: 'm068',
+    id: 'm069',
     stage: 'round16',
     date: '7月5日',
     time: '09:00',
@@ -941,7 +954,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者4 vs 1/16决赛胜者13',
     matchNumber: 4,
   },  {
-    id: 'm069',
+    id: 'm070',
     stage: 'round16',
     date: '7月6日',
     time: '03:00',
@@ -956,7 +969,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者5 vs 1/16决赛胜者12',
     matchNumber: 5,
   },  {
-    id: 'm070',
+    id: 'm071',
     stage: 'round16',
     date: '7月6日',
     time: '09:00',
@@ -971,7 +984,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者6 vs 1/16决赛胜者11',
     matchNumber: 6,
   },  {
-    id: 'm071',
+    id: 'm072',
     stage: 'round16',
     date: '7月7日',
     time: '03:00',
@@ -986,7 +999,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者7 vs 1/16决赛胜者10',
     matchNumber: 7,
   },  {
-    id: 'm072',
+    id: 'm073',
     stage: 'round16',
     date: '7月8日',
     time: '03:00',
@@ -1001,7 +1014,7 @@ export const schedule: Match[] = [
     round: '1/16决赛胜者8 vs 1/16决赛胜者9',
     matchNumber: 8,
   },  {
-    id: 'm073',
+    id: 'm074',
     stage: 'quarter',
     date: '7月9日',
     time: '03:00',
@@ -1016,7 +1029,7 @@ export const schedule: Match[] = [
     round: '1/8决赛胜者1 vs 1/8决赛胜者8',
     matchNumber: 1,
   },  {
-    id: 'm074',
+    id: 'm075',
     stage: 'quarter',
     date: '7月9日',
     time: '09:00',
@@ -1031,7 +1044,7 @@ export const schedule: Match[] = [
     round: '1/8决赛胜者2 vs 1/8决赛胜者7',
     matchNumber: 2,
   },  {
-    id: 'm075',
+    id: 'm076',
     stage: 'quarter',
     date: '7月10日',
     time: '03:00',
@@ -1046,7 +1059,7 @@ export const schedule: Match[] = [
     round: '1/8决赛胜者3 vs 1/8决赛胜者6',
     matchNumber: 3,
   },  {
-    id: 'm076',
+    id: 'm077',
     stage: 'quarter',
     date: '7月11日',
     time: '03:00',
@@ -1061,7 +1074,7 @@ export const schedule: Match[] = [
     round: '1/8决赛胜者4 vs 1/8决赛胜者5',
     matchNumber: 4,
   },  {
-    id: 'm077',
+    id: 'm078',
     stage: 'semi',
     date: '7月15日',
     time: '09:00',
@@ -1076,7 +1089,7 @@ export const schedule: Match[] = [
     round: '1/4决赛胜者1 vs 1/4决赛胜者4',
     matchNumber: 1,
   },  {
-    id: 'm078',
+    id: 'm079',
     stage: 'semi',
     date: '7月16日',
     time: '09:00',
@@ -1091,7 +1104,7 @@ export const schedule: Match[] = [
     round: '1/4决赛胜者2 vs 1/4决赛胜者3',
     matchNumber: 2,
   },  {
-    id: 'm079',
+    id: 'm080',
     stage: 'third',
     date: '7月19日',
     time: '03:00',
@@ -1106,7 +1119,7 @@ export const schedule: Match[] = [
     round: '半决赛负者1 vs 半决赛负者2',
     matchNumber: 0,
   },  {
-    id: 'm080',
+    id: 'm081',
     stage: 'final',
     date: '7月20日',
     time: '03:00',
