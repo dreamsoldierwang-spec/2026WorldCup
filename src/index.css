@@ -258,3 +258,15 @@
     animation: flameFlicker 0.6s ease-in-out infinite;
   }
 }
+/* ====== MOBILE SCROLL UTILITIES ====== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}

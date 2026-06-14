@@ -35,8 +35,8 @@ export default function Records() {
         世界杯历史上的经典数据与纪录
       </p>
 
-      {/* Category Tabs */}
-      <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide">
+      {/* Category Tabs — touch-scrollable */}
+      <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide touch-scroll snap-x">
         {records.map((cat, idx) => (
           <button
             key={cat.title}
