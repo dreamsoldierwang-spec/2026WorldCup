@@ -82,3 +82,161 @@
     @apply inline-flex items-center px-4 py-2 rounded-lg border-2 border-wc-green text-wc-green font-medium hover:bg-wc-green hover:text-white transition-colors;
   }
 }
+
+/* ====== COMIC / MANGA STYLE ====== */
+@layer components {
+  /* Comic text with outline and shadow */
+  .comic-title {
+    font-weight: 900;
+    color: #fff;
+    text-shadow:
+      3px 3px 0 #FF2D55,
+      5px 5px 0 rgba(0,0,0,0.3),
+      0 0 30px rgba(255,45,85,0.4);
+    letter-spacing: 0.05em;
+    transform: rotate(-1deg);
+  }
+  .comic-title-sm {
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 rgba(0,0,0,0.3);
+    letter-spacing: 0.08em;
+  }
+
+  /* Comic dialog bubble */
+  .comic-bubble {
+    position: relative;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px 24px 16px 20px;
+    box-shadow: 5px 5px 0 #000;
+    padding: 1rem;
+  }
+  .comic-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 16px solid #000;
+  }
+  .comic-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 33px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 13px solid #fff;
+    z-index: 1;
+  }
+
+  /* Comic card with hand-drawn border */
+  .comic-card {
+    border: 3px solid #000;
+    border-radius: 10px 24px 14px 22px;
+    box-shadow: 5px 5px 0 #000, 8px 8px 0 rgba(0,0,0,0.1);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .comic-card:hover {
+    transform: translate(-2px, -2px) rotate(-0.5deg);
+    box-shadow: 8px 8px 0 #000, 12px 12px 0 rgba(0,0,0,0.1);
+  }
+
+  /* Comic button */
+  .comic-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    font-weight: 900;
+    font-size: 1.1rem;
+    border: 3px solid #000;
+    border-radius: 8px 24px 10px 22px;
+    box-shadow: 4px 4px 0 #000;
+    color: #fff;
+    transition: all 0.12s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .comic-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+  }
+  .comic-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #000;
+  }
+  .comic-btn-red {
+    background: #FF2D55;
+  }
+  .comic-btn-red:hover {
+    background: #e0254a;
+  }
+  .comic-btn-yellow {
+    background: #f59e0b;
+    color: #000;
+  }
+  .comic-btn-yellow:hover {
+    background: #d97706;
+  }
+
+  /* Speed lines background pattern */
+  .speed-lines {
+    background-image:
+      repeating-linear-gradient(30deg, transparent, transparent 8px, rgba(255,255,255,0.08) 8px, rgba(255,255,255,0.08) 10px),
+      repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(255,255,255,0.06) 15px, rgba(255,255,255,0.06) 17px);
+  }
+
+  /* Halftone dots pattern */
+  .manga-dots {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+    background-size: 8px 8px;
+  }
+
+  /* Impact action text */
+  .action-impact {
+    display: inline-block;
+    animation: impactPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  @keyframes impactPop {
+    0% { transform: scale(0.3); opacity: 0; }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Bounce-in animation */
+  @keyframes comicBounceIn {
+    0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.1) rotate(2deg); }
+    70% { transform: scale(0.95) rotate(-1deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  .comic-bounce-in {
+    animation: comicBounceIn 0.5s ease forwards;
+  }
+
+  /* Shake animation on hover */
+  @keyframes comicShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+  }
+  .comic-shake:hover {
+    animation: comicShake 0.3s ease;
+  }
+
+  /* Flame flicker */
+  @keyframes flameFlicker {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+  }
+  .comic-flame {
+    animation: flameFlicker 0.6s ease-in-out infinite;
+  }
+}
