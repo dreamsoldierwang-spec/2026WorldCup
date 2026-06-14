@@ -13,7 +13,6 @@ const navItems = [
   { path: '/standings', label: '积分榜', icon: '📊' },
   { path: '/scorers', label: '射手榜', icon: '🎯' },
   { path: '/host-cities', label: '主办城市', icon: '🏟️' },
-  { path: '/fan-zone', label: '球迷专区', icon: '💬' },
 ];
 
 export default function Navbar() {
