@@ -17,7 +17,7 @@
 
   body {
     font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 25%, #f1f5f9 50%, #ecfdf5 75%, #f0fdf4 100%);
+    background: linear-gradient(135deg, #fef2f2 0%, #fdf2f8 25%, #fef3c7 50%, #fdf2f8 75%, #fef2f2 100%);
     min-height: 100vh;
     position: relative;
   }
@@ -27,19 +27,17 @@
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.04;
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 50px, #166534 50px, #166534 51px),
-      repeating-linear-gradient(90deg, transparent 49.5%, #166534 49.5%, #166534 50.5%);
+    opacity: 0.03;
+    background-image: radial-gradient(circle, #e11d48 1px, transparent 1px);
+    background-size: 12px 12px;
   }
   .dark body {
-    background: linear-gradient(135deg, #0a1f0a 0%, #0f172a 30%, #0a1f0a 60%, #0f172a 100%);
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0533 30%, #0a0a1a 60%, #1a0533 100%);
   }
   .dark body::before {
-    opacity: 0.03;
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 50px, #22c55e 50px, #22c55e 51px),
-      repeating-linear-gradient(90deg, transparent 49.5%, #22c55e 49.5%, #22c55e 50.5%);
+    opacity: 0.05;
+    background-image: radial-gradient(circle, #e11d48 1px, transparent 1px);
+    background-size: 12px 12px;
   }
 
   ::-webkit-scrollbar {
@@ -55,19 +53,37 @@
 
 @layer components {
   .page-container {
-    @apply max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 relative z-10;
   }
 
   .section-title {
-    @apply text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6;
+    @apply text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-6;
+    text-shadow: 2px 2px 0 rgba(255,45,85,0.3);
   }
 
   .card-base {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300;
+    background: white;
+    border: 3px solid #000;
+    border-radius: 10px 24px 14px 22px;
+    box-shadow: 5px 5px 0 #000;
+    transition: all 0.15s ease;
+  }
+  .card-base:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #000;
+  }
+  .dark .card-base {
+    background: #1f2937;
+    border-color: #374151;
+    box-shadow: 5px 5px 0 #111827;
+  }
+  .dark .card-base:hover {
+    box-shadow: 8px 8px 0 #111827;
   }
 
   .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border-2 border-black;
+    box-shadow: 2px 2px 0 #000;
   }
 
   .badge-confederation {
@@ -75,11 +91,13 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center px-4 py-2 rounded-lg bg-wc-green text-white font-medium hover:bg-green-700 transition-colors;
+    @apply inline-flex items-center px-4 py-2 font-black border-2 border-black shadow-[4px_4px_0_#000] bg-wc-green text-white hover:bg-green-700 active:shadow-none active:translate-x-1 active:translate-y-1 transition-all;
+    border-radius: 8px 24px 10px 22px;
   }
 
   .btn-outline {
-    @apply inline-flex items-center px-4 py-2 rounded-lg border-2 border-wc-green text-wc-green font-medium hover:bg-wc-green hover:text-white transition-colors;
+    @apply inline-flex items-center px-4 py-2 font-black border-2 border-black shadow-[4px_4px_0_#000] border-wc-green text-wc-green hover:bg-wc-green hover:text-white active:shadow-none active:translate-x-1 active:translate-y-1 transition-all;
+    border-radius: 8px 24px 10px 22px;
   }
 }
 
