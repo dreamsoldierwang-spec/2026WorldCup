@@ -33,6 +33,8 @@ export const scorers: Scorer[] = [
   // Brazil 1-1 Morocco (6.14)
   { rank: 2, name: 'Vinicius Junior', nameZh: '维尼修斯', teamId: 'bra', goals: 1, matches: 1, position: 'Forward' },
   { rank: 2, name: 'Mohammed Sabari', nameZh: '塞巴里', teamId: 'mar', goals: 1, matches: 1, position: 'Midfielder' },
+  // Scotland 1-0 Haiti (6.14)
+  { rank: 2, name: 'John McGinn', nameZh: '约翰·麦金', teamId: 'sco', goals: 1, matches: 1, position: 'Midfielder' },
 ];
 
 export function getScorerByTeam(teamId: string): Scorer[] {

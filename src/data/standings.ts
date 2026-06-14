@@ -16,10 +16,10 @@ export const standings: Record<string, StandingRow[]> = {
     { position: 1, teamId: 'qat', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
   ],
   C: [
-    { position: 1, teamId: 'bra', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
-    { position: 1, teamId: 'mar', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
-    { position: 3, teamId: 'sco', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDiff: 0, points: 0 },
-    { position: 3, teamId: 'hai', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDiff: 0, points: 0 },
+    { position: 1, teamId: 'sco', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 1, goalsAgainst: 0, goalDiff: 1, points: 3 },
+    { position: 2, teamId: 'bra', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
+    { position: 2, teamId: 'mar', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
+    { position: 4, teamId: 'hai', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 0, goalsAgainst: 1, goalDiff: -1, points: 0 },
   ],
   D: [
     { position: 1, teamId: 'usa', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 4, goalsAgainst: 1, goalDiff: 3, points: 3 },
