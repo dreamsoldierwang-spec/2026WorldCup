@@ -10,6 +10,7 @@ const navItems = [
   { path: '/stars', label: '球星', icon: '⭐' },
   { path: '/records', label: '纪录', icon: '🏆' },
   { path: '/news', label: '新闻', icon: '📰' },
+  { path: '/standings', label: '积分榜', icon: '📊' },
   { path: '/scorers', label: '射手榜', icon: '🎯' },
   { path: '/host-cities', label: '主办城市', icon: '🏟️' },
   { path: '/fan-zone', label: '球迷专区', icon: '💬' },

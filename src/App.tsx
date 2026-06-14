@@ -13,6 +13,7 @@ import HostCities from './pages/HostCities';
 import FanZone from './pages/FanZone';
 import Scorers from './pages/Scorers';
 import News from './pages/News';
+import Standings from './pages/Standings';
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/fan-zone" element={<FanZone />} />
             <Route path="/scorers" element={<Scorers />} />
             <Route path="/news" element={<News />} />
+            <Route path="/standings" element={<Standings />} />
           </Routes>
         </main>
         <Footer />
