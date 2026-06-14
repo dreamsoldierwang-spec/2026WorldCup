@@ -185,7 +185,7 @@ export default function HostCities() {
                 <div className="relative z-10 text-center">
                   <Building2 size={36} className="mx-auto text-white/70 mb-2" />
                   <p className="text-white text-3xl font-black tracking-wider drop-shadow-lg">
-                    {getStadiumInitials(stadium.cityZh)}
+                    {stadium.cityZh}
                   </p>
                 </div>
                 {/* Country flag badge top-right */}
