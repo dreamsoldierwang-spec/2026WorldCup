@@ -1,10 +1,12 @@
 # Netlify Configuration — 2026 World Cup Fan Site
 # Deploy from GitHub: https://github.com/dreamsoldierwang-spec/2026WorldCup
+# Auto-deploy triggered on push to main
 
 [build]
   command = "npm run build"
   publish = "dist"
   functions = "netlify/functions"
+  node_version = "22"
 
 # Redirect /api/messages/* to the Netlify Function
 [[redirects]]
