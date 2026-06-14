@@ -123,7 +123,7 @@ export default function Stars() {
       )}
 
       {/* Player Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {filteredStars.map((player) => {
           const team = getTeamById(player.teamId);
           const posConfig = POSITION_CONFIG[player.position] || {
@@ -135,31 +135,10 @@ export default function Stars() {
           return (
             <div
               key={player.id}
-              className="card-base overflow-hidden group animate-slide-up"
+              className="card-base overflow-hidden group animate-slide-up flex flex-col sm:flex-row"
             >
-              {/* Player Image */}
-              <div className="relative h-64 bg-gray-100 dark:bg-gray-700/50 flex items-center justify-center overflow-hidden border-b-[3px] border-black dark:border-gray-600">
-                <img
-                  src={`/stars/${player.id}.png`}
-                  alt={player.nameZh}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                  onError={(e) => {
-                    // Fallback placeholder if image doesn't exist
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.querySelector('.fallback')!.classList.remove('hidden');
-                  }}
-                />
-                {/* Fallback placeholder */}
-                <div className="fallback hidden absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="text-6xl mb-2 opacity-30">⚽</div>
-                  <span className="text-xs text-gray-400">{player.nameZh}</span>
-                </div>
-              </div>
-
-              {/* Card content */}
-              <div className="p-5">
+              {/* Card content — Left side */}
+              <div className="p-5 flex-1 flex flex-col justify-between min-w-0">
               {/* Header: Name + Top Star Badge */}
               <div className="flex items-start justify-between mb-3">
                 <div>
@@ -219,6 +198,25 @@ export default function Stars() {
                   </p>
                 )}
               </div>
+              </div>
+
+              {/* Player Image — Right side */}
+              <div className="relative w-full sm:w-44 h-48 sm:h-auto bg-gray-100 dark:bg-gray-700/50 flex items-center justify-center overflow-hidden sm:border-l-[3px] border-t-[3px] sm:border-t-0 border-black dark:border-gray-600 shrink-0">
+                <img
+                  src={`/stars/${player.id}.png`}
+                  alt={player.nameZh}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.querySelector('.fallback')!.classList.remove('hidden');
+                  }}
+                />
+                <div className="fallback hidden absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="text-5xl mb-1 opacity-30">⚽</div>
+                  <span className="text-xs text-gray-400">{player.nameZh}</span>
+                </div>
               </div>
             </div>
           );
