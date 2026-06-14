@@ -135,8 +135,31 @@ export default function Stars() {
           return (
             <div
               key={player.id}
-              className="card-base p-5 group animate-slide-up"
+              className="card-base overflow-hidden group animate-slide-up"
             >
+              {/* Player Image */}
+              <div className="relative h-64 bg-gray-100 dark:bg-gray-700/50 flex items-center justify-center overflow-hidden border-b-[3px] border-black dark:border-gray-600">
+                <img
+                  src={`/stars/${player.id}.png`}
+                  alt={player.nameZh}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  onError={(e) => {
+                    // Fallback placeholder if image doesn't exist
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.querySelector('.fallback')!.classList.remove('hidden');
+                  }}
+                />
+                {/* Fallback placeholder */}
+                <div className="fallback hidden absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="text-6xl mb-2 opacity-30">⚽</div>
+                  <span className="text-xs text-gray-400">{player.nameZh}</span>
+                </div>
+              </div>
+
+              {/* Card content */}
+              <div className="p-5">
               {/* Header: Name + Top Star Badge */}
               <div className="flex items-start justify-between mb-3">
                 <div>
@@ -195,6 +218,7 @@ export default function Stars() {
                     +{player.notable.length - 2} 更多成就
                   </p>
                 )}
+              </div>
               </div>
             </div>
           );
