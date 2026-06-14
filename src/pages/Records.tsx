@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { records } from '../data/records';
 import { Trophy, Medal } from 'lucide-react';
 import type { RecordCategory, RecordEntry } from '../types';
@@ -19,8 +19,29 @@ function getRankColorClass(rank: number): string {
   return '';
 }
 
+const MIN_SWIPE_DISTANCE = 40;
+
 export default function Records() {
   const [activeCategory, setActiveCategory] = useState<number>(0);
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  }, []);
+
+  const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    // Only trigger if horizontal swipe dominates
+    if (Math.abs(dx) < MIN_SWIPE_DISTANCE || Math.abs(dx) < Math.abs(dy)) return;
+    if (dx > 0) {
+      setActiveCategory((prev) => Math.max(0, prev - 1));
+    } else {
+      setActiveCategory((prev) => Math.min(records.length - 1, prev + 1));
+    }
+  }, []);
 
   const category: RecordCategory = records[activeCategory];
   const isFunFact = category.title === 'Interesting Records';
@@ -53,8 +74,12 @@ export default function Records() {
         ))}
       </div>
 
-      {/* Current Category Card */}
-      <div className="card-base overflow-hidden animate-slide-up">
+      {/* Current Category Card — swipeable */}
+      <div
+        className="card-base overflow-hidden animate-slide-up touch-pan-x select-none"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {/* Category Header */}
         <div className="p-5 border-b border-gray-100 dark:border-gray-700">
           <div className="flex items-center gap-3">
@@ -175,8 +200,12 @@ export default function Records() {
         )}
       </div>
 
-      {/* Category Navigation Dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      {/* Category Navigation Dots — swipeable */}
+      <div
+        className="flex justify-center gap-2 mt-6 py-4 -mx-4 touch-pan-x select-none"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {records.map((cat, idx) => (
           <button
             key={cat.title}
