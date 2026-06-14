@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 export interface FanMessage {
   id: string;
@@ -8,29 +8,21 @@ export interface FanMessage {
   timestamp: number;
 }
 
-const API = '/api/messages';
+const STORAGE_KEY = 'wc2026_fan_messages';
 
-async function apiGet(): Promise<FanMessage[]> {
-  const res = await fetch(API);
-  const json = await res.json();
-  return json.data || [];
+function loadMessages(): FanMessage[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
 }
 
-async function apiPost(nickname: string, teamIds: string[], message: string): Promise<FanMessage> {
-  const res = await fetch(API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ nickname, teamIds, message }),
-  });
-  const json = await res.json();
-  if (!json.success) throw new Error(json.error || '发送失败');
-  return json.data;
-}
-
-async function apiDelete(id: string): Promise<void> {
-  const res = await fetch(`${API}/${id}`, { method: 'DELETE' });
-  const json = await res.json();
-  if (!json.success) throw new Error(json.error || '删除失败');
+function saveMessages(msgs: FanMessage[]) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(msgs));
+  } catch { /* quota exceeded — ignore */ }
 }
 
 function calcTeamSupport(msgs: FanMessage[]): Record<string, number> {
@@ -43,43 +35,42 @@ function calcTeamSupport(msgs: FanMessage[]): Record<string, number> {
   return counts;
 }
 
+let idCounter = Date.now();
+function genId(): string {
+  return `local_${++idCounter}_${Math.random().toString(36).slice(2, 8)}`;
+}
+
 export function useFanData() {
   const [messages, setMessages] = useState<FanMessage[]>([]);
   const [teamSupport, setTeamSupport] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const refreshTimer = useRef<ReturnType<typeof setTimeout>>();
 
-  const updateFromMessages = useCallback((msgs: FanMessage[]) => {
-    setMessages(msgs);
-    setTeamSupport(calcTeamSupport(msgs));
-    setError(null);
-  }, []);
-
-  const refresh = useCallback(async () => {
+  // Load from localStorage on mount
+  useEffect(() => {
     try {
-      const msgs = await apiGet();
-      updateFromMessages(msgs);
+      const msgs = loadMessages();
+      setMessages(msgs);
+      setTeamSupport(calcTeamSupport(msgs));
     } catch (e: any) {
-      setError(e.message || '加载失败');
+      setError('加载留言失败');
     } finally {
       setLoading(false);
     }
-  }, [updateFromMessages]);
-
-  useEffect(() => { refresh(); }, [refresh]);
-
-  // Cleanup timer on unmount
-  useEffect(() => () => { if (refreshTimer.current) clearTimeout(refreshTimer.current); }, []);
+  }, []);
 
   const addMessage = useCallback(async (nickname: string, teamIds: string[], message: string) => {
-    const newMsg = await apiPost(nickname, teamIds, message);
-
-    // Optimistic: immediately add to local state so user sees it right away
+    const newMsg: FanMessage = {
+      id: genId(),
+      nickname: nickname || '匿名球迷',
+      teamIds,
+      message,
+      timestamp: Date.now(),
+    };
     setMessages(prev => {
-      // Avoid duplicate if refresh already added it
-      if (prev.some(m => m.id === newMsg.id)) return prev;
-      return [newMsg, ...prev];
+      const next = [newMsg, ...prev];
+      saveMessages(next);
+      return next;
     });
     setTeamSupport(prev => {
       const next = { ...prev };
@@ -88,29 +79,20 @@ export function useFanData() {
       });
       return next;
     });
-
-    // Background sync to catch concurrent messages from other users
-    if (refreshTimer.current) clearTimeout(refreshTimer.current);
-    refreshTimer.current = setTimeout(async () => {
-      try {
-        const msgs = await apiGet();
-        setMessages(msgs);
-        setTeamSupport(calcTeamSupport(msgs));
-      } catch {}
-    }, 2000);
-
     return newMsg;
   }, []);
 
   const deleteMessage = useCallback(async (id: string) => {
-    await apiDelete(id);
-    setMessages(prev => prev.filter(m => m.id !== id));
-    // Background sync
-    try {
-      const msgs = await apiGet();
-      setMessages(msgs);
-      setTeamSupport(calcTeamSupport(msgs));
-    } catch {}
+    setMessages(prev => {
+      const next = prev.filter(m => m.id !== id);
+      saveMessages(next);
+      return next;
+    });
+    setTeamSupport(prev => {
+      // Recalculate from current messages
+      const current = loadMessages();
+      return calcTeamSupport(current);
+    });
   }, []);
 
   return { messages, teamSupport, addMessage, deleteMessage, loading, error };
