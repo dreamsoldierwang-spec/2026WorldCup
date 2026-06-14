@@ -203,7 +203,7 @@ export default function Stars() {
               {/* Player Image — Right side */}
               <div className="relative w-full sm:w-44 h-48 sm:h-auto bg-gray-100 dark:bg-gray-700/50 flex items-center justify-center overflow-hidden sm:border-l-[3px] border-t-[3px] sm:border-t-0 border-black dark:border-gray-600 shrink-0">
                 <img
-                  src={`/stars/${player.id}.png`}
+                  src={`stars/${player.id}.png`}
                   alt={player.nameZh}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
