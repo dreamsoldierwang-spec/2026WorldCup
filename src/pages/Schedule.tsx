@@ -2,8 +2,10 @@ import { useState, useMemo } from 'react';
 import { schedule } from '../data/schedule';
 import { teams } from '../data/teams';
 import FlagImg from '../components/FlagImg';
+import MatchDetailModal from '../components/MatchDetailModal';
+import { matchDetails } from '../data/matchDetails';
 import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Calendar, MapPin, Clock, Filter, LayoutList, CalendarDays } from 'lucide-react';
-import type { MatchStage, Team } from '../types';
+import type { MatchStage, Team, Match } from '../types';
 
 const STAGE_LABELS: Record<string, string> = {
   all: '全部', group: '小组赛', round32: '1/16决赛', round16: '1/8决赛',
@@ -35,7 +37,8 @@ export default function Schedule() {
   const [dateFilter, setDateFilter] = useState<string>('all');
   const [expandedDates, setExpandedDates] = useState<Set<string>>(new Set());
   const [viewMode, setViewMode] = useState<'calendar' | 'list'>('list');
-  const [calendarMonth, setCalendarMonth] = useState(0); // 0=June, 1=July
+  const [calendarMonth, setCalendarMonth] = useState(0);
+  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
   const uniqueDates = useMemo(() => {
     return [...new Set(schedule.map((m) => m.date))];
@@ -352,7 +355,10 @@ export default function Schedule() {
                 const homeTeam = getTeamById(match.homeTeamId);
                 const awayTeam = getTeamById(match.awayTeamId);
                 return (
-                  <div key={match.id} className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                  <div key={match.id}
+                    className={`p-4 transition-colors ${matchDetails[match.id] ? 'hover:bg-gray-50 dark:hover:bg-gray-700/30 cursor-pointer' : ''}`}
+                    onClick={() => matchDetails[match.id] && setSelectedMatch(match)}
+                  >
                     <div className="flex flex-col gap-3">
                       <div className="flex items-center justify-between flex-wrap gap-2">
                         <div className="flex items-center gap-2">
@@ -460,7 +466,10 @@ export default function Schedule() {
                       const hasTeams = homeTeam && awayTeam;
 
                       return (
-                        <div key={match.id} className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                        <div key={match.id}
+                          className={`p-4 transition-colors ${matchDetails[match.id] ? 'hover:bg-gray-50 dark:hover:bg-gray-700/30 cursor-pointer' : ''}`}
+                          onClick={() => matchDetails[match.id] && setSelectedMatch(match)}
+                        >
                           {match.stage !== 'group' && !hasTeams ? (
                             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                               <div className="flex items-center gap-2 shrink-0">
@@ -615,6 +624,9 @@ export default function Schedule() {
 
       {/* Content */}
       {viewMode === 'calendar' ? renderCalendar() : renderList()}
+      {selectedMatch && (
+        <MatchDetailModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
+      )}
     </div>
   );
 }

@@ -82,7 +82,9 @@ export const schedule: Match[] = [
     stadium: 'Gillette Stadium',
     city: 'Foxborough',
     cityZh: '波士顿',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
+    homeScore: 2,
+    awayScore: 0,
   },
   {
     id: 'm006',
