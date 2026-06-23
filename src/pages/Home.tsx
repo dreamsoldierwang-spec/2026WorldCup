@@ -30,7 +30,7 @@ const quickLinks = [
 // 重要新闻海报配置 — 当有重要新闻时设置为 true，并配置海报信息
 const FEATURED_NEWS = {
   enabled: true,
-  image: '/messi-record.jpg',
+  image: './messi-record.jpg',
   alt: '梅西18球成为世界杯历史射手王',
   badge: '最新纪录',
   title: '🐐 梅西超越克洛泽！世界杯历史射手王',
