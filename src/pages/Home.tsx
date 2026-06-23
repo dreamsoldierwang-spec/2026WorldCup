@@ -33,6 +33,7 @@ const FEATURED_NEWS = {
   image: './messi-record.jpg',
   alt: '梅西18球成为世界杯历史射手王',
   badge: '最新纪录',
+  badgeColor: 'bg-[#FFD700]',
   title: '🐐 梅西超越克洛泽！世界杯历史射手王',
   description: '阿根廷2-0奥地利，梅西梅开二度，世界杯总进球达到18球，正式超越克洛泽独占历史射手榜榜首。同时刷新连续6场进球纪录、历史出场王（28场）、胜场数第一（18胜）等多项纪录。',
 };
@@ -53,161 +54,260 @@ export default function Home() {
 
   return (
     <div>
-      {/* Featured News Banner — 重要新闻海报（置顶） */}
-      {FEATURED_NEWS.enabled && (
-        <section className="relative overflow-hidden">
-          <div className="relative w-full aspect-[16/7] sm:aspect-[16/5] lg:aspect-[16/4] max-h-[420px]">
-            <img
-              src={FEATURED_NEWS.image}
-              alt={FEATURED_NEWS.alt}
-              className="w-full h-full object-cover object-top"
-            />
-            {/* Gradient overlays for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" />
-            {/* Text overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8">
-              <div className="max-w-7xl mx-auto w-full">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFD700] text-black text-xs sm:text-sm font-black mb-2 sm:mb-3 shadow-lg">
+      {/* Hero Section — 有重要新闻时显示新闻海报+世界杯元素，无新闻时显示原版 */}
+      <section className="relative text-white overflow-hidden min-h-[75vh] flex items-center">
+        {FEATURED_NEWS.enabled ? (
+          // 有重要新闻：以新闻海报为背景，叠加世界杯Logo元素
+          <>
+            {/* 新闻海报背景 */}
+            <div className="absolute inset-0">
+              <img
+                src={FEATURED_NEWS.image}
+                alt={FEATURED_NEWS.alt}
+                className="w-full h-full object-cover object-top"
+              />
+              {/* 暗化遮罩，确保文字可读 */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
+            </div>
+
+            {/* 漫画风格装饰元素 */}
+            <div className="absolute inset-0 manga-dots opacity-10" />
+            <div className="absolute inset-0 speed-lines opacity-10" />
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-12 left-8 text-8xl comic-shake" style={{ animationPlayState: 'running' }}>⚡</div>
+              <div className="absolute top-20 right-12 text-7xl comic-flame">🔥</div>
+              <div className="absolute bottom-16 left-16 text-7xl comic-shake">💥</div>
+              <div className="absolute bottom-24 right-8 text-8xl">⚽</div>
+            </div>
+
+            <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-20 lg:py-24 w-full">
+              {/* 顶部：LIVE标签 + 新闻徽章 */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+                <div className="comic-bounce-in inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#FF2D55] border-2 border-white text-sm font-black shadow-[0_4px_0_#000]">
+                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+                  <span className="tracking-wider">LIVE</span>
+                  <span className="text-white/80">赛事进行中</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFD700] border-2 border-white text-sm font-black text-black shadow-[0_4px_0_#000]">
                   <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                   {FEATURED_NEWS.badge}
                 </div>
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-white mb-1 sm:mb-2"
-                  style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              </div>
+
+              {/* 世界杯主标题 */}
+              <div className="text-center mb-4">
+                <h1 className="comic-title text-4xl sm:text-6xl lg:text-7xl leading-tight mb-3"
+                  style={{ filter: 'drop-shadow(0 8px 12px rgba(255,45,85,0.5))' }}>
+                  FIFA WORLD CUP
+                  <br />
+                  <span className="comic-title-sm text-5xl sm:text-7xl lg:text-8xl block mt-2"
+                    style={{ filter: 'drop-shadow(0 6px 8px rgba(255,215,0,0.6))' }}>
+                    ⚽ 2026 世界杯 ⚽
+                  </span>
+                </h1>
+              </div>
+
+              {/* 副标题 */}
+              <div className="text-center mb-5">
+                <p className="text-base sm:text-xl font-bold tracking-widest"
+                  style={{ textShadow: '2px 2px 0 #000, 0 0 20px rgba(255,45,85,0.5)' }}>
+                  🇺🇸 美国 · 🇨🇦 加拿大 · 🇲🇽 墨西哥 联合主办
+                </p>
+              </div>
+
+              {/* 新闻标题 */}
+              <div className="text-center mb-5 max-w-4xl mx-auto">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#FFD700] leading-relaxed"
+                  style={{
+                    textShadow: '3px 3px 0 #FF2D55, 6px 6px 0 rgba(0,0,0,0.4)',
+                    filter: 'drop-shadow(0 0 20px rgba(255,45,85,0.6))'
+                  }}>
                   {FEATURED_NEWS.title}
                 </h2>
-                <p className="text-sm sm:text-lg text-white/90 font-bold max-w-2xl"
-                  style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                <p className="text-sm sm:text-lg text-white/90 font-bold mt-3 max-w-3xl mx-auto leading-relaxed"
+                  style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9)' }}>
                   {FEATURED_NEWS.description}
                 </p>
               </div>
+
+              {/* 统计数字 */}
+              <div className="flex justify-center gap-3 sm:gap-6 mb-6">
+                {[
+                  { num: '48', label: '支球队' },
+                  { num: '104', label: '场比赛' },
+                  { num: '16', label: '座城市' },
+                  { num: '1', label: '个冠军' },
+                ].map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className="comic-card bg-white/10 backdrop-blur-sm px-3 py-2 sm:px-6 sm:py-4 text-center border-2 border-white/30"
+                    style={{ animation: `comicBounceIn ${0.4 + i * 0.1}s ease forwards`, opacity: 0 }}
+                  >
+                    <div className="text-2xl sm:text-4xl font-black text-[#FFD700]"
+                      style={{ textShadow: '2px 2px 0 #000' }}>
+                      {stat.num}
+                    </div>
+                    <div className="text-[10px] sm:text-sm font-bold text-white/80 mt-1 tracking-wider">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* 标语 */}
+              <div className="text-center mb-8">
+                <p className="text-xl sm:text-3xl lg:text-4xl font-black tracking-widest text-[#FFD700] leading-relaxed"
+                  style={{
+                    textShadow: '3px 3px 0 #FF2D55, 6px 6px 0 rgba(0,0,0,0.4)',
+                    filter: 'drop-shadow(0 0 20px rgba(255,45,85,0.6))'
+                  }}>
+                  🔥 四年磨一剑，一战定乾坤！🔥
+                </p>
+              </div>
+
+              {/* CTA按钮 */}
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link to="/groups" className="comic-btn comic-btn-red action-impact text-lg">
+                  ⚔️ 查看分组
+                </Link>
+                <Link to="/schedule" className="comic-btn comic-btn-yellow action-impact text-lg"
+                  style={{ animationDelay: '0.2s' }}>
+                  📅 完整赛程
+                </Link>
+                <Link to="/standings" className="comic-btn bg-white text-black action-impact text-lg border-3 border-black"
+                  style={{ animationDelay: '0.4s' }}>
+                  📊 积分榜
+                </Link>
+              </div>
+
+              {/* 底部速度线装饰 */}
+              <div className="mt-10 flex justify-center gap-1 opacity-30">
+                {Array.from({ length: 40 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-1 bg-white rounded-full"
+                    style={{
+                      height: `${6 + Math.random() * 20}px`,
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    }}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* Hero Section — Comic Style */}
-      <section className="relative bg-gradient-to-br from-[#1a0533] via-[#2d0a4a] to-[#e11d48] text-white overflow-hidden min-h-[75vh] flex items-center">
-        {/* Manga dot pattern overlay */}
-        <div className="absolute inset-0 manga-dots opacity-20" />
-        
-        {/* Speed lines */}
-        <div className="absolute inset-0 speed-lines opacity-15" />
-
-        {/* Action vector decorations */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-12 left-8 text-8xl comic-shake" style={{ animationPlayState: 'running' }}>⚡</div>
-          <div className="absolute top-20 right-12 text-7xl comic-flame">🔥</div>
-          <div className="absolute bottom-16 left-16 text-7xl comic-shake">💥</div>
-          <div className="absolute bottom-24 right-8 text-8xl">⚽</div>
-          <div className="absolute top-1/3 left-1/2 text-[14rem] -translate-x-1/2 opacity-[0.04]">🏆</div>
-        </div>
-
-        {/* Speed effects — diagonal lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="speed" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
-              <line x1="0" y1="80" x2="80" y2="0" stroke="white" strokeWidth="2" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#speed)" />
-        </svg>
-
-        <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-20 lg:py-24 w-full">
-          {/* Live indicator badge */}
-          <div className="flex justify-center mb-6">
-            <div className="comic-bounce-in inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#FF2D55] border-2 border-white text-sm font-black shadow-[0_4px_0_#000]">
-              <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
-              <span className="tracking-wider">LIVE</span>
-              <span className="text-white/80">赛事进行中</span>
+          </>
+        ) : (
+          // 无重要新闻：原版 Hero 区域
+          <>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1a0533] via-[#2d0a4a] to-[#e11d48]" />
+            <div className="absolute inset-0 manga-dots opacity-20" />
+            <div className="absolute inset-0 speed-lines opacity-15" />
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-12 left-8 text-8xl comic-shake" style={{ animationPlayState: 'running' }}>⚡</div>
+              <div className="absolute top-20 right-12 text-7xl comic-flame">🔥</div>
+              <div className="absolute bottom-16 left-16 text-7xl comic-shake">💥</div>
+              <div className="absolute bottom-24 right-8 text-8xl">⚽</div>
+              <div className="absolute top-1/3 left-1/2 text-[14rem] -translate-x-1/2 opacity-[0.04]">🏆</div>
             </div>
-          </div>
+            <svg className="absolute inset-0 w-full h-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="speed" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
+                  <line x1="0" y1="80" x2="80" y2="0" stroke="white" strokeWidth="2" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#speed)" />
+            </svg>
 
-          {/* Main Title */}
-          <div className="text-center mb-8">
-            <h1 className="comic-title text-5xl sm:text-7xl lg:text-8xl leading-tight mb-4"
-              style={{ filter: 'drop-shadow(0 8px 12px rgba(255,45,85,0.5))' }}>
-              FIFA WORLD CUP
-              <br />
-              <span className="comic-title-sm text-7xl sm:text-8xl lg:text-9xl block mt-2"
-                style={{ filter: 'drop-shadow(0 6px 8px rgba(255,215,0,0.6))' }}>
-                ⚽ 2026 世界杯 ⚽
-              </span>
-            </h1>
-          </div>
-
-          {/* Subtitle */}
-          <div className="text-center mb-6">
-            <p className="text-lg sm:text-2xl font-bold tracking-widest"
-              style={{ textShadow: '2px 2px 0 #000, 0 0 20px rgba(255,45,85,0.5)' }}>
-              🇺🇸 美国 · 🇨🇦 加拿大 · 🇲🇽 墨西哥 联合主办
-            </p>
-          </div>
-
-          {/* Stats counter — comic style */}
-          <div className="flex justify-center gap-4 sm:gap-8 mb-8">
-            {[
-              { num: '48', label: '支球队' },
-              { num: '104', label: '场比赛' },
-              { num: '16', label: '座城市' },
-              { num: '1', label: '个冠军' },
-            ].map((stat, i) => (
-              <div
-                key={stat.label}
-                className="comic-card bg-white/10 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 text-center"
-                style={{ animation: `comicBounceIn ${0.4 + i * 0.1}s ease forwards`, opacity: 0 }}
-              >
-                <div className="text-3xl sm:text-4xl font-black text-[#FFD700]"
-                  style={{ textShadow: '2px 2px 0 #000' }}>
-                  {stat.num}
-                </div>
-                <div className="text-xs sm:text-sm font-bold text-white/80 mt-1 tracking-wider">
-                  {stat.label}
+            <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-20 lg:py-24 w-full">
+              <div className="flex justify-center mb-6">
+                <div className="comic-bounce-in inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#FF2D55] border-2 border-white text-sm font-black shadow-[0_4px_0_#000]">
+                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+                  <span className="tracking-wider">LIVE</span>
+                  <span className="text-white/80">赛事进行中</span>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Hot-blooded Slogan */}
-          <div className="text-center mb-10">
-            <p className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-widest text-[#FFD700] leading-relaxed"
-              style={{
-                textShadow: '3px 3px 0 #FF2D55, 6px 6px 0 rgba(0,0,0,0.4)',
-                filter: 'drop-shadow(0 0 20px rgba(255,45,85,0.6))'
-              }}>
-              🔥 四年磨一剑，一战定乾坤！🔥
-            </p>
-          </div>
+              <div className="text-center mb-8">
+                <h1 className="comic-title text-5xl sm:text-7xl lg:text-8xl leading-tight mb-4"
+                  style={{ filter: 'drop-shadow(0 8px 12px rgba(255,45,85,0.5))' }}>
+                  FIFA WORLD CUP
+                  <br />
+                  <span className="comic-title-sm text-7xl sm:text-8xl lg:text-9xl block mt-2"
+                    style={{ filter: 'drop-shadow(0 6px 8px rgba(255,215,0,0.6))' }}>
+                    ⚽ 2026 世界杯 ⚽
+                  </span>
+                </h1>
+              </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/groups" className="comic-btn comic-btn-red action-impact text-lg">
-              ⚔️ 查看分组
-            </Link>
-            <Link to="/schedule" className="comic-btn comic-btn-yellow action-impact text-lg"
-              style={{ animationDelay: '0.2s' }}>
-              📅 完整赛程
-            </Link>
-            <Link to="/standings" className="comic-btn bg-white text-black action-impact text-lg border-3 border-black"
-              style={{ animationDelay: '0.4s' }}>
-              📊 积分榜
-            </Link>
-          </div>
+              <div className="text-center mb-6">
+                <p className="text-lg sm:text-2xl font-bold tracking-widest"
+                  style={{ textShadow: '2px 2px 0 #000, 0 0 20px rgba(255,45,85,0.5)' }}>
+                  🇺🇸 美国 · 🇨🇦 加拿大 · 🇲🇽 墨西哥 联合主办
+                </p>
+              </div>
 
-          {/* Bottom speed line decoration */}
-          <div className="mt-12 flex justify-center gap-1 opacity-30">
-            {Array.from({ length: 40 }).map((_, i) => (
-              <div
-                key={i}
-                className="w-1 bg-white rounded-full"
-                style={{
-                  height: `${6 + Math.random() * 20}px`,
-                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
+              <div className="flex justify-center gap-4 sm:gap-8 mb-8">
+                {[
+                  { num: '48', label: '支球队' },
+                  { num: '104', label: '场比赛' },
+                  { num: '16', label: '座城市' },
+                  { num: '1', label: '个冠军' },
+                ].map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className="comic-card bg-white/10 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 text-center"
+                    style={{ animation: `comicBounceIn ${0.4 + i * 0.1}s ease forwards`, opacity: 0 }}
+                  >
+                    <div className="text-3xl sm:text-4xl font-black text-[#FFD700]"
+                      style={{ textShadow: '2px 2px 0 #000' }}>
+                      {stat.num}
+                    </div>
+                    <div className="text-xs sm:text-sm font-bold text-white/80 mt-1 tracking-wider">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center mb-10">
+                <p className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-widest text-[#FFD700] leading-relaxed"
+                  style={{
+                    textShadow: '3px 3px 0 #FF2D55, 6px 6px 0 rgba(0,0,0,0.4)',
+                    filter: 'drop-shadow(0 0 20px rgba(255,45,85,0.6))'
+                  }}>
+                  🔥 四年磨一剑，一战定乾坤！🔥
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link to="/groups" className="comic-btn comic-btn-red action-impact text-lg">
+                  ⚔️ 查看分组
+                </Link>
+                <Link to="/schedule" className="comic-btn comic-btn-yellow action-impact text-lg"
+                  style={{ animationDelay: '0.2s' }}>
+                  📅 完整赛程
+                </Link>
+                <Link to="/standings" className="comic-btn bg-white text-black action-impact text-lg border-3 border-black"
+                  style={{ animationDelay: '0.4s' }}>
+                  📊 积分榜
+                </Link>
+              </div>
+
+              <div className="mt-12 flex justify-center gap-1 opacity-30">
+                {Array.from({ length: 40 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-1 bg-white rounded-full"
+                    style={{
+                      height: `${6 + Math.random() * 20}px`,
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </section>
 
       {/* Latest Results — Comic Style */}
