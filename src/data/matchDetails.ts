@@ -94,6 +94,97 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 54, awayPossession: 46, homeShots: 11, awayShots: 7, homeShotsOnTarget: 2, awayShotsOnTarget: 2, homeFouls: 12, awayFouls: 14, homeCorners: 4, awayCorners: 3, homePasses: 468, awayPasses: 402 },
   },
+  m009: {
+    matchId: 'm009',
+    summary: '荷兰与日本上演精彩对攻战。加克波为荷兰首开纪录，日本迅速扳平比分。下半场双方各入一球，最终2-2握手言和。',
+    goals: [
+      { time: '23\'', player: '加克波 (Gakpo)', team: 'home' },
+      { time: '38\'', player: '三笘薰 (Mitoma)', team: 'away' },
+      { time: '56\'', player: '萨默维尔 (Summerville)', team: 'home' },
+      { time: '71\'', player: '上田绮世 (Ueda)', team: 'away' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 15, awayShots: 9, homeShotsOnTarget: 6, awayShotsOnTarget: 4, homeFouls: 11, awayFouls: 13, homeCorners: 7, awayCorners: 3, homePasses: 534, awayPasses: 389 },
+  },
+  m012: {
+    matchId: 'm012',
+    summary: '德国队7-1狂胜世界杯新军库拉索，展现强大实力。哈弗茨梅开二度，翁达夫替补登场打入处子球。库拉索由普林斯扳回一城但无力回天。',
+    goals: [
+      { time: '12\'', player: '哈弗茨 (Havertz)', team: 'home' },
+      { time: '28\'', player: '穆西亚拉 (Musiala)', team: 'home' },
+      { time: '45\'', player: '翁达夫 (Undav)', team: 'home' },
+      { time: '53\'', player: '普林斯 (Prince)', team: 'away' },
+      { time: '61\'', player: '哈弗茨 (Havertz)', team: 'home' },
+      { time: '74\'', player: '维尔茨 (Wirtz)', team: 'home' },
+      { time: '88\'', player: '翁达夫 (Undav)', team: 'home' },
+    ],
+    stats: { homePossession: 65, awayPossession: 35, homeShots: 22, awayShots: 4, homeShotsOnTarget: 11, awayShotsOnTarget: 1, homeFouls: 7, awayFouls: 16, homeCorners: 9, awayCorners: 1, homePasses: 612, awayPasses: 328 },
+  },
+  m018: {
+    matchId: 'm018',
+    summary: '梅西在世界杯首战上演帽子戏法，阿根廷3-0完胜阿尔及利亚。梅西第16分钟点球破门，第34分钟任意球直接得分，第78分钟单刀锁定胜局。世界杯总进球达到16球追平克洛泽。',
+    goals: [
+      { time: '16\'', player: '梅西 (Messi)', team: 'home' },
+      { time: '34\'', player: '梅西 (Messi)', team: 'home' },
+      { time: '78\'', player: '梅西 (Messi)', team: 'home' },
+    ],
+    stats: { homePossession: 62, awayPossession: 38, homeShots: 16, awayShots: 5, homeShotsOnTarget: 7, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 14, homeCorners: 6, awayCorners: 2, homePasses: 567, awayPasses: 345 },
+  },
+  m020: {
+    matchId: 'm020',
+    summary: '法国3-1击败塞内加尔，姆巴佩贡献一传一射。姆巴佩第22分钟打破僵局，塞内加尔由马内扳平，但法国下半场连入两球锁定胜局。',
+    goals: [
+      { time: '22\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+      { time: '41\'', player: '马内 (Mane)', team: 'away' },
+      { time: '58\'', player: '登贝莱 (Dembele)', team: 'home' },
+      { time: '76\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+    ],
+    stats: { homePossession: 60, awayPossession: 40, homeShots: 14, awayShots: 7, homeShotsOnTarget: 6, awayShotsOnTarget: 3, homeFouls: 10, awayFouls: 15, homeCorners: 5, awayCorners: 3, homePasses: 545, awayPasses: 362 },
+  },
+  m021: {
+    matchId: 'm021',
+    summary: '英格兰4-2力克克罗地亚。凯恩梅开二度，贝林厄姆也有一球入账。克罗地亚由莫德里奇点球和克拉马里奇各入一球两度扳平，但英格兰最终取胜。',
+    goals: [
+      { time: '18\'', player: '凯恩 (Kane)', team: 'home' },
+      { time: '35\'', player: '莫德里奇 (Modric)', team: 'away' },
+      { time: '52\'', player: '贝林厄姆 (Bellingham)', team: 'home' },
+      { time: '67\'', player: '克拉马里奇 (Kramaric)', team: 'away' },
+      { time: '81\'', player: '凯恩 (Kane)', team: 'home' },
+      { time: '90+2\'', player: '萨卡 (Saka)', team: 'home' },
+    ],
+    stats: { homePossession: 55, awayPossession: 45, homeShots: 13, awayShots: 10, homeShotsOnTarget: 6, awayShotsOnTarget: 5, homeFouls: 11, awayFouls: 13, homeCorners: 6, awayCorners: 4, homePasses: 498, awayPasses: 412 },
+  },
+  m027: {
+    matchId: 'm027',
+    summary: '加拿大主场6-0血洗卡塔尔，创造队史世界杯最大比分胜利。乔纳森·戴维梅开二度，卡塔尔单场两红牌加一乌龙，惨遭小组赛两连败。',
+    goals: [
+      { time: '15\'', player: '戴维 (David)', team: 'home' },
+      { time: '33\'', player: '卡塔尔 (乌龙)', team: 'away', ownGoal: true },
+      { time: '48\'', player: '戴维 (David)', team: 'home' },
+      { time: '62\'', player: '戴维斯 (Davies)', team: 'home' },
+      { time: '75\'', player: '拉林 (Larin)', team: 'home' },
+      { time: '89\'', player: '布坎南 (Buchanan)', team: 'home' },
+    ],
+    stats: { homePossession: 61, awayPossession: 39, homeShots: 20, awayShots: 3, homeShotsOnTarget: 10, awayShotsOnTarget: 0, homeFouls: 8, awayFouls: 19, homeCorners: 8, awayCorners: 1, homePasses: 556, awayPasses: 342 },
+  },
+  m041: {
+    matchId: 'm041',
+    summary: '梅西梅开二度，世界杯总进球达到18球，正式超越克洛泽独占历史射手榜榜首！阿根廷2-0击败奥地利，两战全胜提前出线。梅西同时刷新连续6场进球纪录、历史出场王（28场）、胜场数第一（18胜）等多项纪录。',
+    goals: [
+      { time: '31\'', player: '梅西 (Messi)', team: 'home' },
+      { time: '73\'', player: '梅西 (Messi)', team: 'home' },
+    ],
+    stats: { homePossession: 59, awayPossession: 41, homeShots: 12, awayShots: 6, homeShotsOnTarget: 5, awayShotsOnTarget: 2, homeFouls: 9, awayFouls: 14, homeCorners: 5, awayCorners: 3, homePasses: 523, awayPasses: 367 },
+  },
+  m042: {
+    matchId: 'm042',
+    summary: '法国3-0大胜伊拉克，但比赛因费城突发雷暴中断约2小时。姆巴佩代表法国国家队第100场比赛梅开二度，世界杯总进球达16球追平克洛泽。',
+    goals: [
+      { time: '18\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+      { time: '68\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+      { time: '85\'', player: '图拉姆 ( Thuram)', team: 'home' },
+    ],
+    stats: { homePossession: 64, awayPossession: 36, homeShots: 17, awayShots: 4, homeShotsOnTarget: 8, awayShotsOnTarget: 1, homeFouls: 7, awayFouls: 16, homeCorners: 7, awayCorners: 2, homePasses: 578, awayPasses: 321 },
+  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {

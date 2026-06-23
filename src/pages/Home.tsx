@@ -27,6 +27,16 @@ const quickLinks = [
   { to: '/host-cities', emoji: '🏟️', title: '16座球场', desc: '3国16城' },
 ];
 
+// 重要新闻海报配置 — 当有重要新闻时设置为 true，并配置海报信息
+const FEATURED_NEWS = {
+  enabled: true,
+  image: '/messi-record.jpg',
+  alt: '梅西18球成为世界杯历史射手王',
+  badge: '最新纪录',
+  title: '🐐 梅西超越克洛泽！世界杯历史射手王',
+  description: '阿根廷2-0奥地利，梅西梅开二度，世界杯总进球达到18球，正式超越克洛泽独占历史射手榜榜首。同时刷新连续6场进球纪录、历史出场王（28场）、胜场数第一（18胜）等多项纪录。',
+};
+
 export default function Home() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
@@ -43,6 +53,39 @@ export default function Home() {
 
   return (
     <div>
+      {/* Featured News Banner — 重要新闻海报（置顶） */}
+      {FEATURED_NEWS.enabled && (
+        <section className="relative overflow-hidden">
+          <div className="relative w-full aspect-[16/7] sm:aspect-[16/5] lg:aspect-[16/4] max-h-[420px]">
+            <img
+              src={FEATURED_NEWS.image}
+              alt={FEATURED_NEWS.alt}
+              className="w-full h-full object-cover object-top"
+            />
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" />
+            {/* Text overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8">
+              <div className="max-w-7xl mx-auto w-full">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFD700] text-black text-xs sm:text-sm font-black mb-2 sm:mb-3 shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+                  {FEATURED_NEWS.badge}
+                </div>
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-white mb-1 sm:mb-2"
+                  style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                  {FEATURED_NEWS.title}
+                </h2>
+                <p className="text-sm sm:text-lg text-white/90 font-bold max-w-2xl"
+                  style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                  {FEATURED_NEWS.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Hero Section — Comic Style */}
       <section className="relative bg-gradient-to-br from-[#1a0533] via-[#2d0a4a] to-[#e11d48] text-white overflow-hidden min-h-[75vh] flex items-center">
         {/* Manga dot pattern overlay */}
