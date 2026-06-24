@@ -185,6 +185,28 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 64, awayPossession: 36, homeShots: 17, awayShots: 4, homeShotsOnTarget: 8, awayShotsOnTarget: 1, homeFouls: 7, awayFouls: 16, homeCorners: 7, awayCorners: 2, homePasses: 578, awayPasses: 321 },
   },
+  m044: {
+    matchId: 'm044',
+    summary: '阿尔及利亚在J组2-1逆转约旦，取得本届世界杯首胜。约旦率先破门取得领先，但阿尔及利亚下半场连入两球完成逆转。约旦两战皆负小组出线渺茫。',
+    goals: [
+      { time: '24\'', player: '阿尔-纳马特 (Al-Naimat)', team: 'home' },
+      { time: '58\'', player: '本纳赛尔 (Bennacer)', team: 'away' },
+      { time: '79\'', player: '布内贾 (Bounedjah)', team: 'away' },
+    ],
+    stats: { homePossession: 44, awayPossession: 56, homeShots: 8, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 6, homeFouls: 13, awayFouls: 10, homeCorners: 3, awayCorners: 6, homePasses: 378, awayPasses: 489 },
+  },
+  m048: {
+    matchId: 'm048',
+    summary: '葡萄牙5-0大胜乌兹别克斯坦，展现强大进攻火力。C罗替补登场但未能进球，连续10场大赛进球荒延续。葡萄牙队多点开花，两轮不败积4分排名K组第一。',
+    goals: [
+      { time: '12\'', player: '莱奥 (Leao)', team: 'home' },
+      { time: '34\'', player: 'B费 (Bruno Fernandes)', team: 'home' },
+      { time: '52\'', player: '贡萨洛·拉莫斯 (Goncalo Ramos)', team: 'home' },
+      { time: '71\'', player: '莱奥 (Leao)', team: 'home' },
+      { time: '88\'', player: '内托 (Neto)', team: 'home' },
+    ],
+    stats: { homePossession: 68, awayPossession: 32, homeShots: 21, awayShots: 3, homeShotsOnTarget: 10, awayShotsOnTarget: 0, homeFouls: 6, awayFouls: 18, homeCorners: 9, awayCorners: 1, homePasses: 612, awayPasses: 289 },
+  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {

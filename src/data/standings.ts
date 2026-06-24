@@ -60,20 +60,20 @@ export const standings: Record<string, StandingRow[]> = {
   J: [
     { position: 1, teamId: 'arg', played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 5, goalsAgainst: 0, goalDiff: 5, points: 6 },
     { position: 2, teamId: 'aut', played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 3, goalsAgainst: 2, goalDiff: 1, points: 3 },
-    { position: 3, teamId: 'jor', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDiff: -2, points: 0 },
-    { position: 4, teamId: 'alg', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 0, goalsAgainst: 3, goalDiff: -3, points: 0 },
+    { position: 3, teamId: 'alg', played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 3, goalDiff: -1, points: 3 },
+    { position: 4, teamId: 'jor', played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 2, goalsAgainst: 5, goalDiff: -3, points: 0 },
   ],
   K: [
-    { position: 1, teamId: 'col', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDiff: 2, points: 3 },
-    { position: 2, teamId: 'cod', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
-    { position: 3, teamId: 'por', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
-    { position: 4, teamId: 'uzb', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDiff: -2, points: 0 },
+    { position: 1, teamId: 'por', played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDiff: 5, points: 4 },
+    { position: 2, teamId: 'col', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDiff: 2, points: 3 },
+    { position: 3, teamId: 'cod', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
+    { position: 4, teamId: 'uzb', played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 8, goalDiff: -7, points: 0 },
   ],
   L: [
-    { position: 1, teamId: 'eng', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 4, goalsAgainst: 2, goalDiff: 2, points: 3 },
-    { position: 2, teamId: 'gha', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 1, goalsAgainst: 0, goalDiff: 1, points: 3 },
-    { position: 3, teamId: 'pan', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 0, goalsAgainst: 1, goalDiff: -1, points: 0 },
-    { position: 4, teamId: 'cro', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 4, goalDiff: -2, points: 0 },
+    { position: 1, teamId: 'eng', played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 4, goalsAgainst: 2, goalDiff: 2, points: 4 },
+    { position: 2, teamId: 'gha', played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 0, goalDiff: 1, points: 4 },
+    { position: 3, teamId: 'cro', played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 3, goalsAgainst: 4, goalDiff: -1, points: 3 },
+    { position: 4, teamId: 'pan', played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 0, goalsAgainst: 2, goalDiff: -2, points: 0 },
   ],
 };
 
