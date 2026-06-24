@@ -31,7 +31,7 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './messi-record.jpg',
+  image: './ronaldo-record.jpg',
   alt: 'C罗连续6届世界杯进球创造历史',
   badge: '历史纪录',
   title: '🔥 C罗连续6届世界杯进球！历史第一人',
