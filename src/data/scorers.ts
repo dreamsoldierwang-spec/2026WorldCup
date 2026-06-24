@@ -25,6 +25,7 @@ export const scorers: Scorer[] = [
   { rank: 5, name: 'Erling Haaland', nameZh: '哈兰德', teamId: 'nor', goals: 2, matches: 2, position: 'Forward' },
   { rank: 5, name: 'Harry Kane', nameZh: '凯恩', teamId: 'eng', goals: 2, matches: 1, position: 'Forward' },
   { rank: 5, name: 'Kai Havertz', nameZh: '哈弗茨', teamId: 'ger', goals: 2, matches: 2, position: 'Forward' },
+  { rank: 5, name: 'Cristiano Ronaldo', nameZh: 'C罗', teamId: 'por', goals: 2, matches: 2, position: 'Forward' },
   { rank: 14, name: 'Julian Quinones', nameZh: '基尼奥内斯', teamId: 'mex', goals: 1, matches: 2, position: 'Forward' },
   { rank: 14, name: 'Raul Jimenez', nameZh: '劳尔·希门尼斯', teamId: 'mex', goals: 1, matches: 2, position: 'Forward' },
   { rank: 14, name: 'Hwang In-beom', nameZh: '黄仁范', teamId: 'kor', goals: 1, matches: 2, position: 'Midfielder' },

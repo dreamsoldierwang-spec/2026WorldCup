@@ -719,10 +719,12 @@ export const schedule: Match[] = [
     group: 'K',
     homeTeamId: 'col',
     awayTeamId: 'cod',
+    homeScore: 2,
+    awayScore: 0,
     stadium: 'Estadio Akron',
     city: 'Zapopan',
     cityZh: '萨波潘',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm046',

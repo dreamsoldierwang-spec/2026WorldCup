@@ -65,8 +65,8 @@ export const standings: Record<string, StandingRow[]> = {
   ],
   K: [
     { position: 1, teamId: 'por', played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDiff: 5, points: 4 },
-    { position: 2, teamId: 'col', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDiff: 2, points: 3 },
-    { position: 3, teamId: 'cod', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDiff: 0, points: 1 },
+    { position: 2, teamId: 'col', played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 5, goalsAgainst: 1, goalDiff: 4, points: 6 },
+    { position: 3, teamId: 'cod', played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDiff: -2, points: 1 },
     { position: 4, teamId: 'uzb', played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 8, goalDiff: -7, points: 0 },
   ],
   L: [

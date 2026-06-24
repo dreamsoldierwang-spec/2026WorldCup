@@ -47,6 +47,7 @@ export const matchResults: Record<string, { homeScore: number; awayScore: number
   m042: { homeScore: 3, awayScore: 0 },  // 法国 3-0 伊拉克 (6.23)
   m043: { homeScore: 1, awayScore: 0 },  // 挪威 1-0 塞内加尔 (6.23)
   m044: { homeScore: 1, awayScore: 2 },  // 约旦 1-2 阿尔及利亚 (6.23)
+  m045: { homeScore: 2, awayScore: 0 },  // 哥伦比亚 2-0 刚果金 (6.24)
   m046: { homeScore: 0, awayScore: 1 },  // 巴拿马 0-1 克罗地亚 (6.24)
   m047: { homeScore: 0, awayScore: 0 },  // 英格兰 0-0 加纳 (6.24)
   m048: { homeScore: 5, awayScore: 0 },  // 葡萄牙 5-0 乌兹别克斯坦 (6.24)
