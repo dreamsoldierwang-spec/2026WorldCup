@@ -96,6 +96,8 @@ export interface StandingRow {
   goalsAgainst: number;
   goalDiff: number;
   points: number;
+  qualified?: boolean;  // 是否已晋级淘汰赛
+  qualifiedAs?: 'direct' | 'best3rd';  // 晋级方式：直接晋级（前两名）或最佳小组第三
 }
 
 export interface RecordEntry {

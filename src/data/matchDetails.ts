@@ -61,12 +61,14 @@ export const matchDetails: Record<string, MatchDetail> = {
   },
   m005: {
     matchId: 'm005',
-    summary: '澳大利亚在温哥华2-0力克土耳其，取得D组开门红。伊兰昆达上半场以一敌三低射破门，梅特卡夫下半场远射建功锁定胜局。澳大利亚18号比奇全场评分最高8.6分。',
+    summary: 'D组首轮上演精彩对攻大战！伊尔迪兹第23分钟单刀赴会为土耳其先拔头筹，伊兰昆达第38分钟远射扳平。杜克第65分钟头球反超比分，但恰尔汗奥卢第88分钟点球绝平，土耳其惊险带走一分。',
     goals: [
-      { time: '37\'', player: '伊兰昆达 (Irankunda)', team: 'home' },
-      { time: '72\'', player: '梅特卡夫 (Metcalfe)', team: 'home' },
+      { time: '23\'', player: '伊尔迪兹 (Yildiz)', team: 'away' },
+      { time: '38\'', player: '伊兰昆达 (Irankunda)', team: 'home' },
+      { time: '65\'', player: '杜克 (Duke)', team: 'home' },
+      { time: '88\'', player: '恰尔汗奥卢 (Calhanoglu)', team: 'away' },
     ],
-    stats: { homePossession: 45, awayPossession: 55, homeShots: 10, awayShots: 9, homeShotsOnTarget: 4, awayShotsOnTarget: 3, homeFouls: 13, awayFouls: 11, homeCorners: 4, awayCorners: 5, homePasses: 398, awayPasses: 487 },
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 11, awayShots: 12, homeShotsOnTarget: 5, awayShotsOnTarget: 5, homeFouls: 14, awayFouls: 12, homeCorners: 5, awayCorners: 5, homePasses: 423, awayPasses: 461 },
   },
   m006: {
     matchId: 'm006',
@@ -105,6 +107,27 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 58, awayPossession: 42, homeShots: 15, awayShots: 9, homeShotsOnTarget: 6, awayShotsOnTarget: 4, homeFouls: 11, awayFouls: 13, homeCorners: 7, awayCorners: 3, homePasses: 534, awayPasses: 389 },
   },
+  m010: {
+    matchId: 'm010',
+    summary: '瑞典在蒙特雷5-1大胜突尼斯，伊萨克上演帽子戏法成为全场最耀眼的明星！库卢塞夫斯基第23分钟推射扩大比分，姆萨克尼一度为突尼斯扳回一城，但伊萨克下半场再入两球彻底杀死悬念，哲凯赖什锦上添花。',
+    goals: [
+      { time: '8\'', player: '伊萨克 (Isak)', team: 'home' },
+      { time: '23\'', player: '库卢塞夫斯基 (Kulusevski)', team: 'home' },
+      { time: '35\'', player: '姆萨克尼 (Msakni)', team: 'away' },
+      { time: '51\'', player: '伊萨克 (Isak)', team: 'home' },
+      { time: '67\'', player: '哲凯赖什 (Gyokeres)', team: 'home' },
+      { time: '82\'', player: '伊萨克 (Isak)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 19, awayShots: 6, homeShotsOnTarget: 9, awayShotsOnTarget: 2, homeFouls: 9, awayFouls: 17, homeCorners: 8, awayCorners: 2, homePasses: 534, awayPasses: 387 },
+  },
+  m011: {
+    matchId: 'm011',
+    summary: '科特迪瓦在蒙特雷1-0力克厄瓜多尔，凯西第56分钟点球命中打入全场唯一进球。厄瓜多尔控球率占优但进攻缺乏致命一击，凯西点球命中后科特迪瓦全线退守保住胜果。',
+    goals: [
+      { time: '56\'', player: '凯西 (Kessie)', team: 'home' },
+    ],
+    stats: { homePossession: 46, awayPossession: 54, homeShots: 8, awayShots: 11, homeShotsOnTarget: 3, awayShotsOnTarget: 3, homeFouls: 15, awayFouls: 13, homeCorners: 3, awayCorners: 5, homePasses: 398, awayPasses: 467 },
+  },
   m012: {
     matchId: 'm012',
     summary: '德国队7-1狂胜世界杯新军库拉索，展现强大实力。哈弗茨梅开二度，翁达夫替补登场打入处子球。库拉索由普林斯扳回一城但无力回天。',
@@ -119,6 +142,52 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 65, awayPossession: 35, homeShots: 22, awayShots: 4, homeShotsOnTarget: 11, awayShotsOnTarget: 1, homeFouls: 7, awayFouls: 16, homeCorners: 9, awayCorners: 1, homePasses: 612, awayPasses: 328 },
   },
+  m013: {
+    matchId: 'm013',
+    summary: '西班牙在迈阿密狂轰23脚射门却0-0被世界杯新军佛得角逼平，爆出小组赛首轮冷门！佛得角门将沃津哈全场做出8次精彩扑救，力保大门不失。西班牙控球率高达72%却始终无法洞穿对手铁桶阵。',
+    goals: [],
+    stats: { homePossession: 72, awayPossession: 28, homeShots: 23, awayShots: 3, homeShotsOnTarget: 7, awayShotsOnTarget: 0, homeFouls: 8, awayFouls: 19, homeCorners: 11, awayCorners: 1, homePasses: 678, awayPasses: 245 },
+  },
+  m014: {
+    matchId: 'm014',
+    summary: '比利时在亚特兰大1-1战平埃及。卢卡库第18分钟禁区内爆射为比利时取得领先，萨拉赫第43分钟利用反击单刀低射扳平比分。下半场德布劳内多次制造威胁但埃及防线众志成城守住平局。',
+    goals: [
+      { time: '18\'', player: '卢卡库 (Lukaku)', team: 'home' },
+      { time: '43\'', player: '萨拉赫 (Salah)', team: 'away' },
+    ],
+    stats: { homePossession: 57, awayPossession: 43, homeShots: 13, awayShots: 8, homeShotsOnTarget: 4, awayShotsOnTarget: 3, homeFouls: 11, awayFouls: 14, homeCorners: 6, awayCorners: 3, homePasses: 512, awayPasses: 389 },
+  },
+  m015: {
+    matchId: 'm015',
+    summary: '沙特在洛杉矶1-1逼平乌拉圭，爆出G组冷门！努涅斯第34分钟头球为乌拉圭打破僵局，但达瓦萨里第78分钟禁区外世界波扳平比分。乌拉圭全场15次射门却未能全取三分。',
+    goals: [
+      { time: '34\'', player: '努涅斯 (Nunez)', team: 'away' },
+      { time: '78\'', player: '达瓦萨里 (Al-Dawsari)', team: 'home' },
+    ],
+    stats: { homePossession: 38, awayPossession: 62, homeShots: 7, awayShots: 15, homeShotsOnTarget: 3, awayShotsOnTarget: 5, homeFouls: 16, awayFouls: 10, homeCorners: 3, awayCorners: 7, homePasses: 334, awayPasses: 548 },
+  },
+  m016: {
+    matchId: 'm016',
+    summary: '伊朗在西雅图2-2战平新西兰，克里斯·伍德梅开二度一度为新西兰取得领先。塔雷米和阿兹蒙连入两球为伊朗反超比分，但伍德第81分钟头球再度扳平，新西兰从西亚狼口中抢走一分。',
+    goals: [
+      { time: '12\'', player: '克里斯·伍德 (Chris Wood)', team: 'away' },
+      { time: '29\'', player: '塔雷米 (Taremi)', team: 'home' },
+      { time: '54\'', player: '阿兹蒙 (Azmoun)', team: 'home' },
+      { time: '81\'', player: '克里斯·伍德 (Chris Wood)', team: 'away' },
+    ],
+    stats: { homePossession: 51, awayPossession: 49, homeShots: 12, awayShots: 10, homeShotsOnTarget: 5, awayShotsOnTarget: 4, homeFouls: 13, awayFouls: 14, homeCorners: 4, awayCorners: 4, homePasses: 445, awayPasses: 423 },
+  },
+  m017: {
+    matchId: 'm017',
+    summary: '奥地利在旧金山3-1击败世界杯新军约旦。阿瑙托维奇第15分钟头球闪击得手，阿尔-塔马里第39分钟精彩远射为约旦扳平。萨比策第62分钟远射破门再度领先，阿瑙托维奇第88分钟单刀锁定胜局。',
+    goals: [
+      { time: '15\'', player: '阿瑙托维奇 (Arnautovic)', team: 'home' },
+      { time: '39\'', player: '阿尔-塔马里 (Al-Tamari)', team: 'away' },
+      { time: '62\'', player: '萨比策 (Sabitzer)', team: 'home' },
+      { time: '88\'', player: '阿瑙托维奇 (Arnautovic)', team: 'home' },
+    ],
+    stats: { homePossession: 55, awayPossession: 45, homeShots: 14, awayShots: 8, homeShotsOnTarget: 6, awayShotsOnTarget: 3, homeFouls: 11, awayFouls: 13, homeCorners: 6, awayCorners: 3, homePasses: 498, awayPasses: 398 },
+  },
   m018: {
     matchId: 'm018',
     summary: '梅西在世界杯首战上演帽子戏法，阿根廷3-0完胜阿尔及利亚。梅西第16分钟点球破门，第34分钟任意球直接得分，第78分钟单刀锁定胜局。世界杯总进球达到16球追平克洛泽。',
@@ -128,6 +197,18 @@ export const matchDetails: Record<string, MatchDetail> = {
       { time: '78\'', player: '梅西 (Messi)', team: 'home' },
     ],
     stats: { homePossession: 62, awayPossession: 38, homeShots: 16, awayShots: 5, homeShotsOnTarget: 7, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 14, homeCorners: 6, awayCorners: 2, homePasses: 567, awayPasses: 345 },
+  },
+  m019: {
+    matchId: 'm019',
+    summary: '挪威在波士顿4-1大胜伊拉克，哈兰德上演帽子戏法统治比赛！哈兰德第11分钟单刀破门，侯赛因一度为伊拉克扳平比分，但哈兰德半场结束前再度超出，厄德高远射建功后哈兰德第74分钟完成帽子戏法。',
+    goals: [
+      { time: '11\'', player: '哈兰德 (Haaland)', team: 'away' },
+      { time: '27\'', player: '侯赛因 (Hussein)', team: 'home' },
+      { time: '42\'', player: '哈兰德 (Haaland)', team: 'away' },
+      { time: '58\'', player: '厄德高 (Odegaard)', team: 'away' },
+      { time: '74\'', player: '哈兰德 (Haaland)', team: 'away' },
+    ],
+    stats: { homePossession: 35, awayPossession: 65, homeShots: 6, awayShots: 18, homeShotsOnTarget: 2, awayShotsOnTarget: 9, homeFouls: 17, awayFouls: 9, homeCorners: 2, awayCorners: 7, homePasses: 312, awayPasses: 589 },
   },
   m020: {
     matchId: 'm020',
@@ -153,6 +234,55 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 55, awayPossession: 45, homeShots: 13, awayShots: 10, homeShotsOnTarget: 6, awayShotsOnTarget: 5, homeFouls: 11, awayFouls: 13, homeCorners: 6, awayCorners: 4, homePasses: 498, awayPasses: 412 },
   },
+  m022: {
+    matchId: 'm022',
+    summary: '加纳在多伦多1-0小胜巴拿马，库杜斯第53分钟禁区内转身抽射打入全场唯一进球。巴拿马全场9次射门仅2次射正，加纳凭借顽强防守拿下关键三分。',
+    goals: [
+      { time: '53\'', player: '库杜斯 (Kudus)', team: 'home' },
+    ],
+    stats: { homePossession: 52, awayPossession: 48, homeShots: 11, awayShots: 9, homeShotsOnTarget: 4, awayShotsOnTarget: 2, homeFouls: 14, awayFouls: 12, homeCorners: 5, awayCorners: 4, homePasses: 445, awayPasses: 401 },
+  },
+  m023: {
+    matchId: 'm023',
+    summary: '哥伦比亚在墨西哥城3-1逆转乌兹别克斯坦。肖穆罗多夫第19分钟为主队取得领先，但路易斯·迪亚斯第33分钟扳平，J罗第57分钟远射反超，迪亚斯第79分钟单刀梅开二度锁定胜局。',
+    goals: [
+      { time: '19\'', player: '肖穆罗多夫 (Shomurodov)', team: 'home' },
+      { time: '33\'', player: '路易斯·迪亚斯 (Luis Diaz)', team: 'away' },
+      { time: '57\'', player: 'J罗 (James Rodriguez)', team: 'away' },
+      { time: '79\'', player: '路易斯·迪亚斯 (Luis Diaz)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 8, awayShots: 15, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 13, awayFouls: 11, homeCorners: 3, awayCorners: 6, homePasses: 367, awayPasses: 512 },
+  },
+  m024: {
+    matchId: 'm024',
+    summary: '葡萄牙在休斯敦1-1被民主刚果逼平，爆出K组冷门。B费第28分钟远射为葡萄牙取得领先，但巴坎布第66分钟利用角球混战中扳平比分。葡萄牙全场16次射门却未能全取三分。',
+    goals: [
+      { time: '28\'', player: 'B费 (Bruno Fernandes)', team: 'home' },
+      { time: '66\'', player: '巴坎布 (Bakambu)', team: 'away' },
+    ],
+    stats: { homePossession: 66, awayPossession: 34, homeShots: 16, awayShots: 5, homeShotsOnTarget: 5, awayShotsOnTarget: 2, homeFouls: 9, awayFouls: 15, homeCorners: 7, awayCorners: 2, homePasses: 598, awayPasses: 312 },
+  },
+  m025: {
+    matchId: 'm025',
+    summary: '捷克在亚特兰大1-1战平南非。希克第31分钟禁区内抢点破门为捷克取得领先，福斯特第74分钟头球扳平比分。南非拿到队史世界杯第二分，捷克则连续两场平局。',
+    goals: [
+      { time: '31\'', player: '希克 (Schick)', team: 'home' },
+      { time: '74\'', player: '福斯特 (Foster)', team: 'away' },
+    ],
+    stats: { homePossession: 53, awayPossession: 47, homeShots: 12, awayShots: 9, homeShotsOnTarget: 4, awayShotsOnTarget: 3, homeFouls: 13, awayFouls: 12, homeCorners: 5, awayCorners: 4, homePasses: 478, awayPasses: 421 },
+  },
+  m026: {
+    matchId: 'm026',
+    summary: '瑞士在洛杉矶4-1大胜波黑，一扫首轮被卡塔尔逼平的郁闷。恩博洛第12分钟头球闪击，哲科第26分钟为波黑扳平，但扎卡半场补时远射再度超出，恩博洛第61分钟和巴尔加斯第83分钟连入两球锁定胜局。',
+    goals: [
+      { time: '12\'', player: '恩博洛 (Embolo)', team: 'home' },
+      { time: '26\'', player: '哲科 (Dzeko)', team: 'away' },
+      { time: '45+2\'', player: '扎卡 (Xhaka)', team: 'home' },
+      { time: '61\'', player: '恩博洛 (Embolo)', team: 'home' },
+      { time: '83\'', player: '巴尔加斯 (Vargas)', team: 'home' },
+    ],
+    stats: { homePossession: 59, awayPossession: 41, homeShots: 17, awayShots: 7, homeShotsOnTarget: 8, awayShotsOnTarget: 3, homeFouls: 10, awayFouls: 14, homeCorners: 7, awayCorners: 3, homePasses: 534, awayPasses: 378 },
+  },
   m027: {
     matchId: 'm027',
     summary: '加拿大主场6-0血洗卡塔尔，创造队史世界杯最大比分胜利。乔纳森·戴维梅开二度，卡塔尔单场两红牌加一乌龙，惨遭小组赛两连败。',
@@ -165,6 +295,128 @@ export const matchDetails: Record<string, MatchDetail> = {
       { time: '89\'', player: '布坎南 (Buchanan)', team: 'home' },
     ],
     stats: { homePossession: 61, awayPossession: 39, homeShots: 20, awayShots: 3, homeShotsOnTarget: 10, awayShotsOnTarget: 0, homeFouls: 8, awayFouls: 19, homeCorners: 8, awayCorners: 1, homePasses: 556, awayPasses: 342 },
+  },
+  m028: {
+    matchId: 'm028',
+    summary: '墨西哥在萨波潘1-0小胜韩国，希门尼斯第49分钟头球打入全场唯一进球。韩国队孙兴慜状态依旧低迷，全场4次射门无一射正。墨西哥两连胜暂居A组榜首。',
+    goals: [
+      { time: '49\'', player: '希门尼斯 (Jimenez)', team: 'home' },
+    ],
+    stats: { homePossession: 52, awayPossession: 48, homeShots: 10, awayShots: 11, homeShotsOnTarget: 3, awayShotsOnTarget: 3, homeFouls: 15, awayFouls: 13, homeCorners: 4, awayCorners: 5, homePasses: 456, awayPasses: 432 },
+  },
+  m029: {
+    matchId: 'm029',
+    summary: '土耳其在旧金山1-0力克巴拉圭，伊尔迪兹第71分钟禁区外远射打入精彩世界波。巴拉圭全场8次射门但始终无法攻破土耳其门将巴因迪尔的十指关，土耳其拿下关键三分保留出线希望。',
+    goals: [
+      { time: '71\'', player: '伊尔迪兹 (Yildiz)', team: 'home' },
+    ],
+    stats: { homePossession: 56, awayPossession: 44, homeShots: 12, awayShots: 8, homeShotsOnTarget: 4, awayShotsOnTarget: 2, homeFouls: 13, awayFouls: 11, homeCorners: 6, awayCorners: 3, homePasses: 489, awayPasses: 378 },
+  },
+  m030: {
+    matchId: 'm030',
+    summary: '日本在蒙特雷4-0横扫突尼斯，展现亚洲足球顶级水准！三笘薰梅开二度，久保建英传射建功，上田绮世也有一球入账。日本控球率62%完全压制对手，两战积4分位居F组头名。',
+    goals: [
+      { time: '16\'', player: '三笘薰 (Mitoma)', team: 'away' },
+      { time: '38\'', player: '久保建英 (Kubo)', team: 'away' },
+      { time: '62\'', player: '上田绮世 (Ueda)', team: 'away' },
+      { time: '85\'', player: '三笘薰 (Mitoma)', team: 'away' },
+    ],
+    stats: { homePossession: 38, awayPossession: 62, homeShots: 5, awayShots: 18, homeShotsOnTarget: 1, awayShotsOnTarget: 9, homeFouls: 16, awayFouls: 8, homeCorners: 2, awayCorners: 8, homePasses: 323, awayPasses: 567 },
+  },
+  m031: {
+    matchId: 'm031',
+    summary: '巴西在费城3-0完胜海地，维尼修斯、罗德里戈和拉菲尼亚各入一球。安切洛蒂的球队控球率63%完全掌控比赛，海地全场仅5次射门1次射正，巴西两战积4分位居C组头名。',
+    goals: [
+      { time: '22\'', player: '维尼修斯 (Vinicius Jr)', team: 'home' },
+      { time: '47\'', player: '罗德里戈 (Rodrygo)', team: 'home' },
+      { time: '76\'', player: '拉菲尼亚 (Raphinha)', team: 'home' },
+    ],
+    stats: { homePossession: 63, awayPossession: 37, homeShots: 18, awayShots: 5, homeShotsOnTarget: 8, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 15, homeCorners: 8, awayCorners: 2, homePasses: 578, awayPasses: 334 },
+  },
+  m032: {
+    matchId: 'm032',
+    summary: '摩洛哥在波士顿1-0击败苏格兰，恩-内斯里第39分钟头球打入全场唯一进球。苏格兰虽然控球率占优但进攻效率低下，阿什拉夫领衔的摩洛哥防线固若金汤，摩洛哥两战积4分。',
+    goals: [
+      { time: '39\'', player: '恩-内斯里 (En-Nesyri)', team: 'away' },
+    ],
+    stats: { homePossession: 54, awayPossession: 46, homeShots: 10, awayShots: 8, homeShotsOnTarget: 2, awayShotsOnTarget: 3, homeFouls: 12, awayFouls: 13, homeCorners: 5, awayCorners: 3, homePasses: 456, awayPasses: 389 },
+  },
+  m033: {
+    matchId: 'm033',
+    summary: '美国在西雅图2-0力克澳大利亚，普利西奇第28分钟禁区内低射破门，巴洛贡第71分钟单刀锁定胜局。美国两连胜积6分领跑D组，澳大利亚则遭遇两连败出线形势严峻。',
+    goals: [
+      { time: '28\'', player: '普利西奇 (Pulisic)', team: 'home' },
+      { time: '71\'', player: '巴洛贡 (Balogun)', team: 'home' },
+    ],
+    stats: { homePossession: 57, awayPossession: 43, homeShots: 14, awayShots: 7, homeShotsOnTarget: 6, awayShotsOnTarget: 2, homeFouls: 11, awayFouls: 14, homeCorners: 6, awayCorners: 3, homePasses: 523, awayPasses: 398 },
+  },
+  m034: {
+    matchId: 'm034',
+    summary: '荷兰在休斯敦5-1横扫瑞典，报了首轮被日本逼平的一箭之仇！加克波梅开二度，西蒙斯和邓弗里斯各入一球，德佩也有进球入账。伊萨克为瑞典打入挽回颜面的一球。荷兰两战积4分升至F组头名。',
+    goals: [
+      { time: '9\'', player: '加克波 (Gakpo)', team: 'home' },
+      { time: '24\'', player: '西蒙斯 (Xavi Simons)', team: 'home' },
+      { time: '36\'', player: '伊萨克 (Isak)', team: 'away' },
+      { time: '52\'', player: '德佩 (Depay)', team: 'home' },
+      { time: '68\'', player: '加克波 (Gakpo)', team: 'home' },
+      { time: '85\'', player: '邓弗里斯 (Dumfries)', team: 'home' },
+    ],
+    stats: { homePossession: 61, awayPossession: 39, homeShots: 20, awayShots: 8, homeShotsOnTarget: 10, awayShotsOnTarget: 3, homeFouls: 9, awayFouls: 12, homeCorners: 8, awayCorners: 3, homePasses: 567, awayPasses: 365 },
+  },
+  m035: {
+    matchId: 'm035',
+    summary: '德国在多伦多2-1逆转科特迪瓦。凯西第17分钟点球为科特迪瓦取得意外领先，穆西亚拉第41分钟远射扳平比分，哈弗茨第77分钟头球绝杀。德国两连胜积6分领跑E组。',
+    goals: [
+      { time: '17\'', player: '凯西 (Kessie)', team: 'away' },
+      { time: '41\'', player: '穆西亚拉 (Musiala)', team: 'home' },
+      { time: '77\'', player: '哈弗茨 (Havertz)', team: 'home' },
+    ],
+    stats: { homePossession: 60, awayPossession: 40, homeShots: 16, awayShots: 7, homeShotsOnTarget: 6, awayShotsOnTarget: 3, homeFouls: 10, awayFouls: 15, homeCorners: 7, awayCorners: 3, homePasses: 578, awayPasses: 378 },
+  },
+  m036: {
+    matchId: 'm036',
+    summary: '厄瓜多尔在堪萨斯城0-0被库拉索逼平，爆出E组冷门！厄瓜多尔全场15次射门64%控球率却始终无法破门，库拉索门将罗姆全场做出4次关键扑救，世界杯新军连续两场拿分。',
+    goals: [],
+    stats: { homePossession: 64, awayPossession: 36, homeShots: 15, awayShots: 4, homeShotsOnTarget: 4, awayShotsOnTarget: 1, homeFouls: 11, awayFouls: 14, homeCorners: 8, awayCorners: 2, homePasses: 545, awayPasses: 312 },
+  },
+  m037: {
+    matchId: 'm037',
+    summary: '埃及在温哥华3-1击败新西兰，萨拉赫梅开二度闪耀全场。马尔穆什第14分钟先拔头筹，萨拉赫第38分钟扩大比分，克里斯·伍德点球为新西兰扳回一城，但萨拉赫第82分钟单刀锁定胜局。',
+    goals: [
+      { time: '14\'', player: '马尔穆什 (Marmoush)', team: 'away' },
+      { time: '38\'', player: '萨拉赫 (Salah)', team: 'away' },
+      { time: '59\'', player: '克里斯·伍德 (Chris Wood)', team: 'home' },
+      { time: '82\'', player: '萨拉赫 (Salah)', team: 'away' },
+    ],
+    stats: { homePossession: 43, awayPossession: 57, homeShots: 8, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 13, awayFouls: 11, homeCorners: 3, awayCorners: 6, homePasses: 378, awayPasses: 501 },
+  },
+  m038: {
+    matchId: 'm038',
+    summary: '西班牙在亚特兰大4-0大胜沙特，一扫首轮被佛得角逼平的郁闷。亚马尔第18分钟世界波破门，佩德里第33分钟远射扩大比分，奥亚萨瓦尔和费兰·托雷斯下半场各入一球，西班牙控球率高达74%。',
+    goals: [
+      { time: '18\'', player: '亚马尔 (Yamal)', team: 'home' },
+      { time: '33\'', player: '佩德里 (Pedri)', team: 'home' },
+      { time: '57\'', player: '奥亚萨瓦尔 (Oyarzabal)', team: 'home' },
+      { time: '81\'', player: '费兰·托雷斯 (Ferran Torres)', team: 'home' },
+    ],
+    stats: { homePossession: 74, awayPossession: 26, homeShots: 22, awayShots: 3, homeShotsOnTarget: 11, awayShotsOnTarget: 0, homeFouls: 7, awayFouls: 18, homeCorners: 10, awayCorners: 1, homePasses: 689, awayPasses: 234 },
+  },
+  m039: {
+    matchId: 'm039',
+    summary: '比利时在洛杉矶0-0被伊朗逼平，欧洲红魔全场14次射门却颗粒无收。德布劳内和卢卡库多次制造威胁但伊朗门将贝兰万德表现神勇，伊朗铁桶阵成功守住一分，比利时两连平出线告急。',
+    goals: [],
+    stats: { homePossession: 63, awayPossession: 37, homeShots: 14, awayShots: 5, homeShotsOnTarget: 4, awayShotsOnTarget: 1, homeFouls: 10, awayFouls: 13, homeCorners: 7, awayCorners: 2, homePasses: 567, awayPasses: 323 },
+  },
+  m040: {
+    matchId: 'm040',
+    summary: '乌拉圭在迈阿密2-2被佛得角逼平，世界杯新军再创奇迹！努涅斯第21分钟头球破门，塞梅多第44分钟扳平，巴尔韦德第63分钟远射再度超出，但蒙特罗第94分钟头球绝平！佛得角连续两场逼平强敌。',
+    goals: [
+      { time: '21\'', player: '努涅斯 (Nunez)', team: 'home' },
+      { time: '44\'', player: '塞梅多 (Willy Semedo)', team: 'away' },
+      { time: '63\'', player: '巴尔韦德 (Valverde)', team: 'home' },
+      { time: '90+4\'', player: '蒙特罗 (Monteiro)', team: 'away' },
+    ],
+    stats: { homePossession: 65, awayPossession: 35, homeShots: 17, awayShots: 6, homeShotsOnTarget: 7, awayShotsOnTarget: 3, homeFouls: 9, awayFouls: 14, homeCorners: 8, awayCorners: 2, homePasses: 578, awayPasses: 298 },
   },
   m041: {
     matchId: 'm041',
@@ -181,9 +433,17 @@ export const matchDetails: Record<string, MatchDetail> = {
     goals: [
       { time: '18\'', player: '姆巴佩 (Mbappe)', team: 'home' },
       { time: '68\'', player: '姆巴佩 (Mbappe)', team: 'home' },
-      { time: '85\'', player: '图拉姆 ( Thuram)', team: 'home' },
+      { time: '85\'', player: '图拉姆 (Thuram)', team: 'home' },
     ],
     stats: { homePossession: 64, awayPossession: 36, homeShots: 17, awayShots: 4, homeShotsOnTarget: 8, awayShotsOnTarget: 1, homeFouls: 7, awayFouls: 16, homeCorners: 7, awayCorners: 2, homePasses: 578, awayPasses: 321 },
+  },
+  m043: {
+    matchId: 'm043',
+    summary: '挪威在纽约1-0小胜塞内加尔，哈兰德第34分钟点球命中打入全场唯一进球。塞内加尔由马内领衔的锋线多次制造威胁但始终无法扳平比分，挪威积6分与法国同组领跑I组。',
+    goals: [
+      { time: '34\'', player: '哈兰德 (Haaland)', team: 'home' },
+    ],
+    stats: { homePossession: 52, awayPossession: 48, homeShots: 11, awayShots: 10, homeShotsOnTarget: 4, awayShotsOnTarget: 3, homeFouls: 12, awayFouls: 13, homeCorners: 5, awayCorners: 4, homePasses: 467, awayPasses: 423 },
   },
   m044: {
     matchId: 'm044',
@@ -195,17 +455,101 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 44, awayPossession: 56, homeShots: 8, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 6, homeFouls: 13, awayFouls: 10, homeCorners: 3, awayCorners: 6, homePasses: 378, awayPasses: 489 },
   },
+  m045: {
+    matchId: 'm045',
+    summary: '哥伦比亚在萨波潘1-0力克民主刚果，J罗第64分钟禁区外远射打入全场唯一进球。哥伦比亚两连胜积6分领跑K组，民主刚果两连平积2分仍有出线希望。',
+    goals: [
+      { time: '64\'', player: 'J罗 (James Rodriguez)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 13, awayShots: 7, homeShotsOnTarget: 5, awayShotsOnTarget: 2, homeFouls: 12, awayFouls: 11, homeCorners: 6, awayCorners: 3, homePasses: 512, awayPasses: 378 },
+  },
+  m046: {
+    matchId: 'm046',
+    summary: '克罗地亚在多伦多1-0小胜巴拿马，莫德里奇第53分钟点球命中打入全场唯一进球。40岁的莫德里奇发挥出色全场传球成功率高达93%，克罗地亚积3分保留出线希望。',
+    goals: [
+      { time: '53\'', player: '莫德里奇 (Modric)', team: 'away' },
+    ],
+    stats: { homePossession: 40, awayPossession: 60, homeShots: 7, awayShots: 13, homeShotsOnTarget: 2, awayShotsOnTarget: 5, homeFouls: 15, awayFouls: 10, homeCorners: 3, awayCorners: 6, homePasses: 356, awayPasses: 523 },
+  },
+  m047: {
+    matchId: 'm047',
+    summary: '英格兰在波士顿0-0被加纳逼平，爆出L组大冷门！英格兰全场17次射门控球率66%却始终无法破门，凯恩和贝林厄姆多次错失良机。加纳门将沃拉科特做出5次精彩扑救力保大门不失。',
+    goals: [],
+    stats: { homePossession: 66, awayPossession: 34, homeShots: 17, awayShots: 5, homeShotsOnTarget: 5, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 16, homeCorners: 8, awayCorners: 2, homePasses: 589, awayPasses: 298 },
+  },
   m048: {
     matchId: 'm048',
-    summary: '葡萄牙5-0大胜乌兹别克斯坦，展现强大进攻火力。C罗替补登场但未能进球，连续10场大赛进球荒延续。葡萄牙队多点开花，两轮不败积4分排名K组第一。',
+    summary: '葡萄牙5-0大胜乌兹别克斯坦，C罗替补登场梅开二度创造历史！莱奥闪电破门，B费远射建功，C罗第67分钟替补登场后首次触球即头球破门，第89分钟再入一球，成为史上首位连续6届世界杯进球的球员！贡萨洛·拉莫斯也有一球入账。',
     goals: [
       { time: '12\'', player: '莱奥 (Leao)', team: 'home' },
       { time: '34\'', player: 'B费 (Bruno Fernandes)', team: 'home' },
-      { time: '52\'', player: '贡萨洛·拉莫斯 (Goncalo Ramos)', team: 'home' },
-      { time: '71\'', player: '莱奥 (Leao)', team: 'home' },
-      { time: '88\'', player: '内托 (Neto)', team: 'home' },
+      { time: '67\'', player: 'C罗 (Cristiano Ronaldo)', team: 'home' },
+      { time: '73\'', player: '贡萨洛·拉莫斯 (Goncalo Ramos)', team: 'home' },
+      { time: '89\'', player: 'C罗 (Cristiano Ronaldo)', team: 'home' },
     ],
     stats: { homePossession: 68, awayPossession: 32, homeShots: 21, awayShots: 3, homeShotsOnTarget: 10, awayShotsOnTarget: 0, homeFouls: 6, awayFouls: 18, homeCorners: 9, awayCorners: 1, homePasses: 612, awayPasses: 289 },
+  },
+  m049: {
+    matchId: 'm049',
+    summary: '瑞士在温哥华2-1力克东道主加拿大！沙奇里第19分钟任意球直接破门，乔纳森·戴维第42分钟为加拿大扳平比分，但恩博洛第74分钟头球绝杀。加拿大虽然控球率占优但未能把握住机会。',
+    goals: [
+      { time: '19\'', player: '沙奇里 (Shaqiri)', team: 'home' },
+      { time: '42\'', player: '戴维 (David)', team: 'away' },
+      { time: '74\'', player: '恩博洛 (Embolo)', team: 'home' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 10, awayShots: 12, homeShotsOnTarget: 4, awayShotsOnTarget: 4, homeFouls: 13, awayFouls: 11, homeCorners: 4, awayCorners: 6, homePasses: 434, awayPasses: 478 },
+  },
+  m050: {
+    matchId: 'm050',
+    summary: '波黑在西雅图3-1击败卡塔尔，哲科第11分钟头球闪击得手，阿菲夫第33分钟为卡塔尔扳平比分。德米罗维奇第58分钟头球再度超出，克鲁尼奇第86分钟远射锁定胜局。卡塔尔三连败小组垫底。',
+    goals: [
+      { time: '11\'', player: '哲科 (Dzeko)', team: 'home' },
+      { time: '33\'', player: '阿菲夫 (Afif)', team: 'away' },
+      { time: '58\'', player: '德米罗维奇 (Demirovic)', team: 'home' },
+      { time: '86\'', player: '克鲁尼奇 (Krunic)', team: 'home' },
+    ],
+    stats: { homePossession: 54, awayPossession: 46, homeShots: 14, awayShots: 7, homeShotsOnTarget: 6, awayShotsOnTarget: 2, homeFouls: 12, awayFouls: 14, homeCorners: 5, awayCorners: 3, homePasses: 478, awayPasses: 398 },
+  },
+  m051: {
+    matchId: 'm051',
+    summary: '摩洛哥在亚特兰大4-2击败海地上演进球大战。恩-内斯里上演帽子戏法，齐耶赫和阿什拉夫各贡献传射。皮埃罗为海地梅开二度两度扳平，但恩-内斯里第89分钟头球完成帽子戏法绝杀。',
+    goals: [
+      { time: '8\'', player: '恩-内斯里 (En-Nesyri)', team: 'home' },
+      { time: '25\'', player: '皮埃罗 (Pierrot)', team: 'away' },
+      { time: '39\'', player: '齐耶赫 (Ziyech)', team: 'home' },
+      { time: '56\'', player: '阿什拉夫 (Hakimi)', team: 'home' },
+      { time: '72\'', player: '皮埃罗 (Pierrot)', team: 'away' },
+      { time: '89\'', player: '恩-内斯里 (En-Nesyri)', team: 'home' },
+    ],
+    stats: { homePossession: 56, awayPossession: 44, homeShots: 16, awayShots: 9, homeShotsOnTarget: 8, awayShotsOnTarget: 4, homeFouls: 13, awayFouls: 12, homeCorners: 6, awayCorners: 4, homePasses: 489, awayPasses: 387 },
+  },
+  m052: {
+    matchId: 'm052',
+    summary: '巴西在迈阿密3-0完胜苏格兰，维尼修斯、罗德里戈和帕奎塔各入一球。苏格兰全场仅5次射门1次射正，巴西完全掌控比赛节奏。巴西三战积7分以C组头名晋级。',
+    goals: [
+      { time: '23\'', player: '维尼修斯 (Vinicius Jr)', team: 'away' },
+      { time: '51\'', player: '罗德里戈 (Rodrygo)', team: 'away' },
+      { time: '78\'', player: '帕奎塔 (Paqueta)', team: 'away' },
+    ],
+    stats: { homePossession: 38, awayPossession: 62, homeShots: 5, awayShots: 19, homeShotsOnTarget: 1, awayShotsOnTarget: 9, homeFouls: 14, awayFouls: 8, homeCorners: 2, awayCorners: 8, homePasses: 323, awayPasses: 578 },
+  },
+  m053: {
+    matchId: 'm053',
+    summary: '南非在蒙特雷1-0爆冷击败韩国！福斯特第59分钟单刀破门打入全场唯一进球。韩国全场13次射门4次射正却始终无法扳平比分，孙兴慜延续低迷状态。南非取得队史世界杯首胜！',
+    goals: [
+      { time: '59\'', player: '福斯特 (Foster)', team: 'home' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 7, awayShots: 13, homeShotsOnTarget: 3, awayShotsOnTarget: 4, homeFouls: 15, awayFouls: 11, homeCorners: 3, awayCorners: 6, homePasses: 356, awayPasses: 498 },
+  },
+  m054: {
+    matchId: 'm054',
+    summary: '墨西哥在阿兹特克球场3-0大胜捷克，三战全胜积9分以A组头名强势晋级！希门尼斯第26分钟头球破门，阿尔瓦雷斯第54分钟远射扩大比分，基尼奥内斯第82分钟单刀锁定胜局。捷克三连败小组垫底。',
+    goals: [
+      { time: '26\'', player: '希门尼斯 (Jimenez)', team: 'away' },
+      { time: '54\'', player: '阿尔瓦雷斯 (Edson Alvarez)', team: 'away' },
+      { time: '82\'', player: '基尼奥内斯 (Quinones)', team: 'away' },
+    ],
+    stats: { homePossession: 40, awayPossession: 60, homeShots: 6, awayShots: 17, homeShotsOnTarget: 1, awayShotsOnTarget: 8, homeFouls: 15, awayFouls: 9, homeCorners: 2, awayCorners: 7, homePasses: 345, awayPasses: 534 },
   },
 };
 

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { schedule } from '../data/schedule';
 import { teams } from '../data/teams';
-import { matchDetails } from '../data/matchDetails';
 import { news } from '../data/news';
 import FlagImg from '../components/FlagImg';
 import MatchDetailModal from '../components/MatchDetailModal';
@@ -169,8 +168,8 @@ export default function Home() {
                   return (
                     <div
                       key={match.id}
-                      className={`flex-shrink-0 w-[140px] bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 px-3 py-3 flex flex-col items-center gap-1.5 ${matchDetails[match.id] ? 'cursor-pointer hover:bg-white/10 hover:border-white/20' : ''} transition-all`}
-                      onClick={() => matchDetails[match.id] && setSelectedMatch(match)}
+                      className={`flex-shrink-0 w-[140px] bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 px-3 py-3 flex flex-col items-center gap-1.5 cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all`}
+                      onClick={() => setSelectedMatch(match)}
                     >
                       <div className="flex items-center gap-1.5 text-[10px]">
                         <span className="bg-[#FF2D55]/80 text-white px-1.5 py-0.5 rounded font-bold">{match.group}组</span>

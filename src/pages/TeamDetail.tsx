@@ -1,8 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 import { teams } from '../data/teams';
 import { schedule } from '../data/schedule';
 import FlagImg from '../components/FlagImg';
+import MatchDetailModal from '../components/MatchDetailModal';
 import { ArrowLeft, MapPin, Star, History, Calendar } from 'lucide-react';
+import type { Match } from '../types';
 
 const confLabels: Record<string, string> = {
   UEFA: '欧洲足联', CONMEBOL: '南美足联', CONCACAF: '中北美及加勒比海足联',
@@ -12,6 +15,7 @@ const confLabels: Record<string, string> = {
 export default function TeamDetail() {
   const { teamId } = useParams<{ teamId: string }>();
   const team = teams.find((t) => t.id === teamId);
+  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
   if (!team) {
     return (
@@ -125,7 +129,11 @@ export default function TeamDetail() {
                   const oppTeam = teams.find((t) => t.id === oppId);
                   const isHome = match.homeTeamId === team.id;
                   return (
-                    <div key={match.id} className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-700/50 text-sm">
+                    <div
+                      key={match.id}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-700/50 text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                      onClick={() => setSelectedMatch(match)}
+                    >
                       <div className="text-xs text-gray-500 dark:text-gray-400 min-w-[70px]">
                         <div>{match.date}</div>
                         <div>{match.time}</div>
@@ -141,10 +149,12 @@ export default function TeamDetail() {
                         </span>
                         <span>{!isHome ? <FlagImg team={team} /> : oppTeam ? <FlagImg team={oppTeam} /> : <span>❓</span>}</span>
                       </div>
-                      {match.status !== 'scheduled' && (
+                      {match.status !== 'scheduled' ? (
                         <span className="font-bold text-gray-900 dark:text-white">
                           {match.homeScore}-{match.awayScore}
                         </span>
+                      ) : (
+                        <span className="text-xs text-gray-400">未开始</span>
                       )}
                       <div className="hidden sm:block text-xs text-gray-400 text-right min-w-[80px]">{match.cityZh}</div>
                     </div>
@@ -217,6 +227,10 @@ export default function TeamDetail() {
           </div>
         </div>
       </div>
+
+      {selectedMatch && (
+        <MatchDetailModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
+      )}
     </div>
   );
 }

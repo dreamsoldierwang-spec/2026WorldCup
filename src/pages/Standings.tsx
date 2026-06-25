@@ -1,7 +1,7 @@
 import { standings } from '../data/standings';
 import { teams } from '../data/teams';
 import FlagImg from '../components/FlagImg';
-import { Trophy } from 'lucide-react';
+import { Trophy, CheckCircle2 } from 'lucide-react';
 
 const GROUP_IDS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 
@@ -9,12 +9,6 @@ const QUALIFY_COLORS: Record<number, string> = {
   1: 'border-l-green-500 bg-green-50/50 dark:bg-green-900/10',
   2: 'border-l-blue-500 bg-blue-50/50 dark:bg-blue-900/10',
 };
-
-function getQualifyStatus(pos: number): string | null {
-  if (pos <= 2) return '直接晋级';
-  if (pos === 3) return '可能晋级（最佳小组第三）';
-  return null;
-}
 
 export default function Standings() {
   return (
@@ -29,6 +23,7 @@ export default function Standings() {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {GROUP_IDS.map((gid, gi) => {
           const rows = standings[gid] || [];
+          const qualifiedCount = rows.filter(r => r.qualified).length;
           return (
             <div
               key={gid}
@@ -40,9 +35,16 @@ export default function Standings() {
                 <span className="font-black text-gray-900 dark:text-white text-lg">
                   {gid} 组
                 </span>
-                <span className="text-xs text-gray-400">
-                  {rows.filter(r => r.played > 0).length}/{rows.length} 队已赛
-                </span>
+                <div className="flex items-center gap-2">
+                  {qualifiedCount > 0 && (
+                    <span className="inline-flex items-center gap-1 text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full">
+                      <CheckCircle2 size={12} /> {qualifiedCount}队已晋级
+                    </span>
+                  )}
+                  <span className="text-xs text-gray-400">
+                    {rows.filter(r => r.played > 0).length}/{rows.length} 队已赛
+                  </span>
+                </div>
               </div>
 
               {/* Table */}
@@ -64,31 +66,47 @@ export default function Standings() {
                   <tbody>
                     {rows.map((r, i) => {
                       const team = teams.find(t => t.id === r.teamId);
-                      const borderColor = i < 2 ? QUALIFY_COLORS[i + 1] || '' : '';
+                      const isDirectQualify = r.qualified && r.qualifiedAs === 'direct';
+                      const isBestThird = r.qualified && r.qualifiedAs === 'best3rd';
+                      const borderColor = isDirectQualify
+                        ? 'border-l-green-500 bg-green-50/60 dark:bg-green-900/20'
+                        : isBestThird
+                        ? 'border-l-blue-500 bg-blue-50/60 dark:bg-blue-900/20'
+                        : i < 2 ? QUALIFY_COLORS[i + 1] || '' : '';
                       return (
                         <tr
                           key={r.teamId}
                           className={`border-b border-gray-50 dark:border-gray-700/30 hover:bg-gray-50 dark:hover:bg-gray-750 ${borderColor} border-l-[3px]`}
                         >
                           <td className="pl-3 pr-1 py-2">
-                            {i === 0 ? (
-                              <span className="text-xs font-bold text-wc-gold">{i + 1}</span>
-                            ) : i === 1 ? (
-                              <span className="text-xs font-bold text-blue-500">{i + 1}</span>
-                            ) : i === 2 ? (
-                              <span className="text-xs text-amber-500">3</span>
-                            ) : (
-                              <span className="text-xs text-gray-400">{i + 1}</span>
-                            )}
+                            <div className="flex items-center gap-1">
+                              {i === 0 ? (
+                                <span className="text-xs font-bold text-wc-gold">{i + 1}</span>
+                              ) : i === 1 ? (
+                                <span className="text-xs font-bold text-blue-500">{i + 1}</span>
+                              ) : i === 2 ? (
+                                <span className="text-xs text-amber-500">3</span>
+                              ) : (
+                                <span className="text-xs text-gray-400">{i + 1}</span>
+                              )}
+                              {isDirectQualify && (
+                                <CheckCircle2 size={12} className="text-green-500" />
+                              )}
+                            </div>
                           </td>
                           <td className="px-1 py-2">
                             <div className="flex items-center gap-1.5">
                               {team && <FlagImg team={team} size="sm" />}
-                              <span className={`text-xs font-medium truncate max-w-[70px] ${
+                              <span className={`text-xs font-medium truncate max-w-[60px] ${
                                 r.played > 0 ? 'text-gray-900 dark:text-white' : 'text-gray-400 dark:text-gray-500'
                               }`}>
                                 {team?.nameZh || r.teamId}
                               </span>
+                              {isDirectQualify && (
+                                <span className="hidden sm:inline text-[9px] font-bold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/40 px-1 py-0.5 rounded">
+                                  晋级
+                                </span>
+                              )}
                             </div>
                           </td>
                           <td className="px-1 py-2 text-center text-gray-400">{r.played}</td>
@@ -118,12 +136,12 @@ export default function Standings() {
       {/* Legend */}
       <div className="flex flex-wrap gap-4 mt-6 text-xs text-gray-400">
         <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 border-l-[3px] border-l-green-500 rounded-sm" />
-          <span>直接晋级</span>
+          <div className="w-3 h-3 border-l-[3px] border-l-green-500 rounded-sm bg-green-50 dark:bg-green-900/20" />
+          <span className="text-green-600 dark:text-green-400 font-medium">✓ 已晋级（小组前两名）</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 border-l-[3px] border-l-blue-500 rounded-sm" />
-          <span>直接晋级</span>
+          <div className="w-3 h-3 border-l-[3px] border-l-green-500 rounded-sm" />
+          <span>晋级区（前两名）</span>
         </div>
         <div className="flex items-center gap-1.5">
           <span className="text-amber-500 font-bold">3</span>

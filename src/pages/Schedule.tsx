@@ -3,7 +3,6 @@ import { schedule } from '../data/schedule';
 import { teams } from '../data/teams';
 import FlagImg from '../components/FlagImg';
 import MatchDetailModal from '../components/MatchDetailModal';
-import { matchDetails } from '../data/matchDetails';
 import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Calendar, MapPin, Clock, Filter, LayoutList, CalendarDays } from 'lucide-react';
 import type { MatchStage, Team, Match } from '../types';
 
@@ -356,8 +355,8 @@ export default function Schedule() {
                 const awayTeam = getTeamById(match.awayTeamId);
                 return (
                   <div key={match.id}
-                    className={`p-4 transition-colors ${matchDetails[match.id] ? 'hover:bg-gray-50 dark:hover:bg-gray-700/30 cursor-pointer' : ''}`}
-                    onClick={() => matchDetails[match.id] && setSelectedMatch(match)}
+                    className="p-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700/30 cursor-pointer"
+                    onClick={() => setSelectedMatch(match)}
                   >
                     <div className="flex flex-col gap-3">
                       <div className="flex items-center justify-between flex-wrap gap-2">
@@ -467,8 +466,8 @@ export default function Schedule() {
 
                       return (
                         <div key={match.id}
-                          className={`p-4 transition-colors ${matchDetails[match.id] ? 'hover:bg-gray-50 dark:hover:bg-gray-700/30 cursor-pointer' : ''}`}
-                          onClick={() => matchDetails[match.id] && setSelectedMatch(match)}
+                          className="p-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700/30 cursor-pointer"
+                          onClick={() => setSelectedMatch(match)}
                         >
                           {match.stage !== 'group' && !hasTeams ? (
                             <div className="flex flex-col sm:flex-row sm:items-center gap-3">

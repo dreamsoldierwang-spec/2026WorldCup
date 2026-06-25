@@ -1,16 +1,19 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 import { groups } from '../data/groups';
 import { teams } from '../data/teams';
 import { schedule } from '../data/schedule';
 import { getGroupStandings } from '../data/standings';
 import FlagImg from '../components/FlagImg';
-import { ArrowLeft, Trophy, MapPin } from 'lucide-react';
-import type { GroupId } from '../types';
+import MatchDetailModal from '../components/MatchDetailModal';
+import { ArrowLeft, Trophy, MapPin, CheckCircle2 } from 'lucide-react';
+import type { GroupId, Match } from '../types';
 
 export default function GroupDetail() {
   const { groupId } = useParams<{ groupId: string }>();
   const group = groups.find((g) => g.id === groupId);
   const groupTeams = teams.filter((t) => t.group === groupId);
+  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
   if (!group || !groupId) {
     return (
@@ -23,7 +26,7 @@ export default function GroupDetail() {
     );
   }
 
-  const standings = getGroupStandings(groupId as GroupId);
+  const groupStandings = getGroupStandings(groupId as GroupId);
   const groupMatches = schedule.filter(
     (m) => m.group === groupId && m.stage === 'group'
   );
@@ -84,7 +87,7 @@ export default function GroupDetail() {
       <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
         <Trophy size={20} /> 小组积分榜
       </h2>
-      {standings.length > 0 ? (
+      {groupStandings.length > 0 ? (
         <div className="card-base overflow-hidden mb-10">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -99,18 +102,27 @@ export default function GroupDetail() {
                   <th className="px-4 py-3 text-center text-gray-500 dark:text-gray-400 font-medium">进/失</th>
                   <th className="px-4 py-3 text-center text-gray-500 dark:text-gray-400 font-medium">净胜</th>
                   <th className="px-4 py-3 text-center text-gray-500 dark:text-gray-400 font-medium">分</th>
+                  <th className="px-4 py-3 text-center text-gray-500 dark:text-gray-400 font-medium">状态</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                {standings.map((row) => {
+                {groupStandings.map((row, idx) => {
                   const team = teams.find((t) => t.id === row.teamId);
+                  const isDirectQualify = row.qualified && row.qualifiedAs === 'direct';
                   return (
-                    <tr key={row.teamId} className="hover:bg-gray-50 dark:hover:bg-gray-750">
+                    <tr
+                      key={row.teamId}
+                      className={`hover:bg-gray-50 dark:hover:bg-gray-750 ${
+                        isDirectQualify ? 'bg-green-50/40 dark:bg-green-900/10 border-l-[3px] border-l-green-500' :
+                        row.qualified ? 'bg-blue-50/40 dark:bg-blue-900/10 border-l-[3px] border-l-blue-500' : ''
+                      }`}
+                    >
                       <td className="px-4 py-3 font-bold text-gray-900 dark:text-white">{row.position}</td>
                       <td className="px-4 py-3">
                         <Link to={`/teams/${row.teamId}`} className="flex items-center gap-2 hover:text-wc-green transition-colors">
                           <span>{team && <FlagImg team={team} />}</span>
                           <span className="font-medium text-gray-900 dark:text-white">{team?.nameZh}</span>
+                          {team?.isHost && <span className="text-wc-gold text-xs">★</span>}
                         </Link>
                       </td>
                       <td className="px-4 py-3 text-center text-gray-900 dark:text-white">{row.played}</td>
@@ -118,8 +130,17 @@ export default function GroupDetail() {
                       <td className="px-4 py-3 text-center text-gray-500">{row.drawn}</td>
                       <td className="px-4 py-3 text-center text-red-500 font-medium">{row.lost}</td>
                       <td className="px-4 py-3 text-center text-gray-900 dark:text-white text-xs">{row.goalsFor}/{row.goalsAgainst}</td>
-                      <td className="px-4 py-3 text-center font-medium">{row.goalDiff > 0 ? '+' : ''}{row.goalDiff}</td>
+                      <td className={`px-4 py-3 text-center font-medium ${row.goalDiff > 0 ? 'text-green-600' : row.goalDiff < 0 ? 'text-red-500' : 'text-gray-400'}`}>
+                        {row.goalDiff > 0 ? '+' : ''}{row.goalDiff}
+                      </td>
                       <td className="px-4 py-3 text-center font-bold text-gray-900 dark:text-white">{row.points}</td>
+                      <td className="px-4 py-3 text-center">
+                        {isDirectQualify && (
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-green-600 dark:text-green-400">
+                            <CheckCircle2 size={14} /> 晋级
+                          </span>
+                        )}
+                      </td>
                     </tr>
                   );
                 })}
@@ -144,7 +165,11 @@ export default function GroupDetail() {
             const homeTeam = teams.find((t) => t.id === match.homeTeamId);
             const awayTeam = teams.find((t) => t.id === match.awayTeamId);
             return (
-              <div key={match.id} className="card-base p-4 flex items-center gap-4 flex-wrap">
+              <div
+                key={match.id}
+                className="card-base p-4 flex items-center gap-4 flex-wrap cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
+                onClick={() => setSelectedMatch(match)}
+              >
                 <div className="text-sm text-gray-500 dark:text-gray-400 min-w-[80px]">
                   <div className="font-medium text-gray-900 dark:text-white">{match.date}</div>
                   <div>{match.timeBeijing}</div>
@@ -171,6 +196,9 @@ export default function GroupDetail() {
                     {match.homeScore} - {match.awayScore}
                   </div>
                 )}
+                {match.status === 'finished' && (
+                  <div className="text-xs text-green-600 dark:text-green-400 font-medium">查看详情 →</div>
+                )}
                 <div className="text-xs text-gray-400 text-right min-w-[120px]">
                   <div>{match.stadium}</div>
                   <div>{match.cityZh}</div>
@@ -183,6 +211,10 @@ export default function GroupDetail() {
         <div className="card-base p-8 text-center">
           <p className="text-gray-500 dark:text-gray-400">暂无赛程数据</p>
         </div>
+      )}
+
+      {selectedMatch && (
+        <MatchDetailModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
       )}
     </div>
   );
