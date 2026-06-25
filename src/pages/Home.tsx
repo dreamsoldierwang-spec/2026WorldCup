@@ -31,11 +31,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './ronaldo-record.jpg',
-  alt: 'C罗连续6届世界杯进球创造历史',
-  badge: '历史纪录',
-  title: '🔥 C罗连续6届世界杯进球！历史第一人',
-  description: '葡萄牙5-0乌兹别克斯坦，C罗梅开二度。他成为世界杯历史上首位连续6届世界杯（2006、2010、2014、2018、2022、2026）都有进球的球员，创造前无古人的伟大纪录！',
+  image: './hosts-advance.jpg',
+  alt: '三东道主全部晋级淘汰赛创造历史',
+  badge: '历史时刻',
+  title: '🏆 三东道主全部出线！世界杯历史首次',
+  description: '2026世界杯三大东道主墨西哥、美国、加拿大全部晋级淘汰赛，创造世界杯96年历史纪录！墨西哥三战全胜A组头名，美国两连胜锁定D组第一，加拿大凭借净胜球优势惊险获得B组第二。',
 };
 
 export default function Home() {

@@ -1,6 +1,6 @@
 // 2026 FIFA World Cup Official Match Schedule
 // Generated from verified schedule data (3 xlsx files)
-// Updated: 2026-06-23
+// Updated: 2026-06-25
 // Note: Matches start June 12, not June 11
 
 import type { Match } from '../types';
@@ -719,7 +719,7 @@ export const schedule: Match[] = [
     group: 'K',
     homeTeamId: 'col',
     awayTeamId: 'cod',
-    homeScore: 2,
+    homeScore: 1,
     awayScore: 0,
     stadium: 'Estadio Akron',
     city: 'Zapopan',
@@ -783,10 +783,12 @@ export const schedule: Match[] = [
     group: 'B',
     homeTeamId: 'sui',
     awayTeamId: 'can',
+    homeScore: 2,
+    awayScore: 1,
     stadium: 'BC Place',
     city: 'Vancouver',
     cityZh: '温哥华',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm050',
@@ -797,10 +799,12 @@ export const schedule: Match[] = [
     group: 'B',
     homeTeamId: 'bih',
     awayTeamId: 'qat',
+    homeScore: 3,
+    awayScore: 1,
     stadium: 'Lumen Field',
     city: 'Seattle',
     cityZh: '西雅图',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm051',
@@ -811,10 +815,12 @@ export const schedule: Match[] = [
     group: 'C',
     homeTeamId: 'mar',
     awayTeamId: 'hai',
+    homeScore: 4,
+    awayScore: 2,
     stadium: 'Mercedes-Benz Stadium',
     city: 'Atlanta',
     cityZh: '亚特兰大',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm052',
@@ -825,10 +831,12 @@ export const schedule: Match[] = [
     group: 'C',
     homeTeamId: 'sco',
     awayTeamId: 'bra',
+    homeScore: 0,
+    awayScore: 3,
     stadium: 'Hard Rock Stadium',
     city: 'Miami Gardens',
     cityZh: '迈阿密',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm053',
@@ -839,10 +847,12 @@ export const schedule: Match[] = [
     group: 'A',
     homeTeamId: 'rsa',
     awayTeamId: 'kor',
+    homeScore: 1,
+    awayScore: 0,
     stadium: 'Estadio BBVA',
     city: 'Guadalupe',
     cityZh: '蒙特雷',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm054',
@@ -853,10 +863,12 @@ export const schedule: Match[] = [
     group: 'A',
     homeTeamId: 'cze',
     awayTeamId: 'mex',
+    homeScore: 0,
+    awayScore: 3,
     stadium: 'Estadio Azteca',
     city: 'Mexico City',
     cityZh: '墨西哥城',
-    status: 'scheduled' as const,
+    status: 'finished' as const,
   },
   {
     id: 'm055',

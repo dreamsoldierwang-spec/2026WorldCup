@@ -47,10 +47,21 @@ export const matchResults: Record<string, { homeScore: number; awayScore: number
   m042: { homeScore: 3, awayScore: 0 },  // 法国 3-0 伊拉克 (6.23)
   m043: { homeScore: 1, awayScore: 0 },  // 挪威 1-0 塞内加尔 (6.23)
   m044: { homeScore: 1, awayScore: 2 },  // 约旦 1-2 阿尔及利亚 (6.23)
-  m045: { homeScore: 2, awayScore: 0 },  // 哥伦比亚 2-0 刚果金 (6.24)
+  m045: { homeScore: 1, awayScore: 0 },  // 哥伦比亚 1-0 刚果金 (6.24)
   m046: { homeScore: 0, awayScore: 1 },  // 巴拿马 0-1 克罗地亚 (6.24)
   m047: { homeScore: 0, awayScore: 0 },  // 英格兰 0-0 加纳 (6.24)
   m048: { homeScore: 5, awayScore: 0 },  // 葡萄牙 5-0 乌兹别克斯坦 (6.24)
+
+  // 第三轮 - A/B/C组 (6.25)
+  // === Round 3 - Group B (June 25) ===
+  m049: { homeScore: 2, awayScore: 1 },  // 瑞士 2-1 加拿大 (6.25)
+  m050: { homeScore: 3, awayScore: 1 },  // 波黑 3-1 卡塔尔 (6.25)
+  // === Round 3 - Group C (June 25) ===
+  m051: { homeScore: 4, awayScore: 2 },  // 摩洛哥 4-2 海地 (6.25)
+  m052: { homeScore: 0, awayScore: 3 },  // 苏格兰 0-3 巴西 (6.25)
+  // === Round 3 - Group A (June 25) ===
+  m053: { homeScore: 1, awayScore: 0 },  // 南非 1-0 韩国 (6.25)
+  m054: { homeScore: 0, awayScore: 3 },  // 捷克 0-3 墨西哥 (6.25)
 };
 
 export function getMatchResult(matchId: string) {
