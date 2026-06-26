@@ -30,11 +30,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './hosts-advance.jpg',
-  alt: '三东道主全部晋级淘汰赛创造历史',
-  badge: '历史时刻',
-  title: '🏆 三东道主全部出线！世界杯历史首次',
-  description: '2026世界杯三大东道主墨西哥、美国、加拿大全部晋级淘汰赛，创造世界杯96年历史纪录！墨西哥三战全胜A组头名，美国两连胜锁定D组第一，加拿大凭借净胜球优势惊险获得B组第二。',
+  image: './japan-win.jpg',
+  alt: '日本2-1绝杀瑞典连续两届世界杯晋级',
+  badge: '亚洲之光',
+  title: '🇯🇵 日本2-1绝杀瑞典！堂安律世界波连续两届晋级',
+  description: '三笘薰第24分钟内切破门，伊萨克单刀扳平，堂安律第78分钟轰出惊天世界波绝杀！日本连续两届世界杯闯入淘汰赛，蓝武士军团再次证明亚洲足球的力量。',
 };
 
 export default function Home() {

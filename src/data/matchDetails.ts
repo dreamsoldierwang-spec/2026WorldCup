@@ -551,6 +551,68 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 40, awayPossession: 60, homeShots: 6, awayShots: 17, homeShotsOnTarget: 1, awayShotsOnTarget: 8, homeFouls: 15, awayFouls: 9, homeCorners: 2, awayCorners: 7, homePasses: 345, awayPasses: 534 },
   },
+  m055: {
+    matchId: 'm055',
+    summary: '德国队轮换半数主力仍3-1逆转获胜。恩纳·瓦伦西亚点球为厄瓜多尔首开纪录，但维尔茨禁区弧顶劲射扳平，穆西亚拉与哈弗茨踢墙配合后低射反超，菲尔克鲁格替补登场头球锁定胜局。德国三战全胜狂轰12球。',
+    goals: [
+      { time: '18\'', player: '恩纳·瓦伦西亚 (Enner Valencia)', team: 'home' },
+      { time: '38\'', player: '维尔茨 (Wirtz)', team: 'away' },
+      { time: '63\'', player: '穆西亚拉 (Musiala)', team: 'away' },
+      { time: '81\'', player: '菲尔克鲁格 (Fullkrug)', team: 'away' },
+    ],
+    stats: { homePossession: 40, awayPossession: 60, homeShots: 8, awayShots: 16, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 14, awayFouls: 10, homeCorners: 3, awayCorners: 7, homePasses: 378, awayPasses: 567 },
+  },
+  m056: {
+    matchId: 'm056',
+    summary: '澳大利亚凭借替补奇兵库尔第88分钟的头球绝杀2-1险胜巴拉圭！穆伊30码外世界波首开纪录，恩西索远射扳平，19岁小将库尔绝杀。澳大利亚积6分小组第二出线。',
+    goals: [
+      { time: '34\'', player: '穆伊 (Mooy)', team: 'away' },
+      { time: '73\'', player: '恩西索 (Enciso)', team: 'home' },
+      { time: '88\'', player: '库尔 (Yengi)', team: 'away' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 12, awayShots: 11, homeShotsOnTarget: 4, awayShotsOnTarget: 5, homeFouls: 13, awayFouls: 12, homeCorners: 5, awayCorners: 5, homePasses: 423, awayPasses: 456 },
+  },
+  m057: {
+    matchId: 'm057',
+    summary: '美国队大幅轮换9人仍3-1逆转土耳其！伊尔迪兹25码任意球破门为土耳其取得本届首球，下半场雷纳推射扳平，巴洛贡头球反超并在补时单刀梅开二度。美国三战全胜积9分强势头名出线。',
+    goals: [
+      { time: '29\'', player: '伊尔迪兹 (Yildiz)', team: 'home' },
+      { time: '46\'', player: '雷纳 (Reyna)', team: 'away' },
+      { time: '64\'', player: '巴洛贡 (Balogun)', team: 'away' },
+      { time: '90+2\'', player: '巴洛贡 (Balogun)', team: 'away' },
+    ],
+    stats: { homePossession: 45, awayPossession: 55, homeShots: 9, awayShots: 15, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 14, awayFouls: 11, homeCorners: 4, awayCorners: 6, homePasses: 389, awayPasses: 512 },
+  },
+  m058: {
+    matchId: 'm058',
+    summary: '日本队2-1绝杀瑞典！三笘薰左路连续过人后内切劲射破门，伊萨克单刀扳平，堂安律第78分钟接短角球后禁区外轰出世界波直挂死角！日本连续两届世界杯晋级淘汰赛！',
+    goals: [
+      { time: '24\'', player: '三笘薰 (Mitoma)', team: 'home' },
+      { time: '52\'', player: '伊萨克 (Isak)', team: 'away' },
+      { time: '78\'', player: '堂安律 (Doan)', team: 'home' },
+    ],
+    stats: { homePossession: 54, awayPossession: 46, homeShots: 13, awayShots: 10, homeShotsOnTarget: 5, awayShotsOnTarget: 4, homeFouls: 12, awayFouls: 13, homeCorners: 6, awayCorners: 4, homePasses: 489, awayPasses: 412 },
+  },
+  m059: {
+    matchId: 'm059',
+    summary: '荷兰兵不血刃3-0完胜突尼斯锁定小组头名！加克波接邓弗里斯传中头球破门，下半场接西蒙斯直塞冷静推射梅开二度，德佩反击长途奔袭低射锁定胜局。加克波状态火热。',
+    goals: [
+      { time: '22\'', player: '加克波 (Gakpo)', team: 'away' },
+      { time: '67\'', player: '加克波 (Gakpo)', team: 'away' },
+      { time: '89\'', player: '德佩 (Depay)', team: 'away' },
+    ],
+    stats: { homePossession: 35, awayPossession: 65, homeShots: 5, awayShots: 18, homeShotsOnTarget: 1, awayShotsOnTarget: 8, homeFouls: 16, awayFouls: 9, homeCorners: 2, awayCorners: 8, homePasses: 312, awayPasses: 589 },
+  },
+  m060: {
+    matchId: 'm060',
+    summary: '科特迪瓦2-1逆转库拉索小组第二出线！洛卡迪亚反击单刀为库拉索取得领先，凯西点球扳平，阿莱第83分钟接扎哈传中头球绝杀！凯西本届已打入3球。',
+    goals: [
+      { time: '29\'', player: '洛卡迪亚 (Locadia)', team: 'home' },
+      { time: '56\'', player: '凯西 (Kessie)', team: 'away' },
+      { time: '83\'', player: '阿莱 (Haller)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 8, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 6, homeFouls: 13, awayFouls: 12, homeCorners: 3, awayCorners: 6, homePasses: 356, awayPasses: 498 },
+  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {
