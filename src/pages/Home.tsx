@@ -30,11 +30,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './japan-win.jpg',
-  alt: '日本2-1绝杀瑞典连续两届世界杯晋级',
-  badge: '亚洲之光',
-  title: '🇯🇵 日本2-1绝杀瑞典！堂安律世界波连续两届晋级',
-  description: '三笘薰第24分钟内切破门，伊萨克单刀扳平，堂安律第78分钟轰出惊天世界波绝杀！日本连续两届世界杯闯入淘汰赛，蓝武士军团再次证明亚洲足球的力量。',
+  image: './germany-upset.jpg',
+  alt: '厄瓜多尔2-1逆转德国爆出超级大冷',
+  badge: '超级冷门',
+  title: '💥 超级大冷！厄瓜多尔2-1逆转德国，普拉塔78分钟绝杀',
+  description: '萨内第2分钟闪击破门，安古洛9分钟远射扳平，普拉塔第78分钟角球战术捅射绝杀！大面积轮换的德国队付出代价，厄瓜多尔从两轮仅1分逆袭晋级淘汰赛，球员相拥落泪。',
 };
 
 export default function Home() {
