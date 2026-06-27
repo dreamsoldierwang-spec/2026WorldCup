@@ -30,11 +30,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './germany-upset.jpg',
-  alt: '厄瓜多尔2-1逆转德国爆出超级大冷',
-  badge: '超级冷门',
-  title: '💥 超级大冷！厄瓜多尔2-1逆转德国，普拉塔78分钟绝杀',
-  description: '萨内第2分钟闪击破门，安古洛9分钟远射扳平，普拉塔第78分钟角球战术捅射绝杀！大面积轮换的德国队付出代价，厄瓜多尔从两轮仅1分逆袭晋级淘汰赛，球员相拥落泪。',
+  image: './cape-verde-miracle.jpg',
+  alt: '56万人口佛得角三连平奇迹闯入世界杯16强',
+  badge: '世界杯奇迹',
+  title: '🏝️ 三连平奇迹！56万人口佛得角闯入世界杯16强',
+  description: '首次参加世界杯的佛得角以0-0西班牙、2-2乌拉圭、0-0沙特三连平积3分，奇迹般晋级淘汰赛！人口仅56万的加勒比小岛国书写足球童话，40岁老门将沃齐尼亚即将与梅西同场竞技。',
 };
 
 export default function Home() {

@@ -606,6 +606,66 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 40, awayPossession: 60, homeShots: 5, awayShots: 14, homeShotsOnTarget: 2, awayShotsOnTarget: 6, homeFouls: 14, awayFouls: 11, homeCorners: 2, awayCorners: 6, homePasses: 345, awayPasses: 523 },
   },
+  m061: {
+    matchId: 'm061',
+    summary: '法国4-1大胜挪威锁定头名！登贝莱上演帽子戏法，杜埃锦上添花。挪威大幅轮换，哈兰德替补未出场。法国三连胜进10球仅失2球，展现冠军相。',
+    goals: [
+      { time: '20\'', player: '登贝莱 (Dembele)', team: 'away' },
+      { time: '45\'', player: '登贝莱 (Dembele)', team: 'away' },
+      { time: '60\'', player: '登贝莱 (Dembele)', team: 'away' },
+      { time: '75\'', player: '杜埃 (Doue)', team: 'away' },
+      { time: '82\'', player: '厄德高 (Odegaard)', team: 'home' },
+    ],
+    stats: { homePossession: 45, awayPossession: 55, homeShots: 8, awayShots: 18, homeShotsOnTarget: 3, awayShotsOnTarget: 10, homeFouls: 10, awayFouls: 8, homeCorners: 3, awayCorners: 7, homePasses: 420, awayPasses: 530 },
+  },
+  m062: {
+    matchId: 'm062',
+    summary: '塞内加尔5-0血洗伊拉克！盖耶梅开二度，迪亚拉、恩迪亚耶、萨尔联袂破门。塞内加尔从两连败中逆袭，积3分以净胜球优势成为最佳小组第三晋级。',
+    goals: [
+      { time: '12\'', player: '盖耶 (Gueye)', team: 'home' },
+      { time: '28\'', player: '哈比卜·迪亚拉 (Habib Diarra)', team: 'home' },
+      { time: '34\'', player: '盖耶 (Gueye)', team: 'home' },
+      { time: '56\'', player: '恩迪亚耶 (Ndiaye)', team: 'home' },
+      { time: '71\'', player: '萨尔 (Sarr)', team: 'home' },
+    ],
+    stats: { homePossession: 62, awayPossession: 38, homeShots: 16, awayShots: 5, homeShotsOnTarget: 9, awayShotsOnTarget: 1, homeFouls: 12, awayFouls: 14, homeCorners: 8, awayCorners: 2, homePasses: 520, awayPasses: 320 },
+  },
+  m063: {
+    matchId: 'm063',
+    summary: '0-0闷平！56万人口的佛得角创造世界杯历史——首次参赛就以三连平（0-0西班牙、2-2乌拉圭、0-0沙特）奇迹般晋级淘汰赛！40岁老门将沃齐尼亚与梅西同场竞技的梦想即将实现。',
+    goals: [],
+    stats: { homePossession: 45, awayPossession: 55, homeShots: 7, awayShots: 9, homeShotsOnTarget: 2, awayShotsOnTarget: 3, homeFouls: 16, awayFouls: 12, homeCorners: 3, awayCorners: 5, homePasses: 360, awayPasses: 440 },
+  },
+  m064: {
+    matchId: 'm064',
+    summary: '西班牙1-0力克乌拉圭锁定头名！巴埃纳上半场头球破门，乌拉圭门将出现黄油手低级失误葬送球队。乌拉圭两连平后末轮失利，积2分遗憾出局。',
+    goals: [
+      { time: '38\'', player: '巴埃纳 (Baena)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 6, awayShots: 12, homeShotsOnTarget: 2, awayShotsOnTarget: 5, homeFouls: 14, awayFouls: 10, homeCorners: 4, awayCorners: 6, homePasses: 410, awayPasses: 520 },
+  },
+  m065: {
+    matchId: 'm065',
+    summary: '比利时5-1大胜新西兰头名出线！黄金一代用一场大胜告别小组赛的低迷——特罗萨德、德布劳内、卢卡库、萨勒马科尔斯和多库各入一球。比利时从两连平的悬崖边绝地反击。',
+    goals: [
+      { time: '15\'', player: '特罗萨德 (Trossard)', team: 'away' },
+      { time: '23\'', player: '克里斯·伍德 (Chris Wood)', team: 'home' },
+      { time: '42\'', player: '德布劳内 (De Bruyne)', team: 'away' },
+      { time: '51\'', player: '卢卡库 (Lukaku)', team: 'away' },
+      { time: '68\'', player: '萨勒马科尔斯 (Saelemaekers)', team: 'away' },
+      { time: '78\'', player: '多库 (Doku)', team: 'away' },
+    ],
+    stats: { homePossession: 40, awayPossession: 60, homeShots: 7, awayShots: 19, homeShotsOnTarget: 3, awayShotsOnTarget: 10, homeFouls: 12, awayFouls: 9, homeCorners: 3, awayCorners: 8, homePasses: 340, awayPasses: 540 },
+  },
+  m066: {
+    matchId: 'm066',
+    summary: '伊朗1-1战平埃及，积3分以最佳小组第三晋级！萨比尔开场破门，雷扎扬迅速扳平。塔雷米点球被扑出，哈利勒扎德绝杀被吹越位无效。伊朗三战全平但防守坚韧，挺进淘汰赛。',
+    goals: [
+      { time: '5\'', player: '萨比尔 (Sabir)', team: 'home' },
+      { time: '14\'', player: '雷扎扬 (Rezaeian)', team: 'away' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 10, awayShots: 12, homeShotsOnTarget: 4, awayShotsOnTarget: 5, homeFouls: 13, awayFouls: 14, homeCorners: 4, awayCorners: 5, homePasses: 445, awayPasses: 460 },
+  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {

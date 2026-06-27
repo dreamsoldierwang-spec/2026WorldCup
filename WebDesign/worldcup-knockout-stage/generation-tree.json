@@ -1,0 +1,58 @@
+{
+  "root": {
+    "nodeId": "gen-project-shell",
+    "kind": "project-shell",
+    "pageIds": ["page-index", "page-bracket", "page-matches", "page-teams"],
+    "output": "partials/project-shell.html",
+    "sharedRegions": ["header", "footer"],
+    "privateRegions": [],
+    "mutableSlots": ["activeNavItem", "pageTitle"],
+    "status": "planned",
+    "children": [
+      {
+        "nodeId": "gen-page-index",
+        "kind": "page-leaf",
+        "pageIds": ["page-index"],
+        "output": "pages/index.html",
+        "sharedRegions": [],
+        "privateRegions": ["hero section, news section, teams grid, quick nav"],
+        "mutableSlots": ["activeNavItem", "pageTitle"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-bracket",
+        "kind": "page-leaf",
+        "pageIds": ["page-bracket"],
+        "output": "pages/bracket.html",
+        "sharedRegions": [],
+        "privateRegions": ["bracket tournament tree visualization"],
+        "mutableSlots": ["activeNavItem", "pageTitle"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-matches",
+        "kind": "page-leaf",
+        "pageIds": ["page-matches"],
+        "output": "pages/matches.html",
+        "sharedRegions": [],
+        "privateRegions": ["match schedule list with filters"],
+        "mutableSlots": ["activeNavItem", "pageTitle"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-teams",
+        "kind": "page-leaf",
+        "pageIds": ["page-teams"],
+        "output": "pages/teams.html",
+        "sharedRegions": [],
+        "privateRegions": ["16 team cards with flags and info"],
+        "mutableSlots": ["activeNavItem", "pageTitle"],
+        "status": "planned",
+        "children": []
+      }
+    ]
+  }
+}

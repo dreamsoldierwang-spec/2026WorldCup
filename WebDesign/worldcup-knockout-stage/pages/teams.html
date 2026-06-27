@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16强球队巡礼 - 2026世界杯</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'wc-bg': '#0a0e17',
+            'wc-bg-secondary': '#111827',
+            'wc-bg-elevated': '#1e293b',
+            'wc-bg-surface': '#253047',
+            'wc-gold': '#d4a017',
+            'wc-gold-light': '#facc15',
+            'wc-gold-dark': '#b8860b',
+            'wc-crimson': '#dc2626',
+            'wc-crimson-light': '#f87171',
+            'wc-text': '#f8fafc',
+            'wc-text-secondary': '#94a3b8',
+            'wc-text-muted': '#64748b',
+            'wc-border': '#2a3550',
+          },
+          fontFamily: {
+            'display': ['Oswald', 'Arial Black', 'sans-serif'],
+            'body': ['Inter', 'Noto Sans SC', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-wc-bg text-wc-text font-body min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-wc-bg-secondary/80 backdrop-blur-md border-b border-wc-border sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="font-display text-xl font-bold text-wc-gold tracking-wider">2026 世界杯</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#" data-dom-id="nav-home" class="text-wc-text-secondary hover:text-wc-text text-sm font-medium transition-colors">首页</a>
+          <a href="#" data-dom-id="nav-bracket" class="text-wc-text-secondary hover:text-wc-text text-sm font-medium transition-colors">对阵图</a>
+          <a href="#" data-dom-id="nav-matches" class="text-wc-text-secondary hover:text-wc-text text-sm font-medium transition-colors">淘汰赛赛程</a>
+          <a href="#" data-dom-id="nav-teams" class="text-wc-gold text-sm font-medium border-b-2 border-wc-gold pb-1 transition-colors">16强巡礼</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Title -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="font-display text-4xl font-bold text-white tracking-wide mb-4">16强球队巡礼</h1>
+      <p class="text-wc-text-secondary text-lg mb-6">小组赛的幸存者，淘汰赛的挑战者</p>
+      <div class="text-wc-text-muted text-sm">16支球队 · 3大洲 · 12个小组</div>
+    </div>
+  </section>
+
+  <!-- Team Cards Grid -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Team 1: Paraguay -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇵🇾</div>
+          <h3 class="font-display text-lg text-white mb-3">巴拉圭</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">A组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：奥斯卡·罗梅罗</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 2: Australia -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇦🇺</div>
+          <h3 class="font-display text-lg text-white mb-3">澳大利亚</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">A组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜0平1负 积6分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：杰克逊·欧文</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第二</span>
+        </div>
+
+        <!-- Team 3: Turkey -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇹🇷</div>
+          <h3 class="font-display text-lg text-white mb-3">土耳其</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">B组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：哈坎·恰尔汗奥卢</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 4: USA -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇺🇸</div>
+          <h3 class="font-display text-lg text-white mb-3">美国</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">B组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">1胜2平0负 积5分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：普利西奇</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第二</span>
+        </div>
+
+        <!-- Team 5: Japan -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇯🇵</div>
+          <h3 class="font-display text-lg text-white mb-3">日本</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">C组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：久保建英</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 6: Sweden -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇸🇪</div>
+          <h3 class="font-display text-lg text-white mb-3">瑞典</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">C组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">1胜1平1负 积4分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：伊萨克</div>
+          <span class="inline-block bg-wc-crimson/20 text-wc-crimson-light text-xs px-2 py-1 rounded-full">最佳第三</span>
+        </div>
+
+        <!-- Team 7: Tunisia -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇹🇳</div>
+          <h3 class="font-display text-lg text-white mb-3">突尼斯</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">D组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：哈兹里</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 8: Netherlands -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇳🇱</div>
+          <h3 class="font-display text-lg text-white mb-3">荷兰</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">D组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜0平1负 积6分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：范戴克</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第二</span>
+        </div>
+
+        <!-- Team 9: Ecuador -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇪🇨</div>
+          <h3 class="font-display text-lg text-white mb-3">厄瓜多尔</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">E组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：凯塞多</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 10: Germany -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇩🇪</div>
+          <h3 class="font-display text-lg text-white mb-3">德国</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">E组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">1胜1平1负 积4分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：穆西亚拉</div>
+          <span class="inline-block bg-wc-crimson/20 text-wc-crimson-light text-xs px-2 py-1 rounded-full">最佳第三</span>
+        </div>
+
+        <!-- Team 11: Curacao -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇨🇼</div>
+          <h3 class="font-display text-lg text-white mb-3">库拉索</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">F组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：古斯曼</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 12: Cote d'Ivoire -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇨🇮</div>
+          <h3 class="font-display text-lg text-white mb-3">科特迪瓦</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">F组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜0平1负 积6分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：佩佩</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第二</span>
+        </div>
+
+        <!-- Team 13: South Africa -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇿🇦</div>
+          <h3 class="font-display text-lg text-white mb-3">南非</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">G组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：珀西·Tau</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 14: South Korea -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇰🇷</div>
+          <h3 class="font-display text-lg text-white mb-3">韩国</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">G组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">1胜1平1负 积4分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：孙兴慜</div>
+          <span class="inline-block bg-wc-crimson/20 text-wc-crimson-light text-xs px-2 py-1 rounded-full">最佳第三</span>
+        </div>
+
+        <!-- Team 15: Czech Republic -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇨🇿</div>
+          <h3 class="font-display text-lg text-white mb-3">捷克</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">H组第1</span>
+          <div class="text-sm text-wc-text-secondary mb-2">2胜1平0负 积7分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：绍切克</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第一</span>
+        </div>
+
+        <!-- Team 16: Mexico -->
+        <div class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 text-center hover:border-wc-gold/30 transition-all duration-300">
+          <div class="text-5xl mb-4">🇲🇽</div>
+          <h3 class="font-display text-lg text-white mb-3">墨西哥</h3>
+          <span class="inline-block bg-wc-gold/10 text-wc-gold text-xs px-2 py-1 rounded-full mb-3">H组第2</span>
+          <div class="text-sm text-wc-text-secondary mb-2">1胜2平0负 积5分</div>
+          <div class="text-sm text-wc-text-muted italic mb-4">代表球星：希门尼斯</div>
+          <span class="inline-block bg-wc-gold/20 text-wc-gold text-xs px-2 py-1 rounded-full">小组第二</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Summary Section -->
+  <section class="py-16 border-t border-wc-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="font-display text-4xl font-bold text-wc-gold mb-1">6</div>
+          <div class="text-wc-text-secondary text-sm font-medium mb-1">大洲代表</div>
+          <div class="text-wc-text-muted text-xs">亚洲/南美/欧洲/非洲/北美/大洋洲</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl font-bold text-wc-gold mb-1">16</div>
+          <div class="text-wc-text-secondary text-sm font-medium">晋级球队</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl font-bold text-wc-gold mb-1">48</div>
+          <div class="text-wc-text-secondary text-sm font-medium">小组赛总进球</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl font-bold text-wc-gold mb-1">15</div>
+          <div class="text-wc-text-secondary text-sm font-medium">淘汰赛比赛日</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-wc-bg-secondary border-t border-wc-border py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="font-display text-lg font-bold text-wc-gold tracking-wider mb-3">2026 世界杯</div>
+      <div class="text-wc-text-muted text-sm">淘汰赛阶段 · 16强巡礼</div>
+    </div>
+  </footer>
+
+</body>
+</html>

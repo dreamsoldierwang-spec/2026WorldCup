@@ -11,7 +11,7 @@ export interface Scorer {
 }
 
 // 2026世界杯射手榜 - 实时更新
-// Updated: 2026-06-26 (更正D/E/F组第三轮真实赛果)
+// Updated: 2026-06-27 (更新G/H/I组第三轮真实赛果)
 export const scorers: Scorer[] = [
   // 5球 - 第1档
   { rank: 1, name: 'Lionel Messi', nameZh: '梅西', teamId: 'arg', goals: 5, matches: 3, position: 'Forward' },
@@ -21,6 +21,7 @@ export const scorers: Scorer[] = [
   { rank: 2, name: 'Erling Haaland', nameZh: '哈兰德', teamId: 'nor', goals: 4, matches: 3, position: 'Forward' },
   { rank: 2, name: 'Vinicius Junior', nameZh: '维尼修斯', teamId: 'bra', goals: 4, matches: 3, position: 'Forward' },
   { rank: 2, name: 'Jonathan David', nameZh: '乔纳森·戴维', teamId: 'can', goals: 4, matches: 3, position: 'Forward' },
+  { rank: 2, name: 'Ousmane Dembele', nameZh: '登贝莱', teamId: 'fra', goals: 4, matches: 3, position: 'Forward' },
 
   // 3球 - 第3档
   { rank: 6, name: 'Breel Embolo', nameZh: '恩博洛', teamId: 'sui', goals: 3, matches: 3, position: 'Forward' },
@@ -31,12 +32,12 @@ export const scorers: Scorer[] = [
   { rank: 6, name: 'Kai Havertz', nameZh: '哈弗茨', teamId: 'ger', goals: 3, matches: 3, position: 'Forward' },
   { rank: 6, name: 'Folarin Balogun', nameZh: '巴洛贡', teamId: 'usa', goals: 3, matches: 3, position: 'Forward' },
   { rank: 6, name: 'Cody Gakpo', nameZh: '加克波', teamId: 'ned', goals: 3, matches: 3, position: 'Forward' },
+  { rank: 6, name: 'Chris Wood', nameZh: '克里斯·伍德', teamId: 'nzl', goals: 3, matches: 3, position: 'Forward' },
 
   // 2球 - 第4档
   { rank: 14, name: 'Deniz Undav', nameZh: '翁达夫', teamId: 'ger', goals: 2, matches: 3, position: 'Forward' },
   { rank: 14, name: 'Marko Arnautovic', nameZh: '阿瑙托维奇', teamId: 'aut', goals: 2, matches: 2, position: 'Forward' },
-  { rank: 14, name: 'Chris Wood', nameZh: '克里斯·伍德', teamId: 'nzl', goals: 2, matches: 2, position: 'Forward' },
-  { rank: 14, name: 'Mohamed Salah', nameZh: '萨拉赫', teamId: 'egy', goals: 2, matches: 2, position: 'Forward' },
+  { rank: 14, name: 'Mohamed Salah', nameZh: '萨拉赫', teamId: 'egy', goals: 2, matches: 3, position: 'Forward' },
   { rank: 14, name: 'Jamal Musiala', nameZh: '穆西亚拉', teamId: 'ger', goals: 2, matches: 3, position: 'Midfielder' },
   { rank: 14, name: 'Rodrygo', nameZh: '罗德里戈', teamId: 'bra', goals: 2, matches: 3, position: 'Forward' },
   { rank: 14, name: 'Julian Quinones', nameZh: '基尼奥内斯', teamId: 'mex', goals: 2, matches: 3, position: 'Forward' },
@@ -46,10 +47,12 @@ export const scorers: Scorer[] = [
   { rank: 14, name: 'Nicolas Pepe', nameZh: '尼古拉·佩佩', teamId: 'civ', goals: 2, matches: 3, position: 'Forward' },
   { rank: 14, name: 'Cristiano Ronaldo', nameZh: 'C罗', teamId: 'por', goals: 2, matches: 2, position: 'Forward' },
   { rank: 14, name: 'Harry Kane', nameZh: '凯恩', teamId: 'eng', goals: 2, matches: 2, position: 'Forward' },
-  { rank: 14, name: 'Mikel Oyarzabal', nameZh: '奥亚萨瓦尔', teamId: 'esp', goals: 2, matches: 2, position: 'Forward' },
+  { rank: 14, name: 'Mikel Oyarzabal', nameZh: '奥亚萨瓦尔', teamId: 'esp', goals: 2, matches: 3, position: 'Forward' },
   { rank: 14, name: 'Luis Diaz', nameZh: '路易斯·迪亚斯', teamId: 'col', goals: 2, matches: 2, position: 'Forward' },
   { rank: 14, name: 'Edin Dzeko', nameZh: '哲科', teamId: 'bih', goals: 2, matches: 3, position: 'Forward' },
   { rank: 14, name: 'Pierrot', nameZh: '皮埃罗', teamId: 'hai', goals: 2, matches: 3, position: 'Forward' },
+  { rank: 14, name: 'Romelu Lukaku', nameZh: '卢卡库', teamId: 'bel', goals: 2, matches: 3, position: 'Forward' },
+  { rank: 14, name: 'Idrissa Gueye', nameZh: '盖耶', teamId: 'sen', goals: 2, matches: 3, position: 'Midfielder' },
 
   // 1球 - 第5档
   { rank: 31, name: 'Hwang In-beom', nameZh: '黄仁范', teamId: 'kor', goals: 1, matches: 3, position: 'Midfielder' },
@@ -90,16 +93,14 @@ export const scorers: Scorer[] = [
   { rank: 31, name: 'Luka Modric', nameZh: '莫德里奇', teamId: 'cro', goals: 1, matches: 2, position: 'Midfielder' },
   { rank: 31, name: 'Kudus', nameZh: '库杜斯', teamId: 'gha', goals: 1, matches: 2, position: 'Midfielder' },
   { rank: 31, name: 'James Rodriguez', nameZh: 'J罗', teamId: 'col', goals: 1, matches: 2, position: 'Midfielder' },
-  { rank: 31, name: 'Ousmane Dembele', nameZh: '登贝莱', teamId: 'fra', goals: 1, matches: 2, position: 'Forward' },
   { rank: 31, name: 'Marcus Thuram', nameZh: '图拉姆', teamId: 'fra', goals: 1, matches: 3, position: 'Forward' },
   { rank: 31, name: 'Martin Odegaard', nameZh: '厄德高', teamId: 'nor', goals: 1, matches: 3, position: 'Midfielder' },
-  { rank: 31, name: 'Lamine Yamal', nameZh: '亚马尔', teamId: 'esp', goals: 1, matches: 2, position: 'Forward' },
-  { rank: 31, name: 'Pedri', nameZh: '佩德里', teamId: 'esp', goals: 1, matches: 2, position: 'Midfielder' },
-  { rank: 31, name: 'Ferran Torres', nameZh: '费兰·托雷斯', teamId: 'esp', goals: 1, matches: 2, position: 'Forward' },
-  { rank: 31, name: 'Lukaku', nameZh: '卢卡库', teamId: 'bel', goals: 1, matches: 2, position: 'Forward' },
-  { rank: 31, name: 'Marmoush', nameZh: '马尔穆什', teamId: 'egy', goals: 1, matches: 2, position: 'Forward' },
-  { rank: 31, name: 'Nunez', nameZh: '努涅斯', teamId: 'uru', goals: 1, matches: 2, position: 'Forward' },
-  { rank: 31, name: 'Valverde', nameZh: '巴尔韦德', teamId: 'uru', goals: 1, matches: 2, position: 'Midfielder' },
+  { rank: 31, name: 'Lamine Yamal', nameZh: '亚马尔', teamId: 'esp', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Pedri', nameZh: '佩德里', teamId: 'esp', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Ferran Torres', nameZh: '费兰·托雷斯', teamId: 'esp', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Marmoush', nameZh: '马尔穆什', teamId: 'egy', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Nunez', nameZh: '努涅斯', teamId: 'uru', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Valverde', nameZh: '巴尔韦德', teamId: 'uru', goals: 1, matches: 3, position: 'Midfielder' },
   { rank: 31, name: 'Bennacer', nameZh: '本纳赛尔', teamId: 'alg', goals: 1, matches: 2, position: 'Midfielder' },
   { rank: 31, name: 'Bounedjah', nameZh: '布内贾', teamId: 'alg', goals: 1, matches: 2, position: 'Forward' },
   { rank: 31, name: 'Prince', nameZh: '普林斯', teamId: 'cuw', goals: 1, matches: 3, position: 'Forward' },
@@ -123,6 +124,16 @@ export const scorers: Scorer[] = [
   { rank: 31, name: 'Kaan Ayhan', nameZh: '艾汗', teamId: 'tur', goals: 1, matches: 3, position: 'Defender' },
   { rank: 31, name: 'Raphinha', nameZh: '拉菲尼亚', teamId: 'bra', goals: 1, matches: 3, position: 'Forward' },
   { rank: 31, name: 'Paqueta', nameZh: '帕奎塔', teamId: 'bra', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Desire Doue', nameZh: '杜埃', teamId: 'fra', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Habib Diarra', nameZh: '哈比卜·迪亚拉', teamId: 'sen', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Iliman Ndiaye', nameZh: '恩迪亚耶', teamId: 'sen', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Pape Matar Sarr', nameZh: '萨尔', teamId: 'sen', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Alex Baena', nameZh: '巴埃纳', teamId: 'esp', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Leandro Trossard', nameZh: '特罗萨德', teamId: 'bel', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Kevin De Bruyne', nameZh: '德布劳内', teamId: 'bel', goals: 1, matches: 3, position: 'Midfielder' },
+  { rank: 31, name: 'Alexis Saelemaekers', nameZh: '萨勒马科尔斯', teamId: 'bel', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Sabry', nameZh: '萨比尔', teamId: 'egy', goals: 1, matches: 3, position: 'Forward' },
+  { rank: 31, name: 'Ramin Rezaeian', nameZh: '雷扎扬', teamId: 'irn', goals: 1, matches: 3, position: 'Defender' },
 ];
 
 export function getScorerByTeam(teamId: string): Scorer[] {

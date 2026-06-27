@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026世界杯淘汰赛</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'wc-bg': '#0a0e17',
+            'wc-bg-secondary': '#111827',
+            'wc-bg-elevated': '#1e293b',
+            'wc-bg-surface': '#253047',
+            'wc-gold': '#d4a017',
+            'wc-gold-light': '#facc15',
+            'wc-gold-dark': '#b8860b',
+            'wc-crimson': '#dc2626',
+            'wc-crimson-light': '#f87171',
+            'wc-text': '#f8fafc',
+            'wc-text-secondary': '#94a3b8',
+            'wc-text-muted': '#64748b',
+            'wc-border': '#2a3550',
+          },
+          fontFamily: {
+            'display': ['Oswald', 'Arial Black', 'sans-serif'],
+            'body': ['Inter', 'Noto Sans SC', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0e17; }
+    html { scroll-behavior: smooth; }
+
+    /* Hero background with overlay */
+    .hero-bg {
+      background: linear-gradient(180deg, rgba(10,14,23,0.7) 0%, rgba(10,14,23,0.85) 50%, #0a0e17 100%),
+                  url('../assets/hero-knockout.jpg') center/cover no-repeat;
+    }
+
+    /* Gold glow badge */
+    .gold-glow {
+      box-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15); }
+      50% { box-shadow: 0 0 30px rgba(212,160,23,0.6), 0 0 60px rgba(212,160,23,0.25); }
+    }
+
+    /* Card hover gold border */
+    .card-hover {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      border-color: rgba(212,160,23,0.3);
+      box-shadow: 0 0 20px rgba(212,160,23,0.15);
+    }
+
+    /* Nav active underline */
+    .nav-link-active {
+      color: #d4a017;
+      border-bottom: 2px solid #d4a017;
+    }
+
+    /* Section title gold underline */
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #d4a017, #facc15);
+      margin-top: 0.75rem;
+      border-radius: 2px;
+    }
+
+    /* Flag card subtle gold border animation */
+    .flag-card {
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .flag-card:hover {
+      border-color: rgba(212,160,23,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    /* Quick nav card icon hover */
+    .quick-card {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .quick-card:hover {
+      border-color: rgba(212,160,23,0.3);
+      box-shadow: 0 0 20px rgba(212,160,23,0.1);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="font-body text-wc-text min-h-screen">
+
+  <!-- ========== Navigation ========== -->
+  <nav class="bg-wc-bg/95 backdrop-blur-md border-b border-wc-border fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="font-display text-2xl font-bold tracking-wide">
+          <span class="text-wc-gold">2026</span> <span class="text-wc-text">世界杯</span>
+        </a>
+        <!-- Desktop Nav -->
+        <div class="hidden sm:flex items-center gap-1">
+          <a href="index.html" data-dom-id="nav-home" class="nav-link-active px-4 py-2 text-sm font-medium transition-colors">首页</a>
+          <a href="bracket.html" data-dom-id="nav-bracket" class="px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text transition-colors">对阵图</a>
+          <a href="matches.html" data-dom-id="nav-matches" class="px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text transition-colors">淘汰赛赛程</a>
+          <a href="teams.html" data-dom-id="nav-teams" class="px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text transition-colors">16强巡礼</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button class="sm:hidden text-wc-text-secondary hover:text-wc-text" aria-label="菜单">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Hero Section ========== -->
+  <section class="hero-bg relative flex items-center justify-center min-h-[85vh] pt-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <!-- Gold glowing badge -->
+      <div class="inline-flex items-center gap-2 mb-8 gold-glow bg-wc-bg-elevated/80 border border-wc-gold/40 rounded-full px-6 py-2.5">
+        <span class="w-2.5 h-2.5 bg-wc-gold rounded-full animate-pulse"></span>
+        <span class="font-display text-wc-gold text-lg font-bold tracking-widest">16 TEAMS</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-wc-text leading-none tracking-tight mb-6">
+        淘汰赛<span class="text-wc-gold">开战</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-wc-text-secondary text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+        小组赛落幕，16强诞生！通往大力神杯之路正式开启
+      </p>
+
+      <!-- CTA Button -->
+      <a href="bracket.html" class="inline-flex items-center gap-2 bg-wc-gold hover:bg-wc-gold-light text-wc-bg font-bold font-display text-lg tracking-wider px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,160,23,0.4)]">
+        查看对阵图
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Bottom gradient fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-wc-bg to-transparent"></div>
+  </section>
+
+  <!-- ========== Latest News Section ========== -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Section Title -->
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-wc-text section-title mb-12">最新战报</h2>
+
+      <!-- News Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <!-- News Card 1 -->
+        <article class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 card-hover cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-block bg-wc-crimson/20 text-wc-crimson-light text-xs font-bold font-display tracking-wider px-3 py-1 rounded-full">冷门</span>
+            <span class="text-wc-text-muted text-xs">2小时前</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-wc-text mb-2 leading-snug">厄瓜多尔2-1逆转德国！普拉塔78分钟绝杀</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">小组赛末轮爆出惊天冷门，厄瓜多尔在落后一球的情况下完成逆转，普拉塔在78分钟的进球彻底改写了小组出线格局。</p>
+        </article>
+
+        <!-- News Card 2 -->
+        <article class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 card-hover cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-block bg-wc-gold/20 text-wc-gold-light text-xs font-bold font-display tracking-wider px-3 py-1 rounded-full">头条</span>
+            <span class="text-wc-text-muted text-xs">5小时前</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-wc-text mb-2 leading-snug">16强已确定14席！美德日荷领衔出线</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">随着最后一轮小组赛结束，16强席位已确定14席。传统强队德国、美国、日本、荷兰均以小组头名身份强势晋级。</p>
+        </article>
+
+        <!-- News Card 3 -->
+        <article class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 card-hover cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-block bg-emerald-500/20 text-emerald-400 text-xs font-bold font-display tracking-wider px-3 py-1 rounded-full">历史</span>
+            <span class="text-wc-text-muted text-xs">8小时前</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-wc-text mb-2 leading-snug">科特迪瓦队史首次晋级世界杯淘汰赛</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">创造历史！科特迪瓦在小组赛中力压传统劲旅以小组第二出线，这是该队首次闯入世界杯16强阶段。</p>
+        </article>
+
+        <!-- News Card 4 -->
+        <article class="bg-wc-bg-elevated border border-wc-border rounded-lg p-6 card-hover cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-block bg-blue-500/20 text-blue-400 text-xs font-bold font-display tracking-wider px-3 py-1 rounded-full">赛果</span>
+            <span class="text-wc-text-muted text-xs">12小时前</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-wc-text mb-2 leading-snug">日本1-1瑞典晋级！铃木彩艳4次神扑</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">日本门将铃木彩艳全场贡献4次关键扑救，帮助日本在平局情况下凭借净胜球优势惊险晋级16强。</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 16 Teams Grid ========== -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Section Title -->
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-wc-text section-title mb-3">晋级球队</h2>
+      <p class="text-wc-text-secondary text-lg mb-12">16支球队，一场都不能输</p>
+
+      <!-- Teams Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+
+        <!-- Team 1: Paraguay -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇵🇾</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">巴拉圭</p>
+        </div>
+
+        <!-- Team 2: Australia -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇦🇺</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">澳大利亚</p>
+        </div>
+
+        <!-- Team 3: Turkey -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇹🇷</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">土耳其</p>
+        </div>
+
+        <!-- Team 4: USA -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇺🇸</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">美国</p>
+        </div>
+
+        <!-- Team 5: Japan -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇯🇵</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">日本</p>
+        </div>
+
+        <!-- Team 6: Sweden -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇸🇪</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">瑞典</p>
+        </div>
+
+        <!-- Team 7: Tunisia -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇹🇳</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">突尼斯</p>
+        </div>
+
+        <!-- Team 8: Netherlands -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇳🇱</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">荷兰</p>
+        </div>
+
+        <!-- Team 9: Ecuador -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇪🇨</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">厄瓜多尔</p>
+        </div>
+
+        <!-- Team 10: Germany -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇩🇪</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">德国</p>
+        </div>
+
+        <!-- Team 11: Curacao -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇨🇼</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">库拉索</p>
+        </div>
+
+        <!-- Team 12: Ivory Coast -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇨🇮</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">科特迪瓦</p>
+        </div>
+
+        <!-- Team 13: South Africa -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇿🇦</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">南非</p>
+        </div>
+
+        <!-- Team 14: South Korea -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇰🇷</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">韩国</p>
+        </div>
+
+        <!-- Team 15: Czech Republic -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇨🇿</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">捷克</p>
+        </div>
+
+        <!-- Team 16: Mexico -->
+        <div class="flag-card bg-wc-bg-elevated border border-wc-border rounded-lg p-5 text-center cursor-pointer">
+          <div class="text-5xl mb-3">🇲🇽</div>
+          <p class="font-display text-sm font-semibold text-wc-text tracking-wide">墨西哥</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Quick Navigation Cards ========== -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <!-- Card 1: Bracket -->
+        <a href="bracket.html" class="quick-card bg-wc-bg-elevated border border-wc-border rounded-lg p-6 block">
+          <div class="w-12 h-12 bg-wc-gold/15 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-wc-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-wc-text mb-2">淘汰赛对阵</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">完整淘汰赛对阵图</p>
+        </a>
+
+        <!-- Card 2: Schedule -->
+        <a href="matches.html" class="quick-card bg-wc-bg-elevated border border-wc-border rounded-lg p-6 block">
+          <div class="w-12 h-12 bg-wc-gold/15 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-wc-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-wc-text mb-2">赛程安排</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">16强至决赛时间表</p>
+        </a>
+
+        <!-- Card 3: Teams -->
+        <a href="teams.html" class="quick-card bg-wc-bg-elevated border border-wc-border rounded-lg p-6 block">
+          <div class="w-12 h-12 bg-wc-gold/15 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-wc-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-wc-text mb-2">球队巡礼</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">16强球队详细介绍</p>
+        </a>
+
+        <!-- Card 4: Group Review -->
+        <a href="#" class="quick-card bg-wc-bg-elevated border border-wc-border rounded-lg p-6 block">
+          <div class="w-12 h-12 bg-wc-gold/15 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-wc-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-wc-text mb-2">小组赛回顾</h3>
+          <p class="text-wc-text-secondary text-sm leading-relaxed">12组小组赛最终排名</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="border-t border-wc-border py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-wc-text-muted text-sm mb-2">2026 FIFA World Cup Fan Site | 本站为非官方球迷信息网站</p>
+      <p class="text-wc-text-muted/60 text-xs">数据来源：FIFA官方及公开赛事信息 | 仅供球迷交流参考</p>
+      <p class="text-wc-text-muted/40 text-xs mt-4">&copy; 2026 世界杯淘汰赛信息站</p>
+    </div>
+  </footer>
+
+</body>
+</html>

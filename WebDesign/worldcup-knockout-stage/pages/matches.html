@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>淘汰赛赛程 - 2026世界杯</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'wc-bg': '#0a0e17',
+            'wc-bg-secondary': '#111827',
+            'wc-bg-elevated': '#1e293b',
+            'wc-bg-surface': '#253047',
+            'wc-gold': '#d4a017',
+            'wc-gold-light': '#facc15',
+            'wc-gold-dark': '#b8860b',
+            'wc-crimson': '#dc2626',
+            'wc-crimson-light': '#f87171',
+            'wc-text': '#f8fafc',
+            'wc-text-secondary': '#94a3b8',
+            'wc-text-muted': '#64748b',
+            'wc-border': '#2a3550',
+          },
+          fontFamily: {
+            'display': ['Oswald', 'Arial Black', 'sans-serif'],
+            'body': ['Inter', 'Noto Sans SC', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0e17; }
+
+    /* Timeline vertical line */
+    .match-timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(212,160,23,0.5), rgba(212,160,23,0.15), rgba(212,160,23,0.5));
+    }
+
+    /* Timeline dot */
+    .timeline-dot {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #d4a017;
+      border: 3px solid #0a0e17;
+      z-index: 2;
+    }
+
+    /* Final match glow */
+    .final-glow {
+      box-shadow: 0 0 30px rgba(212, 160, 23, 0.3), 0 0 60px rgba(212, 160, 23, 0.1);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 30px rgba(212, 160, 23, 0.3), 0 0 60px rgba(212, 160, 23, 0.1); }
+      50% { box-shadow: 0 0 40px rgba(212, 160, 23, 0.5), 0 0 80px rgba(212, 160, 23, 0.2); }
+    }
+
+    /* Pulse for live status */
+    .pulse-live {
+      animation: pulseLive 1.5s ease-in-out infinite;
+    }
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Dashed placeholder cards */
+    .placeholder-card {
+      border: 2px dashed #2a3550;
+      background: rgba(30, 41, 59, 0.4);
+    }
+
+    /* Nav active underline */
+    .nav-link-active {
+      color: #d4a017;
+      border-bottom: 2px solid #d4a017;
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-body text-wc-text min-h-screen">
+
+  <!-- ========== Navigation ========== -->
+  <nav class="bg-wc-bg-secondary/90 backdrop-blur-md border-b border-wc-border sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#" class="font-display text-2xl font-bold tracking-wide">
+          <span class="text-wc-gold">2026</span> <span class="text-wc-text">世界杯</span>
+        </a>
+        <!-- Desktop Nav -->
+        <div class="hidden sm:flex items-center gap-1">
+          <a href="#" data-dom-id="nav-home" class="px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text transition-colors">首页</a>
+          <a href="#" data-dom-id="nav-bracket" class="px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text transition-colors">对阵图</a>
+          <a href="#" data-dom-id="nav-matches" class="px-4 py-2 text-sm nav-link-active font-semibold">淘汰赛赛程</a>
+          <a href="#" data-dom-id="nav-teams" class="px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text transition-colors">16强巡礼</a>
+        </div>
+        <!-- Mobile menu button -->
+        <button class="sm:hidden text-wc-text-secondary hover:text-wc-text" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+      <!-- Mobile Nav -->
+      <div id="mobileMenu" class="hidden sm:hidden pb-4 border-t border-wc-border pt-3 space-y-1">
+        <a href="#" data-dom-id="nav-home" class="block px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text rounded hover:bg-wc-bg-elevated transition-colors">首页</a>
+        <a href="#" data-dom-id="nav-bracket" class="block px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text rounded hover:bg-wc-bg-elevated transition-colors">对阵图</a>
+        <a href="#" data-dom-id="nav-matches" class="block px-4 py-2 text-sm text-wc-gold font-semibold rounded bg-wc-bg-elevated transition-colors">淘汰赛赛程</a>
+        <a href="#" data-dom-id="nav-teams" class="block px-4 py-2 text-sm text-wc-text-secondary hover:text-wc-text rounded hover:bg-wc-bg-elevated transition-colors">16强巡礼</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Page Title ========== -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-6">
+    <div class="text-center">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-wide text-wc-text">淘汰赛赛程</h1>
+      <p class="mt-3 text-wc-text-secondary text-base sm:text-lg font-body">每一场都是生死战 - 赛程时间表</p>
+    </div>
+  </section>
+
+  <!-- ========== Round Filter Tabs ========== -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-8">
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+      <button onclick="filterRound('all')" data-filter="all" class="filter-tab px-4 py-2 rounded-full text-sm font-semibold bg-wc-gold text-wc-bg transition-all">全部</button>
+      <button onclick="filterRound('r16')" data-filter="r16" class="filter-tab px-4 py-2 rounded-full text-sm font-medium bg-wc-bg-elevated text-wc-text-secondary border border-wc-border hover:border-wc-gold hover:text-wc-text transition-all">1/16决赛</button>
+      <button onclick="filterRound('r8')" data-filter="r8" class="filter-tab px-4 py-2 rounded-full text-sm font-medium bg-wc-bg-elevated text-wc-text-secondary border border-wc-border hover:border-wc-gold hover:text-wc-text transition-all">1/8决赛</button>
+      <button onclick="filterRound('r4')" data-filter="r4" class="filter-tab px-4 py-2 rounded-full text-sm font-medium bg-wc-bg-elevated text-wc-text-secondary border border-wc-border hover:border-wc-gold hover:text-wc-text transition-all">1/4决赛</button>
+      <button onclick="filterRound('sf')" data-filter="sf" class="filter-tab px-4 py-2 rounded-full text-sm font-medium bg-wc-bg-elevated text-wc-text-secondary border border-wc-border hover:border-wc-gold hover:text-wc-text transition-all">半决赛</button>
+      <button onclick="filterRound('t3')" data-filter="t3" class="filter-tab px-4 py-2 rounded-full text-sm font-medium bg-wc-bg-elevated text-wc-text-secondary border border-wc-border hover:border-wc-gold hover:text-wc-text transition-all">季军赛</button>
+      <button onclick="filterRound('final')" data-filter="final" class="filter-tab px-4 py-2 rounded-full text-sm font-medium bg-wc-bg-elevated text-wc-text-secondary border border-wc-border hover:border-wc-gold hover:text-wc-text transition-all">决赛</button>
+    </div>
+  </section>
+
+  <!-- ========== Match Cards List ========== -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+
+    <!-- ===== 1/16决赛 ===== -->
+    <div id="round-r16" class="round-section mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-wc-gold rounded-full"></div>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-wc-text">1/16决赛</h2>
+        <span class="text-xs text-wc-text-muted bg-wc-bg-elevated px-2 py-0.5 rounded-full border border-wc-border">8场</span>
+      </div>
+
+      <div class="relative match-timeline pl-10 space-y-4">
+
+        <!-- Match 65: Paraguay vs Turkey -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第65场</span>
+                <span class="text-xs text-wc-text-secondary">6月30日 18:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇵🇾</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">巴拉圭</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇹🇷</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">土耳其</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">MetLife球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 66: Australia vs Japan -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第66场</span>
+                <span class="text-xs text-wc-text-secondary">6月30日 21:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇦🇺</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">澳大利亚</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇯🇵</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">日本</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">SoFi球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 67: USA vs Sweden -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第67场</span>
+                <span class="text-xs text-wc-text-secondary">7月1日 02:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇺🇸</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">美国</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇸🇪</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">瑞典</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">Lumen球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 68: Tunisia vs Netherlands -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第68场</span>
+                <span class="text-xs text-wc-text-secondary">7月1日 02:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇹🇳</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">突尼斯</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇳🇱</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">荷兰</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">箭头球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 69: Ecuador vs Germany -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第69场</span>
+                <span class="text-xs text-wc-text-secondary">7月2日 02:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇪🇨</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">厄瓜多尔</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇩🇪</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">德国</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">NRG球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 70: Curacao vs Ivory Coast -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第70场</span>
+                <span class="text-xs text-wc-text-secondary">7月2日 06:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇨🇼</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">库拉索</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇨🇮</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">科特迪瓦</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">硬石球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 71: South Africa vs South Korea -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第71场</span>
+                <span class="text-xs text-wc-text-secondary">7月3日 02:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇿🇦</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">南非</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇰🇷</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">韩国</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">联信球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match 72: Czech Republic vs Mexico -->
+        <div class="match-card relative bg-wc-bg-elevated border border-wc-border rounded-lg p-4 sm:p-5 hover:border-wc-gold/40 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)] transition-all">
+          <div class="timeline-dot"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-gold px-2 py-0.5 rounded">第72场</span>
+                <span class="text-xs text-wc-text-secondary">7月3日 06:00</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇨🇿</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">捷克</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-gold px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🇲🇽</span>
+                  <span class="font-semibold text-wc-text text-sm sm:text-base">墨西哥</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">Levi's球场</span>
+              <span class="text-xs bg-wc-gold/15 text-wc-gold px-2.5 py-0.5 rounded-full font-medium">即将开赛</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== 1/8决赛 ===== -->
+    <div id="round-r8" class="round-section mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-wc-gold rounded-full"></div>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-wc-text">1/8决赛</h2>
+        <span class="text-xs text-wc-text-muted bg-wc-bg-elevated px-2 py-0.5 rounded-full border border-wc-border">7月5日-6日</span>
+      </div>
+
+      <div class="relative match-timeline pl-10 space-y-4">
+        <!-- Placeholder 1 -->
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第73场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder 2 -->
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第74场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder 3 -->
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第75场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder 4 -->
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第76场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 1/4决赛 ===== -->
+    <div id="round-r4" class="round-section mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-wc-gold rounded-full"></div>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-wc-text">1/4决赛</h2>
+        <span class="text-xs text-wc-text-muted bg-wc-bg-elevated px-2 py-0.5 rounded-full border border-wc-border">7月8日-9日</span>
+      </div>
+      <div class="relative match-timeline pl-10 space-y-4">
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第77场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第78场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 半决赛 ===== -->
+    <div id="round-sf" class="round-section mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-wc-gold rounded-full"></div>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-wc-text">半决赛</h2>
+        <span class="text-xs text-wc-text-muted bg-wc-bg-elevated px-2 py-0.5 rounded-full border border-wc-border">7月10日-11日</span>
+      </div>
+      <div class="relative match-timeline pl-10 space-y-4">
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第79场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第80场</span>
+                <span class="text-xs text-wc-text-muted">待定</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 季军赛 ===== -->
+    <div id="round-t3" class="round-section mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-wc-gold rounded-full"></div>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-wc-text">季军赛</h2>
+        <span class="text-xs text-wc-text-muted bg-wc-bg-elevated px-2 py-0.5 rounded-full border border-wc-border">7月15日</span>
+      </div>
+      <div class="relative match-timeline pl-10 space-y-4">
+        <div class="match-card relative placeholder-card rounded-lg p-4 sm:p-5 transition-all">
+          <div class="timeline-dot" style="background:#2a3550;"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-semibold bg-wc-bg-surface text-wc-text-muted px-2 py-0.5 rounded">第81场</span>
+                <span class="text-xs text-wc-text-muted">7月15日</span>
+              </div>
+              <div class="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+                <span class="font-display text-lg font-bold text-wc-text-muted px-2">VS</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl opacity-40">🏳️</span>
+                  <span class="font-semibold text-wc-text-muted text-sm sm:text-base">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-wc-text-muted block mb-1">待定</span>
+              <span class="text-xs bg-wc-bg-surface text-wc-text-muted px-2.5 py-0.5 rounded-full">待定</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 决赛 ===== -->
+    <div id="round-final" class="round-section mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-wc-gold rounded-full"></div>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-wc-gold">决赛</h2>
+        <span class="text-xs text-wc-gold bg-wc-gold/10 px-2 py-0.5 rounded-full border border-wc-gold/30">7月19日</span>
+        <!-- Trophy icon -->
+        <svg class="w-5 h-5 text-wc-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3h14c0 4-2 6-3 6H8C7 9 5 7 5 3zm0 0c-1 0-2 .5-2 1.5S3.5 6 5 6m14 0c1.5 0 2-1 2-1.5S20 3 19 3M12 9v5m-3-1h6M8 18h8l1 3H7l1-3z"/></svg>
+      </div>
+      <div class="relative match-timeline pl-10 space-y-4">
+        <!-- Special Final Card -->
+        <div class="match-card relative final-glow border-2 border-wc-gold/50 rounded-xl p-6 sm:p-8 transition-all">
+          <div class="timeline-dot" style="background:#d4a017; width:20px; height:20px; left:13px; box-shadow: 0 0 12px rgba(212,160,23,0.5);"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex-1 text-center sm:text-left">
+              <div class="flex items-center justify-center sm:justify-start gap-2 mb-3">
+                <span class="text-sm font-bold bg-wc-gold text-wc-bg px-3 py-0.5 rounded">第82场 - 决赛</span>
+                <span class="text-sm text-wc-gold">7月19日</span>
+              </div>
+              <div class="flex items-center justify-center sm:justify-start gap-4 sm:gap-6">
+                <div class="flex items-center gap-3">
+                  <span class="text-4xl opacity-40">🏳️</span>
+                  <span class="font-display text-xl sm:text-2xl font-bold text-wc-text-muted">待定</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <span class="font-display text-2xl sm:text-3xl font-black text-wc-gold">VS</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-4xl opacity-40">🏳️</span>
+                  <span class="font-display text-xl sm:text-2xl font-bold text-wc-text-muted">待定</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-center sm:text-right">
+              <!-- Trophy SVG -->
+              <svg class="w-12 h-12 text-wc-gold mx-auto sm:mx-0 mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3h14c0 4-2 6-3 6H8C7 9 5 7 5 3zm0 0c-1 0-2 .5-2 1.5S3.5 6 5 6m14 0c1.5 0 2-1 2-1.5S20 3 19 3M12 9v5m-3-1h6M8 18h8l1 3H7l1-3z"/></svg>
+              <span class="text-sm text-wc-gold font-medium">大都会球场</span>
+              <br>
+              <span class="text-xs text-wc-text-secondary">纽约</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== Match Day Legend ========== -->
+    <section class="bg-wc-bg-elevated/50 border border-wc-border rounded-lg p-5 mb-12">
+      <h3 class="text-sm font-semibold text-wc-text mb-3 font-body">状态说明</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-wc-gold"></span>
+          <span class="text-sm text-wc-text-secondary">即将开赛</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-wc-crimson pulse-live"></span>
+          <span class="text-sm text-wc-text-secondary">比赛进行中</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="text-sm text-wc-text-secondary">已结束</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="bg-wc-bg-secondary border-t border-wc-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="font-display text-xl font-bold"><span class="text-wc-gold">2026</span> <span class="text-wc-text">世界杯</span></span>
+          <span class="text-wc-text-muted text-xs">|</span>
+          <span class="text-wc-text-muted text-sm">淘汰赛专题</span>
+        </div>
+        <p class="text-wc-text-muted text-sm text-center sm:text-right">本站内容仅供展示，非官方赛事信息</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Filter Logic ========== -->
+  <script>
+    function filterRound(round) {
+      // Update tab styles
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.classList.remove('bg-wc-gold', 'text-wc-bg');
+        tab.classList.add('bg-wc-bg-elevated', 'text-wc-text-secondary', 'border', 'border-wc-border');
+      });
+      const activeTab = document.querySelector(`[data-filter="${round}"]`);
+      activeTab.classList.remove('bg-wc-bg-elevated', 'text-wc-text-secondary', 'border', 'border-wc-border');
+      activeTab.classList.add('bg-wc-gold', 'text-wc-bg');
+
+      // Show/hide round sections
+      const sections = document.querySelectorAll('.round-section');
+      if (round === 'all') {
+        sections.forEach(s => s.style.display = '');
+      } else {
+        sections.forEach(s => {
+          if (s.id === `round-${round}`) {
+            s.style.display = '';
+          } else {
+            s.style.display = 'none';
+          }
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

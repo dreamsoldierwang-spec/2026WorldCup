@@ -1,0 +1,313 @@
+{
+  "project": {
+    "name": "2026世界杯淘汰赛",
+    "path": "/Users/dreamsoldier/WorkSpace_TraeWork/v2026-6-23_WorldCup/WebDesign/worldcup-knockout-stage",
+    "operation": "create",
+    "deviceType": "desktop",
+    "language": "zh-CN",
+    "dashboardMode": false,
+    "replicationMode": null,
+    "sourceUrl": "https://dreamsoldierwang-spec.github.io/2026WorldCup/#/",
+    "visualSpecExcerpt": null,
+    "styleDefinitionBrief": "Dark stadium atmosphere with championship gold (#d4a017) and crimson red (#dc2626) accents. Oswald display font for impact headlines, Inter for body. High contrast, intense competitive energy. Cards with gold border glow on hover.",
+    "designRead": "Sports event knockout stage / passionate football fans / competitive intensity dark premium / medium density / avoid purple neon AI hero",
+    "designDials": {
+      "layoutVariance": 4,
+      "motionIntensity": 3,
+      "visualDensity": 3
+    },
+    "styleContinuityAnchors": {
+      "colorSystem": {
+        "primaryColorRole": "Championship gold for CTAs, highlights, and winner indicators",
+        "brandHuePolicy": "Single gold primary + crimson accent for alerts/live indicators only",
+        "stateColors": "success=green for match completed, warning=gold for upcoming, error=red for live"
+      },
+      "shapeSystem": "Rounded but tight: sm=4px, md=8px, lg=12px, full=9999px",
+      "typographySystem": "Oswald for display/headlines, Inter + Noto Sans SC for body text",
+      "spacingSystem": "8px base grid, 16/24/32/48/64px section rhythm",
+      "componentLanguage": "Dark cards with subtle borders, gold glow hover, badge-style status indicators",
+      "surfaceAndDepth": "Border-first surfaces, shadow alpha <= 0.05 for static, deeper for floating layers",
+      "imageryAndIconography": "Sports photography with gold/amber overlay treatment",
+      "interactionTone": "Energetic, competitive - urgent red for live, gold for upcoming"
+    },
+    "specsConstraints": null,
+    "sharedProjectShellContract": {
+      "navigationShell": "Dark top navbar with gold logo, horizontal nav links, gold active indicator underline",
+      "primaryColorSystem": "Gold primary for CTAs and highlights, crimson for live/urgent states",
+      "typographySystem": "Oswald display + Inter body, Chinese fallback to Noto Sans SC",
+      "radiusScale": "4/8/12px tiers, full for pills and badges",
+      "surfaceDepthModel": "Dark elevated cards with border, gold glow on hover",
+      "ctaStyle": "Gold-filled buttons with dark text, red-outlined for secondary",
+      "alignmentRules": "Center-aligned hero, grid-based content sections, left-aligned text blocks"
+    },
+    "generationTree": {
+      "root": {
+        "nodeId": "gen-project-shell",
+        "kind": "project-shell",
+        "pageIds": ["page-index", "page-bracket", "page-matches", "page-teams"],
+        "output": "partials/project-shell.html",
+        "sharedRegions": ["header", "footer"],
+        "privateRegions": [],
+        "mutableSlots": ["activeNavItem", "pageTitle"],
+        "status": "planned",
+        "children": [
+          {
+            "nodeId": "gen-page-index",
+            "kind": "page-leaf",
+            "pageIds": ["page-index"],
+            "output": "pages/index.html",
+            "sharedRegions": [],
+            "privateRegions": ["hero section, news section, teams grid, quick nav"],
+            "mutableSlots": ["activeNavItem", "pageTitle"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-bracket",
+            "kind": "page-leaf",
+            "pageIds": ["page-bracket"],
+            "output": "pages/bracket.html",
+            "sharedRegions": [],
+            "privateRegions": ["bracket tournament tree visualization"],
+            "mutableSlots": ["activeNavItem", "pageTitle"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-matches",
+            "kind": "page-leaf",
+            "pageIds": ["page-matches"],
+            "output": "pages/matches.html",
+            "sharedRegions": [],
+            "privateRegions": ["match schedule list with filters"],
+            "mutableSlots": ["activeNavItem", "pageTitle"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-teams",
+            "kind": "page-leaf",
+            "pageIds": ["page-teams"],
+            "output": "pages/teams.html",
+            "sharedRegions": [],
+            "privateRegions": ["16 team cards with flags and info"],
+            "mutableSlots": ["activeNavItem", "pageTitle"],
+            "status": "planned",
+            "children": []
+          }
+        ]
+      }
+    }
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "libraryIdentity": null,
+    "libraryPath": null,
+    "cssFilePath": "/Users/dreamsoldier/WorkSpace_TraeWork/v2026-6-23_WorldCup/WebDesign/worldcup-knockout-stage/colors_and_type.css",
+    "brandPrefix": "",
+    "themeMode": "dark",
+    "designDecisionSummary": "Dark stadium theme with gold championship accents, Oswald display font, competitive intensity tone",
+    "componentContractKind": undefined,
+    "forbiddenInventedComponents": [],
+    "allowedComponents": [],
+    "styleConstraints": {
+      "radiusMax": 12,
+      "spacingBase": 8,
+      "fontSizeBody": 16,
+      "fontSizeMin": 12,
+      "controlHeightDefault": 40,
+      "controlHeightLarge": 48
+    },
+    "productContext": {
+      "kitType": null,
+      "productType": "Sports event knockout stage tracker"
+    },
+    "actualTokenNameReference": []
+  },
+  "pages": [
+    {
+      "nodeId": "page-index",
+      "slug": "index",
+      "title": "淘汰赛首页",
+      "htmlSrc": "pages/index.html",
+      "pageIndex": 1,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "showcase",
+      "businessScenario": "Knockout stage landing page with hero, latest news, advancing teams, and quick navigation",
+      "visualNorthStar": "A dramatic dark stadium atmosphere with gold championship accents - the hero feels like walking into a packed arena under floodlights",
+      "compositionPattern": "Hero + Feature Grid + Card List pattern",
+      "continuityAnchors": ["dark background", "gold accent color", "Oswald headlines", "card border glow"],
+      "libraryRestraintMode": false,
+      "uiKitPath": undefined,
+      "componentPlan": [],
+      "imagePlan": ["hero-knockout.jpg"],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": []
+    },
+    {
+      "nodeId": "page-bracket",
+      "slug": "bracket",
+      "title": "淘汰赛对阵图",
+      "htmlSrc": "pages/bracket.html",
+      "pageIndex": 2,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "task-driven",
+      "businessScenario": "Tournament bracket visualization showing all 16 teams and their knockout matchups",
+      "visualNorthStar": "A clean, readable tournament tree diagram on dark background - gold lines connecting matchups, teams as flag+name badges, clear progression from left to right",
+      "compositionPattern": "Full-width data table / bracket visualization",
+      "continuityAnchors": ["dark background", "gold accent color", "card border glow", "Oswald headlines"],
+      "libraryRestraintMode": false,
+      "uiKitPath": undefined,
+      "componentPlan": [],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": ["complex bracket layout needs careful responsive handling"]
+    },
+    {
+      "nodeId": "page-matches",
+      "slug": "matches",
+      "title": "淘汰赛赛程",
+      "htmlSrc": "pages/matches.html",
+      "pageIndex": 3,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "information-dense",
+      "businessScenario": "Detailed match schedule for all knockout rounds with dates, venues, and status indicators",
+      "visualNorthStar": "A timeline-style schedule with round filters - upcoming matches glow gold, live matches pulse red, completed matches show results in muted tone",
+      "compositionPattern": "List + Filter pattern",
+      "continuityAnchors": ["dark background", "gold accent color", "status indicators", "card border glow"],
+      "libraryRestraintMode": false,
+      "uiKitPath": undefined,
+      "componentPlan": [],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": []
+    },
+    {
+      "nodeId": "page-teams",
+      "slug": "teams",
+      "title": "16强球队巡礼",
+      "htmlSrc": "pages/teams.html",
+      "pageIndex": 4,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "showcase",
+      "businessScenario": "Showcase all 16 advancing teams with flags, group performance, key players, and knockout prospects",
+      "visualNorthStar": "A dramatic team gallery - each team card has a large flag, country name in Oswald, group stage stats, and a gold badge showing their group ranking",
+      "compositionPattern": "Card Grid showcase pattern",
+      "continuityAnchors": ["dark background", "gold accent color", "Oswald headlines", "card border glow"],
+      "libraryRestraintMode": false,
+      "uiKitPath": undefined,
+      "componentPlan": [],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": ["16 team cards need balanced grid layout"]
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-knockout.jpg",
+      "role": "critical-hero",
+      "owningPage": "index",
+      "semanticDescription": "Dramatic stadium atmosphere for knockout stage hero section",
+      "status": "planned"
+    }
+  ],
+  "wiringPlan": [
+    {
+      "sourceNodeId": "page-index",
+      "domId": "nav-bracket",
+      "targetPageId": "page-bracket"
+    },
+    {
+      "sourceNodeId": "page-index",
+      "domId": "nav-matches",
+      "targetPageId": "page-matches"
+    },
+    {
+      "sourceNodeId": "page-index",
+      "domId": "nav-teams",
+      "targetPageId": "page-teams"
+    },
+    {
+      "sourceNodeId": "page-bracket",
+      "domId": "nav-home",
+      "targetPageId": "page-index"
+    },
+    {
+      "sourceNodeId": "page-bracket",
+      "domId": "nav-matches",
+      "targetPageId": "page-matches"
+    },
+    {
+      "sourceNodeId": "page-bracket",
+      "domId": "nav-teams",
+      "targetPageId": "page-teams"
+    },
+    {
+      "sourceNodeId": "page-matches",
+      "domId": "nav-home",
+      "targetPageId": "page-index"
+    },
+    {
+      "sourceNodeId": "page-matches",
+      "domId": "nav-bracket",
+      "targetPageId": "page-bracket"
+    },
+    {
+      "sourceNodeId": "page-matches",
+      "domId": "nav-teams",
+      "targetPageId": "page-teams"
+    },
+    {
+      "sourceNodeId": "page-teams",
+      "domId": "nav-home",
+      "targetPageId": "page-index"
+    },
+    {
+      "sourceNodeId": "page-teams",
+      "domId": "nav-bracket",
+      "targetPageId": "page-bracket"
+    },
+    {
+      "sourceNodeId": "page-teams",
+      "domId": "nav-matches",
+      "targetPageId": "page-matches"
+    }
+  ],
+  "hiddenInteractionPlan": []
+}

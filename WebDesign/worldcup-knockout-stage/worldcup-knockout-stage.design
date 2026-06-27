@@ -1,0 +1,143 @@
+{
+  "data": [
+    {
+      "id": "page-index",
+      "title": "淘汰赛首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1750894800000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/index.html",
+        "interactions": [
+          {
+            "domId": "nav-bracket",
+            "targetPageId": "page-bracket"
+          },
+          {
+            "domId": "nav-matches",
+            "targetPageId": "page-matches"
+          },
+          {
+            "domId": "nav-teams",
+            "targetPageId": "page-teams"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-bracket",
+      "title": "淘汰赛对阵图",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1750894800000,
+      "canvasData": {
+        "x": 433,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/bracket.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index"
+          },
+          {
+            "domId": "nav-matches",
+            "targetPageId": "page-matches"
+          },
+          {
+            "domId": "nav-teams",
+            "targetPageId": "page-teams"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-matches",
+      "title": "淘汰赛赛程",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1750894800000,
+      "canvasData": {
+        "x": 433,
+        "y": 2728,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/matches.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index"
+          },
+          {
+            "domId": "nav-bracket",
+            "targetPageId": "page-bracket"
+          },
+          {
+            "domId": "nav-teams",
+            "targetPageId": "page-teams"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-teams",
+      "title": "16强球队巡礼",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1750894800000,
+      "canvasData": {
+        "x": 433,
+        "y": 3811,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/teams.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index"
+          },
+          {
+            "domId": "nav-bracket",
+            "targetPageId": "page-bracket"
+          },
+          {
+            "domId": "nav-matches",
+            "targetPageId": "page-matches"
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-001",
+      "title": "淘汰赛主视觉",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1750894800000,
+      "canvasData": {
+        "x": 0,
+        "y": 4872
+      },
+      "devMetadata": {
+        "imageSrc": "assets/hero-knockout.jpg"
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "freeSize",
+    "projectName": "2026世界杯淘汰赛",
+    "windowSize": {
+      "width": 800,
+      "height": 600
+    }
+  }
+}
