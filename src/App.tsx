@@ -13,6 +13,7 @@ import HostCities from './pages/HostCities';
 import Scorers from './pages/Scorers';
 import News from './pages/News';
 import Standings from './pages/Standings';
+import Knockout from './pages/Knockout';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/scorers" element={<Scorers />} />
             <Route path="/news" element={<News />} />
             <Route path="/standings" element={<Standings />} />
+            <Route path="/knockout" element={<Knockout />} />
           </Routes>
         </main>
         <Footer />

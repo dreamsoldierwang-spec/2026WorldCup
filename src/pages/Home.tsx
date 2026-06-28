@@ -30,11 +30,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './cape-verde-miracle.jpg',
-  alt: '56万人口佛得角三连平奇迹闯入世界杯16强',
-  badge: '世界杯奇迹',
-  title: '🏝️ 三连平奇迹！56万人口佛得角闯入世界杯16强',
-  description: '首次参加世界杯的佛得角以0-0西班牙、2-2乌拉圭、0-0沙特三连平积3分，奇迹般晋级淘汰赛！人口仅56万的加勒比小岛国书写足球童话，40岁老门将沃齐尼亚即将与梅西同场竞技。',
+  image: './hero-worldcup.jpg',
+  alt: '2026世界杯淘汰赛开战',
+  badge: '淘汰赛开战',
+  title: '⚔️ 32强集结！淘汰赛即将震撼开战',
+  description: '48队小组赛尘埃落定，32支劲旅脱颖而出！6月29日起，16场1/16决赛连番上演：巴西vs日本、德国vs巴拉圭、阿根廷vs佛得角、英格兰vs刚果(金)…谁能挺进16强？点击探索完整对阵表与赛程！',
 };
 
 export default function Home() {
@@ -218,10 +218,10 @@ export default function Home() {
                     {FEATURED_NEWS.description}
                   </p>
                   <Link
-                    to="/news"
+                    to="/knockout"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#1a365d] rounded-full text-sm font-black hover:bg-white/90 transition-colors w-fit"
                   >
-                    阅读更多
+                    查看对阵表
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

@@ -666,6 +666,66 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 48, awayPossession: 52, homeShots: 10, awayShots: 12, homeShotsOnTarget: 4, awayShotsOnTarget: 5, homeFouls: 13, awayFouls: 14, homeCorners: 4, awayCorners: 5, homePasses: 445, awayPasses: 460 },
   },
+  m067: {
+    matchId: 'm067',
+    summary: '英格兰2-0击败巴拿马锁定L组头名！贝林厄姆第62分钟打破僵局，凯恩第67分钟扩大比分。英格兰2胜1平不败晋级，巴拿马三战全败出局。',
+    goals: [
+      { time: '62\'', player: '贝林厄姆 (Bellingham)', team: 'away' },
+      { time: '67\'', player: '凯恩 (Kane)', team: 'away' },
+    ],
+    stats: { homePossession: 35, awayPossession: 65, homeShots: 3, awayShots: 15, homeShotsOnTarget: 1, awayShotsOnTarget: 6, homeFouls: 14, awayFouls: 9, homeCorners: 2, awayCorners: 7, homePasses: 298, awayPasses: 589 },
+  },
+  m068: {
+    matchId: 'm068',
+    summary: '克罗地亚2-1击败加纳小组第二出线！苏契奇和弗拉西奇各入一球，拉卡森为加纳扳回一球。加纳凭借3分以最佳小组第三晋级。',
+    goals: [
+      { time: '34\'', player: '苏契奇 (Sucic)', team: 'away' },
+      { time: '58\'', player: '弗拉西奇 (Vlasic)', team: 'away' },
+      { time: '76\'', player: '拉卡森 (Laccason)', team: 'home' },
+    ],
+    stats: { homePossession: 45, awayPossession: 55, homeShots: 8, awayShots: 12, homeShotsOnTarget: 3, awayShotsOnTarget: 6, homeFouls: 13, awayFouls: 11, homeCorners: 4, awayCorners: 6, homePasses: 378, awayPasses: 512 },
+  },
+  m069: {
+    matchId: 'm069',
+    summary: '哥伦比亚0-0闷平葡萄牙，两队携手出线。哥伦比亚2胜1平积7分获K组头名，葡萄牙1胜2平积5分获第二。C罗继续首发但未能破门。',
+    goals: [],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 8, awayShots: 9, homeShotsOnTarget: 2, awayShotsOnTarget: 3, homeFouls: 12, awayFouls: 10, homeCorners: 4, awayCorners: 5, homePasses: 456, awayPasses: 489 },
+  },
+  m070: {
+    matchId: 'm070',
+    summary: '刚果(金)3-1击败乌兹别克斯坦，逆袭晋级32强！刚果(金)从两连败中绝地反击，积4分以最佳小组第三出线。乌兹别克斯坦三战全败出局。',
+    goals: [
+      { time: '23\'', player: '姆布库 (Mbuku)', team: 'home' },
+      { time: '41\'', player: '博拉西 (Bolasie)', team: 'home' },
+      { time: '68\'', player: '巴坎布 (Bakambu)', team: 'home' },
+      { time: '79\'', player: '肖穆罗多夫 (Shomurodov)', team: 'away' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 14, awayShots: 6, homeShotsOnTarget: 7, awayShotsOnTarget: 2, homeFouls: 11, awayFouls: 15, homeCorners: 6, awayCorners: 2, homePasses: 523, awayPasses: 378 },
+  },
+  m071: {
+    matchId: 'm071',
+    summary: '阿尔及利亚3-3战平奥地利！一场进球大战，阿尔及利亚凭借1胜1平1负积4分以最佳小组第三晋级，奥地利1胜1平1负积4分获J组第二出线。',
+    goals: [
+      { time: '12\'', player: '马赫雷斯 (Mahrez)', team: 'home' },
+      { time: '29\'', player: '萨比策 (Sabitzer)', team: 'away' },
+      { time: '45\'', player: '本拉赫马 (Benrahma)', team: 'home' },
+      { time: '56\'', player: '阿瑙托维奇 (Arnautovic)', team: 'away' },
+      { time: '71\'', player: '阿塔尔 (Atal)', team: 'home' },
+      { time: '83\'', player: '格雷戈里奇 (Gregoritsch)', team: 'away' },
+    ],
+    stats: { homePossession: 50, awayPossession: 50, homeShots: 12, awayShots: 10, homeShotsOnTarget: 6, awayShotsOnTarget: 5, homeFouls: 13, awayFouls: 12, homeCorners: 5, awayCorners: 4, homePasses: 478, awayPasses: 467 },
+  },
+  m072: {
+    matchId: 'm072',
+    summary: '阿根廷3-1击败约旦，三战全胜零失球锁定J组头名！梅西领衔的卫冕冠军继续高歌猛进，展现恐怖统治力。',
+    goals: [
+      { time: '18\'', player: '梅西 (Messi)', team: 'away' },
+      { time: '44\'', player: '阿尔瓦雷斯 (Alvarez)', team: 'away' },
+      { time: '52\'', player: '劳塔罗 (Lautaro)', team: 'away' },
+      { time: '67\'', player: '阿尔-塔马里 (Al-Tamari)', team: 'home' },
+    ],
+    stats: { homePossession: 32, awayPossession: 68, homeShots: 4, awayShots: 18, homeShotsOnTarget: 1, awayShotsOnTarget: 8, homeFouls: 16, awayFouls: 8, homeCorners: 1, awayCorners: 8, homePasses: 298, awayPasses: 612 },
+  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {

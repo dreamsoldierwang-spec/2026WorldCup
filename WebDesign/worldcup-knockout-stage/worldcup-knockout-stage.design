@@ -66,7 +66,7 @@
       "createdAt": 1750894800000,
       "canvasData": {
         "x": 433,
-        "y": 2728,
+        "y": 2732,
         "group": 0
       },
       "devMetadata": {
@@ -95,7 +95,7 @@
       "createdAt": 1750894800000,
       "canvasData": {
         "x": 433,
-        "y": 3811,
+        "y": 3815,
         "group": 0
       },
       "devMetadata": {
@@ -124,7 +124,7 @@
       "createdAt": 1750894800000,
       "canvasData": {
         "x": 0,
-        "y": 4872
+        "y": 4876
       },
       "devMetadata": {
         "imageSrc": "assets/hero-knockout.jpg"
