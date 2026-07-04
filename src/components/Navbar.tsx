@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 
 const navItems = [
-  { path: '/', label: '首页', icon: '🏠' },
-  { path: '/knockout', label: '淘汰赛', icon: '⚔️' },
+  { path: '/', label: '淘汰赛', icon: '⚔️' },
+  { path: '/home', label: '首页', icon: '🏠' },
   { path: '/groups', label: '分组', icon: '📋' },
   { path: '/teams', label: '球队', icon: '⚽' },
   { path: '/schedule', label: '赛程', icon: '📅' },

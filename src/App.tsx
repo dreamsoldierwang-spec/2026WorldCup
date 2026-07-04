@@ -22,7 +22,8 @@ export default function App() {
         <Navbar />
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Knockout />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/groups" element={<Groups />} />
             <Route path="/groups/:groupId" element={<GroupDetail />} />
             <Route path="/teams" element={<Teams />} />

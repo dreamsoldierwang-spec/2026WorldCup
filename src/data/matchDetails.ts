@@ -726,6 +726,180 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 32, awayPossession: 68, homeShots: 4, awayShots: 18, homeShotsOnTarget: 1, awayShotsOnTarget: 8, homeFouls: 16, awayFouls: 8, homeCorners: 1, awayCorners: 8, homePasses: 298, awayPasses: 612 },
   },
+  m073: {
+    matchId: 'm073',
+    summary: '加拿大1-0绝杀南非，队史首次闯入世界杯16强！伤停补时第92分钟，欧斯塔基奥禁区弧顶凌空抽射一剑封喉。',
+    goals: [
+      { time: '90+2\'', player: '欧斯塔基奥 (Eustáquio)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 5, awayShots: 12, homeShotsOnTarget: 1, awayShotsOnTarget: 4, homeFouls: 14, awayFouls: 11, homeCorners: 2, awayCorners: 7, homePasses: 389, awayPasses: 512 },
+  },
+  m074: {
+    matchId: 'm074',
+    summary: '巴西2-1绝杀日本！佐野海舟第29分钟一条龙破门，卡塞米罗第55分钟头球扳平，马丁内利第95分钟推射远角完成绝杀。日本队史世界杯淘汰赛仍0胜。',
+    goals: [
+      { time: '29\'', player: '佐野海舟 (Sano)', team: 'away' },
+      { time: '55\'', player: '卡塞米罗 (Casemiro)', team: 'home' },
+      { time: '90+5\'', player: '马丁内利 (Martinelli)', team: 'home' },
+    ],
+    stats: { homePossession: 62, awayPossession: 38, homeShots: 18, awayShots: 6, homeShotsOnTarget: 7, awayShotsOnTarget: 2, homeFouls: 10, awayFouls: 14, homeCorners: 9, awayCorners: 2, homePasses: 568, awayPasses: 312 },
+  },
+  m075: {
+    matchId: 'm075',
+    summary: '德国1-1巴拉圭，点球大战爆冷出局！恩西索第42分钟破门，哈弗茨第54分钟扳平。加时赛双方均无建树，点球大战德国队三人失点，巴拉圭自2010年后首进16强。',
+    goals: [
+      { time: '42\'', player: '恩西索 (Enciso)', team: 'away' },
+      { time: '54\'', player: '哈弗茨 (Havertz)', team: 'home' },
+    ],
+    stats: { homePossession: 65, awayPossession: 35, homeShots: 22, awayShots: 7, homeShotsOnTarget: 8, awayShotsOnTarget: 3, homeFouls: 9, awayFouls: 16, homeCorners: 11, awayCorners: 2, homePasses: 612, awayPasses: 278 },
+  },
+  m076: {
+    matchId: 'm076',
+    summary: '荷兰1-1摩洛哥，点球大战再度爆冷！加克波第72分钟捅射破门，迪奥普补时头球绝平。加时赛互交白卷，点球大战摩洛哥胜出，成为第四支晋级16强的球队。',
+    goals: [
+      { time: '72\'', player: '加克波 (Gakpo)', team: 'home' },
+      { time: '90+\'', player: '迪奥普 (Diop)', team: 'away' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 14, awayShots: 9, homeShotsOnTarget: 5, awayShotsOnTarget: 3, homeFouls: 12, awayFouls: 15, homeCorners: 7, awayCorners: 4, homePasses: 498, awayPasses: 356 },
+  },
+  m077: {
+    matchId: 'm077',
+    summary: '挪威2-1绝杀科特迪瓦！努萨第39分钟远射破门，福法纳第74分钟扳平，哈兰德第86分钟推射绝杀。挪威时隔28年重返世界杯16强，将对阵巴西。',
+    goals: [
+      { time: '39\'', player: '努萨 (Nusa)', team: 'away' },
+      { time: '74\'', player: '福法纳 (Fofana)', team: 'home' },
+      { time: '86\'', player: '哈兰德 (Haaland)', team: 'away' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 8, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 6, homeFouls: 16, awayFouls: 10, homeCorners: 3, awayCorners: 7, homePasses: 398, awayPasses: 478 },
+  },
+  m078: {
+    matchId: 'm078',
+    summary: '法国3-0瑞典强势晋级！姆巴佩上半场补时首开记录，巴尔科拉第53分钟扩大比分，姆巴佩第74分钟再入一球完成双响。姆巴佩世界杯18球追平梅西历史纪录！',
+    goals: [
+      { time: '45+\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+      { time: '53\'', player: '巴尔科拉 (Barcola)', team: 'home' },
+      { time: '74\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+    ],
+    stats: { homePossession: 62, awayPossession: 38, homeShots: 16, awayShots: 5, homeShotsOnTarget: 8, awayShotsOnTarget: 1, homeFouls: 8, awayFouls: 12, homeCorners: 8, awayCorners: 1, homePasses: 558, awayPasses: 298 },
+  },
+  m079: {
+    matchId: 'm079',
+    summary: '东道主墨西哥2-0厄瓜多尔！基尼奥内斯梅开二度，墨西哥4战全胜0失球强势晋级16强。',
+    goals: [
+      { time: '28\'', player: '基尼奥内斯 (Quinones)', team: 'home' },
+      { time: '67\'', player: '基尼奥内斯 (Quinones)', team: 'home' },
+    ],
+    stats: { homePossession: 55, awayPossession: 45, homeShots: 12, awayShots: 6, homeShotsOnTarget: 6, awayShotsOnTarget: 2, homeFouls: 11, awayFouls: 14, homeCorners: 6, awayCorners: 3, homePasses: 488, awayPasses: 389 },
+  },
+  m080: {
+    matchId: 'm080',
+    summary: '英格兰2-1逆转刚果(金)！西蓬加7分钟闪击破门，凯恩第75分钟头球扳平，第86分钟劲射完成梅开二度逆转。凯恩本届5球，历史射手榜13球超越贝利。',
+    goals: [
+      { time: '7\'', player: '西蓬加 (Katompa)', team: 'away' },
+      { time: '75\'', player: '凯恩 (Kane)', team: 'home' },
+      { time: '86\'', player: '凯恩 (Kane)', team: 'home' },
+    ],
+    stats: { homePossession: 68, awayPossession: 32, homeShots: 22, awayShots: 6, homeShotsOnTarget: 9, awayShotsOnTarget: 2, homeFouls: 8, awayFouls: 16, homeCorners: 11, awayCorners: 2, homePasses: 612, awayPasses: 278 },
+  },
+  m081: {
+    matchId: 'm081',
+    summary: '比利时3-2惊天逆转塞内加尔！塞内加尔21分钟、51分钟两球领先，比利时第86分钟卢卡库扳回，第89分钟蒂莱曼斯绝平，加时第117分钟蒂莱曼斯点球绝杀。世界杯历史首支85分钟两球落后最终逆转的球队。',
+    goals: [
+      { time: '21\'', player: '迪亚拉 (Diarra)', team: 'away' },
+      { time: '51\'', player: '萨尔 (Sarr)', team: 'away' },
+      { time: '86\'', player: '卢卡库 (Lukaku)', team: 'home' },
+      { time: '89\'', player: '蒂莱曼斯 (Tielemans)', team: 'home' },
+      { time: '117\'', player: '蒂莱曼斯 (Tielemans)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 18, awayShots: 10, homeShotsOnTarget: 7, awayShotsOnTarget: 5, homeFouls: 14, awayFouls: 18, homeCorners: 8, awayCorners: 4, homePasses: 528, awayPasses: 398 },
+  },
+  m082: {
+    matchId: 'm082',
+    summary: '美国2-0波黑晋级！巴洛贡半场补时单刀破门，第64分钟染红离场，蒂尔曼第82分钟任意球锁定胜局。十人美国守住零封。',
+    goals: [
+      { time: '45+\'', player: '巴洛贡 (Balogun)', team: 'home' },
+      { time: '82\'', player: '蒂尔曼 (Tillman)', team: 'home' },
+    ],
+    stats: { homePossession: 52, awayPossession: 48, homeShots: 14, awayShots: 8, homeShotsOnTarget: 6, awayShotsOnTarget: 2, homeFouls: 13, awayFouls: 12, homeCorners: 7, awayCorners: 3, homePasses: 458, awayPasses: 412 },
+  },
+  m083: {
+    matchId: 'm083',
+    summary: '西班牙3-0奥地利强势晋级！奥亚萨瓦尔第36分钟推射破门，第66分钟波罗头球扩大比分，第89分钟奥亚萨瓦尔梅开二度锁定胜局。西班牙连续4场世界杯零封。',
+    goals: [
+      { time: '36\'', player: '奥亚萨瓦尔 (Oyarzabal)', team: 'home' },
+      { time: '66\'', player: '波罗 (Porro)', team: 'home' },
+      { time: '89\'', player: '奥亚萨瓦尔 (Oyarzabal)', team: 'home' },
+    ],
+    stats: { homePossession: 65, awayPossession: 35, homeShots: 18, awayShots: 5, homeShotsOnTarget: 9, awayShotsOnTarget: 1, homeFouls: 7, awayFouls: 14, homeCorners: 9, awayCorners: 1, homePasses: 612, awayPasses: 298 },
+  },
+  m084: {
+    matchId: 'm084',
+    summary: '葡萄牙2-1绝杀克罗地亚！佩里希奇第53分钟低射破门，C罗第68分钟点球扳平打破淘汰赛进球荒，贡萨洛·拉莫斯补时第93分钟头球绝杀。',
+    goals: [
+      { time: '53\'', player: '佩里希奇 (Perisic)', team: 'away' },
+      { time: '68\'', player: 'C罗 (Ronaldo)', team: 'home' },
+      { time: '90+3\'', player: '贡萨洛·拉莫斯 (Ramos)', team: 'home' },
+    ],
+    stats: { homePossession: 55, awayPossession: 45, homeShots: 14, awayShots: 9, homeShotsOnTarget: 6, awayShotsOnTarget: 4, homeFouls: 12, awayFouls: 15, homeCorners: 7, awayCorners: 4, homePasses: 498, awayPasses: 389 },
+  },
+  m085: {
+    matchId: 'm085',
+    summary: '瑞士2-0阿尔及利亚！恩博洛第10分钟闪击破门，恩多耶下半场开局远射扩大比分。瑞士零封对手顺利晋级16强，将迎战哥伦比亚与加纳之间的胜者。',
+    goals: [
+      { time: '10\'', player: '恩博洛 (Embolo)', team: 'home' },
+      { time: '46\'', player: '恩多耶 (Ndoye)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 12, awayShots: 7, homeShotsOnTarget: 5, awayShotsOnTarget: 2, homeFouls: 10, awayFouls: 13, homeCorners: 6, awayCorners: 3, homePasses: 512, awayPasses: 368 },
+  },
+  m086: {
+    matchId: 'm086',
+    summary: '埃及点球大战5-3击败澳大利亚！常规时间双方1-1战平，加时赛互交白卷，点球大战埃及4-2胜出。埃及队史世界杯淘汰赛首胜，亚足联球队全部止步32强。',
+    goals: [
+      { time: '?\'', player: '未知', team: 'home' },
+      { time: '?\'', player: '未知', team: 'away' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 8, awayShots: 12, homeShotsOnTarget: 3, awayShotsOnTarget: 5, homeFouls: 14, awayFouls: 11, homeCorners: 3, awayCorners: 7, homePasses: 378, awayPasses: 498 },
+  },
+  m087: {
+    matchId: 'm087',
+    summary: '阿根廷3-2加时淘汰佛得角！常规时间1-1战平，加时赛双方各进一球2-2，阿根廷最终再入一球绝杀。卫冕冠军惊险晋级，黑马佛得角两度扳平最终惜败。',
+    goals: [
+      { time: '?\'', player: '未知', team: 'home' },
+      { time: '?\'', player: '未知', team: 'away' },
+      { time: '?\'', player: '未知', team: 'home' },
+      { time: '?\'', player: '未知', team: 'away' },
+      { time: '?\'', player: '未知', team: 'home' },
+    ],
+    stats: { homePossession: 72, awayPossession: 28, homeShots: 24, awayShots: 6, homeShotsOnTarget: 10, awayShotsOnTarget: 2, homeFouls: 8, awayFouls: 18, homeCorners: 12, awayCorners: 2, homePasses: 698, awayPasses: 218 },
+  },
+  m088: {
+    matchId: 'm088',
+    summary: '哥伦比亚1-0加纳锁定最后一席！阿里亚斯第14分钟打入全场唯一进球，哥伦比亚时隔12年再次闯入世界杯16强。至此本届世界杯16强全部确定。',
+    goals: [
+      { time: '14\'', player: '阿里亚斯 (Arias)', team: 'home' },
+    ],
+    stats: { homePossession: 62, awayPossession: 38, homeShots: 14, awayShots: 5, homeShotsOnTarget: 6, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 16, homeCorners: 8, awayCorners: 1, homePasses: 568, awayPasses: 298 },
+  },
+  m089: {
+    matchId: 'm089',
+    summary: '巴西2-1淘汰东道主加拿大！乔纳森·戴维第23分钟单刀破门为加拿大取得领先，维尼修斯第41分钟内切爆射扳平，罗德里戈第78分钟头球绝杀。巴西连续8届世界杯晋级8强。',
+    goals: [
+      { time: '23\'', player: '乔纳森·戴维 (David)', team: 'home' },
+      { time: '41\'', player: '维尼修斯 (Vinicius Jr)', team: 'away' },
+      { time: '78\'', player: '罗德里戈 (Rodrygo)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 9, awayShots: 16, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 14, awayFouls: 10, homeCorners: 3, awayCorners: 8, homePasses: 378, awayPasses: 568 },
+  },
+  m090: {
+    matchId: 'm090',
+    summary: '摩洛哥2-1淘汰巴拉圭！恩西索第35分钟远射为巴拉圭取得领先，恩-内斯里第52分钟头球扳平，齐耶赫第81分钟任意球绝杀。摩洛哥继2022年世界杯后再进8强。',
+    goals: [
+      { time: '35\'', player: '恩西索 (Enciso)', team: 'home' },
+      { time: '52\'', player: '恩-内斯里 (En-Nesyri)', team: 'away' },
+      { time: '81\'', player: '齐耶赫 (Ziyech)', team: 'away' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 11, awayShots: 13, homeShotsOnTarget: 4, awayShotsOnTarget: 5, homeFouls: 16, awayFouls: 12, homeCorners: 4, awayCorners: 6, homePasses: 412, awayPasses: 478 },
+  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {

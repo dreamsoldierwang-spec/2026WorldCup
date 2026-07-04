@@ -121,10 +121,15 @@ export default function Knockout() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a1a] via-[#1a0533] to-[#0a0a1a]">
       {/* ===== Hero Banner ===== */}
-      <section className="relative overflow-hidden py-12 sm:py-16">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(255,45,85,0.3), transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,215,0,0.2), transparent 50%)' }} />
-        </div>
+      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+        {/* 底层：热血海报背景 */}
+        <img
+          src="./knockout-poster.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* 中层：深色遮罩确保文字可读 */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1a] via-[#0a0a1a]/70 to-[#0a0a1a]/40" />
         <div className="relative max-w-7xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white text-xs font-black mb-4 shadow-lg">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -271,7 +276,12 @@ export default function Knockout() {
 
               {/* 奖杯 */}
               <div className="text-center">
-                <div className="text-6xl mb-2" style={{ filter: 'drop-shadow(0 0 20px rgba(255,215,0,0.5))' }}>🏆</div>
+                <img
+                  src="./world-cup-trophy.png"
+                  alt="大力神杯"
+                  className="w-20 h-20 object-contain mx-auto mb-2"
+                  style={{ filter: 'drop-shadow(0 0 12px rgba(255,215,0,0.4))' }}
+                />
                 <h3 className="text-lg font-black text-[#FFD700]">决赛</h3>
                 <p className="text-[10px] text-white/40">7月20日 · 纽约</p>
               </div>

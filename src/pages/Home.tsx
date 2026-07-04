@@ -7,6 +7,16 @@ import FlagImg from '../components/FlagImg';
 import MatchDetailModal from '../components/MatchDetailModal';
 import type { Match } from '../types';
 
+const STAGE_LABELS: Record<string, string> = {
+  group: '小组赛',
+  round32: '1/16决赛',
+  round16: '1/8决赛',
+  quarter: '1/4决赛',
+  semi: '半决赛',
+  third: '季军赛',
+  final: '决赛',
+};
+
 const storylines = [
   { emoji: '👑', title: '梅西最后一舞', desc: '39岁的卫冕冠军梅西，率领阿根廷冲击两连冠' },
   { emoji: '🔥', title: 'C罗终极之战', desc: '41岁第6届世界杯，C罗追逐缺失的最后奖杯' },
@@ -30,11 +40,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './hero-worldcup.jpg',
-  alt: '2026世界杯淘汰赛开战',
-  badge: '淘汰赛开战',
-  title: '⚔️ 32强集结！淘汰赛即将震撼开战',
-  description: '48队小组赛尘埃落定，32支劲旅脱颖而出！6月29日起，16场1/16决赛连番上演：巴西vs日本、德国vs巴拉圭、阿根廷vs佛得角、英格兰vs刚果(金)…谁能挺进16强？点击探索完整对阵表与赛程！',
+  image: './featured-brazil-morocco-quarter.jpg',
+  alt: '巴西摩洛哥携手晋级8强',
+  badge: '战报',
+  title: '🔥 1/8决赛开战！巴西摩洛哥绝杀晋级8强',
+  description: '巴西2-1逆转东道主加拿大，罗德里戈78分钟头球绝杀；摩洛哥2-1淘汰巴拉圭，齐耶赫81分钟任意球一剑封喉。两队将在1/4决赛狭路相逢！',
 };
 
 export default function Home() {
@@ -172,7 +182,9 @@ export default function Home() {
                       onClick={() => setSelectedMatch(match)}
                     >
                       <div className="flex items-center gap-1.5 text-[10px]">
-                        <span className="bg-[#FF2D55]/80 text-white px-1.5 py-0.5 rounded font-bold">{match.group}组</span>
+                        <span className="bg-[#FF2D55]/80 text-white px-1.5 py-0.5 rounded font-bold">
+                          {match.group ? `${match.group}组` : (STAGE_LABELS[match.stage] || '淘汰赛')}
+                        </span>
                         <span className="text-white/40">{match.date}</span>
                       </div>
                       <div className="flex items-center gap-2 w-full justify-center">
