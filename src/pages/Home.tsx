@@ -40,11 +40,11 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './featured-brazil-morocco-quarter.jpg',
-  alt: '巴西摩洛哥携手晋级8强',
-  badge: '战报',
-  title: '🔥 1/8决赛开战！巴西摩洛哥绝杀晋级8强',
-  description: '巴西2-1逆转东道主加拿大，罗德里戈78分钟头球绝杀；摩洛哥2-1淘汰巴拉圭，齐耶赫81分钟任意球一剑封喉。两队将在1/4决赛狭路相逢！',
+  image: './featured-round16-complete.jpg',
+  alt: '世界杯16强全部确定',
+  badge: '里程碑',
+  title: '🏆 16强全部确定！世界杯淘汰赛正式开战',
+  description: '哥伦比亚1-0加纳锁定最后一席，本届世界杯16强全部诞生！欧洲7席、南美4席、中北美3席、非洲2席，亚足联9支球队全部止步32强。1/8决赛即将开打！',
 };
 
 export default function Home() {

@@ -880,26 +880,6 @@ export const matchDetails: Record<string, MatchDetail> = {
     ],
     stats: { homePossession: 62, awayPossession: 38, homeShots: 14, awayShots: 5, homeShotsOnTarget: 6, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 16, homeCorners: 8, awayCorners: 1, homePasses: 568, awayPasses: 298 },
   },
-  m089: {
-    matchId: 'm089',
-    summary: '巴西2-1淘汰东道主加拿大！乔纳森·戴维第23分钟单刀破门为加拿大取得领先，维尼修斯第41分钟内切爆射扳平，罗德里戈第78分钟头球绝杀。巴西连续8届世界杯晋级8强。',
-    goals: [
-      { time: '23\'', player: '乔纳森·戴维 (David)', team: 'home' },
-      { time: '41\'', player: '维尼修斯 (Vinicius Jr)', team: 'away' },
-      { time: '78\'', player: '罗德里戈 (Rodrygo)', team: 'away' },
-    ],
-    stats: { homePossession: 42, awayPossession: 58, homeShots: 9, awayShots: 16, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 14, awayFouls: 10, homeCorners: 3, awayCorners: 8, homePasses: 378, awayPasses: 568 },
-  },
-  m090: {
-    matchId: 'm090',
-    summary: '摩洛哥2-1淘汰巴拉圭！恩西索第35分钟远射为巴拉圭取得领先，恩-内斯里第52分钟头球扳平，齐耶赫第81分钟任意球绝杀。摩洛哥继2022年世界杯后再进8强。',
-    goals: [
-      { time: '35\'', player: '恩西索 (Enciso)', team: 'home' },
-      { time: '52\'', player: '恩-内斯里 (En-Nesyri)', team: 'away' },
-      { time: '81\'', player: '齐耶赫 (Ziyech)', team: 'away' },
-    ],
-    stats: { homePossession: 48, awayPossession: 52, homeShots: 11, awayShots: 13, homeShotsOnTarget: 4, awayShotsOnTarget: 5, homeFouls: 16, awayFouls: 12, homeCorners: 4, awayCorners: 6, homePasses: 412, awayPasses: 478 },
-  },
 };
 
 export function getMatchDetail(matchId: string): MatchDetail | undefined {

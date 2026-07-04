@@ -22,11 +22,9 @@ export const scorers: Scorer[] = [
   { rank: 3, name: 'Harry Kane', nameZh: '凯恩', teamId: 'eng', goals: 5, matches: 4, position: 'Forward' },
   { rank: 3, name: 'Pape Matar Sarr', nameZh: '萨尔', teamId: 'sen', goals: 5, matches: 4, position: 'Midfielder' },
 
-  // 5球
-  { rank: 3, name: 'Vinicius Junior', nameZh: '维尼修斯', teamId: 'bra', goals: 5, matches: 4, position: 'Forward' },
-  { rank: 3, name: 'Jonathan David', nameZh: '乔纳森·戴维', teamId: 'can', goals: 5, matches: 4, position: 'Forward' },
-
   // 4球
+  { rank: 7, name: 'Vinicius Junior', nameZh: '维尼修斯', teamId: 'bra', goals: 4, matches: 3, position: 'Forward' },
+  { rank: 7, name: 'Jonathan David', nameZh: '乔纳森·戴维', teamId: 'can', goals: 4, matches: 3, position: 'Forward' },
   { rank: 7, name: 'Ousmane Dembele', nameZh: '登贝莱', teamId: 'fra', goals: 4, matches: 3, position: 'Forward' },
   { rank: 7, name: 'Kai Havertz', nameZh: '哈弗茨', teamId: 'ger', goals: 4, matches: 4, position: 'Forward' },
   { rank: 7, name: 'Folarin Balogun', nameZh: '巴洛贡', teamId: 'usa', goals: 4, matches: 4, position: 'Forward' },
@@ -40,10 +38,10 @@ export const scorers: Scorer[] = [
   // 3球
   { rank: 18, name: 'Cristiano Ronaldo', nameZh: 'C罗', teamId: 'por', goals: 3, matches: 4, position: 'Forward' },
   { rank: 16, name: 'Raul Jimenez', nameZh: '劳尔·希门尼斯', teamId: 'mex', goals: 3, matches: 3, position: 'Forward' },
-  { rank: 7, name: 'Youssef En-Nesyri', nameZh: '恩-内斯里', teamId: 'mar', goals: 4, matches: 4, position: 'Forward' },
+  { rank: 7, name: 'Youssef En-Nesyri', nameZh: '恩-内斯里', teamId: 'mar', goals: 4, matches: 3, position: 'Forward' },
   { rank: 16, name: 'Alexander Isak', nameZh: '伊萨克', teamId: 'swe', goals: 3, matches: 3, position: 'Forward' },
   { rank: 16, name: 'Kaoru Mitoma', nameZh: '三笘薰', teamId: 'jpn', goals: 3, matches: 3, position: 'Forward' },
-  { rank: 7, name: 'Julio Enciso', nameZh: '恩西索', teamId: 'par', goals: 4, matches: 5, position: 'Forward' },
+  { rank: 16, name: 'Julio Enciso', nameZh: '恩西索', teamId: 'par', goals: 3, matches: 4, position: 'Forward' },
   { rank: 16, name: 'Chris Wood', nameZh: '克里斯·伍德', teamId: 'nzl', goals: 3, matches: 3, position: 'Forward' },
   { rank: 16, name: 'Romelu Lukaku', nameZh: '卢卡库', teamId: 'bel', goals: 3, matches: 4, position: 'Forward' },
   { rank: 16, name: 'Jude Bellingham', nameZh: '贝林厄姆', teamId: 'eng', goals: 3, matches: 3, position: 'Midfielder' },
@@ -52,7 +50,7 @@ export const scorers: Scorer[] = [
   { rank: 25, name: 'Deniz Undav', nameZh: '翁达夫', teamId: 'ger', goals: 2, matches: 3, position: 'Forward' },
   { rank: 25, name: 'Mohamed Salah', nameZh: '萨拉赫', teamId: 'egy', goals: 2, matches: 3, position: 'Forward' },
   { rank: 25, name: 'Jamal Musiala', nameZh: '穆西亚拉', teamId: 'ger', goals: 2, matches: 3, position: 'Midfielder' },
-  { rank: 16, name: 'Rodrygo', nameZh: '罗德里戈', teamId: 'bra', goals: 3, matches: 4, position: 'Forward' },
+  { rank: 25, name: 'Rodrygo', nameZh: '罗德里戈', teamId: 'bra', goals: 2, matches: 3, position: 'Forward' },
   { rank: 25, name: 'Ramon Mauricio', nameZh: '毛利西奥', teamId: 'par', goals: 2, matches: 3, position: 'Forward' },
   { rank: 25, name: 'Franck Kessie', nameZh: '凯西', teamId: 'civ', goals: 2, matches: 3, position: 'Midfielder' },
   { rank: 25, name: 'Nicolas Pepe', nameZh: '尼古拉·佩佩', teamId: 'civ', goals: 2, matches: 3, position: 'Forward' },
@@ -109,7 +107,7 @@ export const scorers: Scorer[] = [
   { rank: 51, name: 'Bruno Fernandes', nameZh: 'B费', teamId: 'por', goals: 1, matches: 3, position: 'Midfielder' },
   { rank: 25, name: 'Goncalo Ramos', nameZh: '贡萨洛·拉莫斯', teamId: 'por', goals: 2, matches: 4, position: 'Forward' },
   { rank: 51, name: 'Achraf Hakimi', nameZh: '阿什拉夫', teamId: 'mar', goals: 1, matches: 3, position: 'Defender' },
-  { rank: 25, name: 'Hakim Ziyech', nameZh: '齐耶赫', teamId: 'mar', goals: 2, matches: 4, position: 'Midfielder' },
+  { rank: 51, name: 'Hakim Ziyech', nameZh: '齐耶赫', teamId: 'mar', goals: 1, matches: 3, position: 'Midfielder' },
   { rank: 51, name: 'Abdoulaye Diop', nameZh: '迪奥普', teamId: 'mar', goals: 1, matches: 4, position: 'Forward' },
   { rank: 51, name: 'Ante Budimir', nameZh: '布迪米尔', teamId: 'cro', goals: 1, matches: 3, position: 'Forward' },
   { rank: 51, name: 'Luka Modric', nameZh: '莫德里奇', teamId: 'cro', goals: 1, matches: 3, position: 'Midfielder' },
