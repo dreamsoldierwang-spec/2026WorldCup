@@ -29,7 +29,12 @@ export default function News() {
     return grouped;
   }, [filtered]);
 
-  const dates = Object.keys(groupedByDate).sort((a, b) => b.localeCompare(a));
+  // 中文日期转数字排序，如 "7月8日" → 708，"7月12日" → 712
+  const dateToNum = (d: string) => {
+    const m = d.match(/(\d+)月(\d+)日/);
+    return m ? parseInt(m[1]) * 100 + parseInt(m[2]) : 0;
+  };
+  const dates = Object.keys(groupedByDate).sort((a, b) => dateToNum(b) - dateToNum(a));
 
   return (
     <div className="page-container animate-fade-in">

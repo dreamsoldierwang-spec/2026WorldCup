@@ -9,7 +9,8 @@ const POSITION_LABELS: Record<string, string> = {
 
 export default function Scorers() {
   const getTeam = (id: string) => teams.find(t => t.id === id);
-  const maxGoals = scorers.length > 0 ? scorers[0].goals : 1;
+  const sorted = [...scorers].sort((a, b) => b.goals - a.goals);
+  const maxGoals = sorted.length > 0 ? sorted[0].goals : 1;
 
   return (
     <div className="page-container animate-fade-in">
@@ -17,7 +18,7 @@ export default function Scorers() {
         <Target size={28} className="text-wc-gold" /> 射手榜
       </h1>
 
-      {scorers.length === 0 ? (
+      {sorted.length === 0 ? (
         <div className="card-base p-12 text-center">
           <Trophy size={48} className="mx-auto text-gray-300 dark:text-gray-600 mb-4" />
           <p className="text-gray-500 dark:text-gray-400">尚无进球数据</p>
@@ -26,7 +27,7 @@ export default function Scorers() {
         <>
           {/* Top 3 highlight */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {scorers.slice(0, 3).map((scorer, idx) => {
+            {sorted.slice(0, 3).map((scorer, idx) => {
               const team = getTeam(scorer.teamId);
               const medals = ['🥇', '🥈', '🥉'];
               const bgColors = [
@@ -67,7 +68,7 @@ export default function Scorers() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700/50">
-                  {scorers.map((scorer, idx) => {
+                  {sorted.map((scorer, idx) => {
                     const team = getTeam(scorer.teamId);
                     const efficiency = scorer.matches > 0 ? (scorer.goals / scorer.matches).toFixed(2) : '0';
                     return (

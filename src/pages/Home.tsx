@@ -40,21 +40,39 @@ const quickLinks = [
 // 重要新闻配置 — 当有重要新闻时设置为 true
 const FEATURED_NEWS = {
   enabled: true,
-  image: './featured-round16-complete.jpg',
-  alt: '世界杯16强全部确定',
-  badge: '里程碑',
-  title: '🏆 16强全部确定！世界杯淘汰赛正式开战',
-  description: '哥伦比亚1-0加纳锁定最后一席，本届世界杯16强全部诞生！欧洲7席、南美4席、中北美3席、非洲2席，亚足联9支球队全部止步32强。1/8决赛即将开打！',
+  image: './final-mega-banner.jpg',
+  alt: '世界杯决赛：西班牙vs阿根廷',
+  badge: '决赛',
+  title: '🏆 世界杯决赛 · 7月20日凌晨3:00 · 纽约',
+  description: '西班牙vs阿根廷！欧洲冠军斗牛士大战卫冕冠军潘帕斯雄鹰，梅西最后一舞！足球之王，即将加冕！',
+};
+
+// 决赛巨幅海报 — 首页醒目位置
+const FINAL_BANNER = {
+  enabled: true,
+  image: './final-mega-banner.jpg',
+  subtitle: '2026 FIFA WORLD CUP FINAL',
+  title: '🏆 西班牙 vs 阿根廷',
+  date: '7月20日 03:00 · 纽约大都会人寿体育场',
+  cta: '查看决赛前瞻 →',
+  ctaLink: '/final',
 };
 
 export default function Home() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
+  // 辅助函数：中文日期转数字，如 "7月8日" → 708，"7月12日" → 712
+  const dateToNum = (d: string) => {
+    const m = d.match(/(\d+)月(\d+)日/);
+    return m ? parseInt(m[1]) * 100 + parseInt(m[2]) : 0;
+  };
+
   // Get finished matches (most recent first)
   const finishedMatches = schedule
     .filter(m => m.status === 'finished')
     .sort((a, b) => {
-      if (a.date !== b.date) return b.date.localeCompare(a.date);
+      const dateDiff = dateToNum(b.date) - dateToNum(a.date);
+      if (dateDiff !== 0) return dateDiff;
       return b.time.localeCompare(a.time);
     });
 
@@ -68,6 +86,40 @@ export default function Home() {
 
   return (
     <div>
+      {/* ===== 决赛巨幅海报 — 最醒目位置 ===== */}
+      {FINAL_BANNER.enabled && (
+        <section className="relative w-full h-screen overflow-hidden">
+          <img
+            src={FINAL_BANNER.image}
+            alt={FINAL_BANNER.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* 暗色渐变遮罩 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+          {/* 内容 */}
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+            <p className="text-xs md:text-sm tracking-[0.3em] text-amber-400 font-semibold uppercase mb-3 animate-pulse">
+              {FINAL_BANNER.subtitle}
+            </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 drop-shadow-2xl"
+              style={{ textShadow: '0 0 40px rgba(255,215,0,0.4), 0 4px 20px rgba(0,0,0,0.8)' }}>
+              {FINAL_BANNER.title}
+            </h1>
+            <p className="text-base md:text-xl text-gray-200 mb-8 font-medium">
+              {FINAL_BANNER.date}
+            </p>
+            <Link
+              to={FINAL_BANNER.ctaLink}
+              className="inline-block px-8 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-bold rounded-full text-sm md:text-base hover:from-amber-400 hover:to-yellow-300 transition-all shadow-lg shadow-amber-500/30 hover:shadow-amber-400/50 hover:scale-105"
+            >
+              {FINAL_BANNER.cta}
+            </Link>
+          </div>
+          {/* 底部火焰渐变 */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1a0533] to-transparent" />
+        </section>
+      )}
+
       {/* ===== Hero Section — 缩小高度，精简内容 ===== */}
       <section className="relative bg-gradient-to-br from-[#1a0533] via-[#2d0a4a] to-[#e11d48] text-white overflow-hidden">
         {/* Background decorations */}

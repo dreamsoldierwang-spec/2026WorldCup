@@ -853,24 +853,24 @@ export const matchDetails: Record<string, MatchDetail> = {
   },
   m086: {
     matchId: 'm086',
-    summary: '埃及点球大战5-3击败澳大利亚！常规时间双方1-1战平，加时赛互交白卷，点球大战埃及4-2胜出。埃及队史世界杯淘汰赛首胜，亚足联球队全部止步32强。',
+    summary: '埃及点球大战5-3击败澳大利亚！第13分钟阿舒尔头球为埃及先拔头筹，第54分钟埃及后卫哈尼自摆乌龙，澳大利亚幸运扳平。加时赛双方均无建树，点球大战埃及4罚全中，澳大利亚苏塔打飞、赫林顿击中横梁，埃及4-2胜出晋级。',
     goals: [
-      { time: '?\'', player: '未知', team: 'home' },
-      { time: '?\'', player: '未知', team: 'away' },
+      { time: '13\'', player: '阿舒尔 (Ashour)', team: 'away' },
+      { time: '54\'', player: '哈尼 (乌龙)', team: 'away', ownGoal: true },
     ],
     stats: { homePossession: 48, awayPossession: 52, homeShots: 8, awayShots: 12, homeShotsOnTarget: 3, awayShotsOnTarget: 5, homeFouls: 14, awayFouls: 11, homeCorners: 3, awayCorners: 7, homePasses: 378, awayPasses: 498 },
   },
   m087: {
     matchId: 'm087',
-    summary: '阿根廷3-2加时淘汰佛得角！常规时间1-1战平，加时赛双方各进一球2-2，阿根廷最终再入一球绝杀。卫冕冠军惊险晋级，黑马佛得角两度扳平最终惜败。',
+    summary: '阿根廷3-2加时险胜佛得角！第29分钟梅西反越位弹射破门（世界杯第20球），第59分钟杜阿尔特转身扫射扳平。加时赛第92分钟利桑德罗·马丁内斯爆射再次领先，第103分钟卡布拉尔轰出世界波再度扳平，第111分钟罗梅罗头球造成博尔热斯乌龙绝杀。卫冕冠军惊险晋级。',
     goals: [
-      { time: '?\'', player: '未知', team: 'home' },
-      { time: '?\'', player: '未知', team: 'away' },
-      { time: '?\'', player: '未知', team: 'home' },
-      { time: '?\'', player: '未知', team: 'away' },
-      { time: '?\'', player: '未知', team: 'home' },
+      { time: '29\'', player: '梅西 (Messi)', team: 'home' },
+      { time: '59\'', player: '杜阿尔特 (Duarte)', team: 'away' },
+      { time: '92\'', player: '利桑德罗·马丁内斯 (Lisandro Martinez)', team: 'home' },
+      { time: '103\'', player: '卡布拉尔 (Cabral)', team: 'away' },
+      { time: '111\'', player: '博尔热斯 (乌龙)', team: 'away', ownGoal: true },
     ],
-    stats: { homePossession: 72, awayPossession: 28, homeShots: 24, awayShots: 6, homeShotsOnTarget: 10, awayShotsOnTarget: 2, homeFouls: 8, awayFouls: 18, homeCorners: 12, awayCorners: 2, homePasses: 698, awayPasses: 218 },
+    stats: { homePossession: 64, awayPossession: 36, homeShots: 22, awayShots: 16, homeShotsOnTarget: 10, awayShotsOnTarget: 5, homeFouls: 8, awayFouls: 18, homeCorners: 8, awayCorners: 8, homePasses: 698, awayPasses: 218 },
   },
   m088: {
     matchId: 'm088',
@@ -879,6 +879,168 @@ export const matchDetails: Record<string, MatchDetail> = {
       { time: '14\'', player: '阿里亚斯 (Arias)', team: 'home' },
     ],
     stats: { homePossession: 62, awayPossession: 38, homeShots: 14, awayShots: 5, homeShotsOnTarget: 6, awayShotsOnTarget: 1, homeFouls: 9, awayFouls: 16, homeCorners: 8, awayCorners: 1, homePasses: 568, awayPasses: 298 },
+  },
+  m089: {
+    matchId: 'm089',
+    summary: '摩洛哥3-0完胜东道主加拿大！乌纳希第50分钟和第82分钟梅开二度，拉希米第98分钟补时破门锁定胜局。摩洛哥延续黑马本色晋级8强，加拿大止步16强。',
+    goals: [
+      { time: '50\'', player: '乌纳希 (Ounahi)', team: 'away' },
+      { time: '82\'', player: '乌纳希 (Ounahi)', team: 'away' },
+      { time: '90+8\'', player: '拉希米 (Rahimi)', team: 'away' },
+    ],
+    stats: { homePossession: 52, awayPossession: 48, homeShots: 10, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 12, awayFouls: 14, homeCorners: 4, awayCorners: 6, homePasses: 412, awayPasses: 478 },
+  },
+  m090: {
+    matchId: 'm090',
+    summary: '姆巴佩点球制胜！法国1-0淘汰巴拉圭。上半场双方互交白卷，第66分钟姆巴佩利用点球机会一蹴而就，打入个人世界杯第7球。法国连续两届世界杯晋级8强。',
+    goals: [
+      { time: '66\'', player: '姆巴佩 (Mbappe)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 7, awayShots: 15, homeShotsOnTarget: 2, awayShotsOnTarget: 6, homeFouls: 16, awayFouls: 10, homeCorners: 2, awayCorners: 8, homePasses: 345, awayPasses: 568 },
+  },
+  m091: {
+    matchId: 'm091',
+    summary: '惊天大冷！挪威2-1淘汰巴西！哈兰德第80分钟头球破门，第90分钟贴地远射梅开二度，内马尔补时第10分钟点球扳回一球无力回天。挪威队史首进世界杯8强，哈兰德7球追平梅西姆巴佩领跑射手榜。',
+    goals: [
+      { time: '80\'', player: '哈兰德 (Haaland)', team: 'away' },
+      { time: '90\'', player: '哈兰德 (Haaland)', team: 'away' },
+      { time: '90+10\'', player: '内马尔 (Neymar)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 14, awayShots: 11, homeShotsOnTarget: 5, awayShotsOnTarget: 4, homeFouls: 11, awayFouls: 14, homeCorners: 7, awayCorners: 3, homePasses: 512, awayPasses: 398 },
+  },
+  m092: {
+    matchId: 'm092',
+    summary: '英格兰3-2淘汰墨西哥！贝林厄姆98秒梅开二度（第36分钟鱼跃头球、第38分钟包抄破门），基尼奥内斯第42分钟爆射追回一球。下半场宽萨红牌被罚下，凯恩第57分钟点球扩大比分，希门尼斯第65分钟点球再追一球。英格兰打破墨西哥阿兹特克球场不败神话。',
+    goals: [
+      { time: '36\'', player: '贝林厄姆 (Bellingham)', team: 'away' },
+      { time: '38\'', player: '贝林厄姆 (Bellingham)', team: 'away' },
+      { time: '42\'', player: '基尼奥内斯 (Quinones)', team: 'home' },
+      { time: '57\'', player: '凯恩 (Kane)', team: 'away' },
+      { time: '65\'', player: '希门尼斯 (Jimenez)', team: 'home' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 13, awayShots: 12, homeShotsOnTarget: 5, awayShotsOnTarget: 6, homeFouls: 14, awayFouls: 12, homeCorners: 5, awayCorners: 4, homePasses: 445, awayPasses: 489 },
+  },
+  m093: {
+    matchId: 'm093',
+    summary: '西班牙1-0绝杀葡萄牙！第91分钟，替补登场的梅里诺接亚马尔传中头球破门上演绝杀。41岁C罗第6届世界杯之旅遗憾谢幕，葡萄牙止步16强。西班牙晋级8强，将与比利时争夺半决赛席位。',
+    goals: [
+      { time: '91\'', player: '梅里诺 (Merino)', team: 'away' },
+    ],
+    stats: { homePossession: 45, awayPossession: 55, homeShots: 9, awayShots: 14, homeShotsOnTarget: 2, awayShotsOnTarget: 5, homeFouls: 16, awayFouls: 11, homeCorners: 3, awayCorners: 7, homePasses: 398, awayPasses: 512 },
+  },
+  m094: {
+    matchId: 'm094',
+    summary: '比利时4-1大胜东道主美国晋级8强！德凯特拉雷第9分钟和第33分钟梅开二度，蒂尔曼第31分钟任意球为美国扳平比分。第57分钟弗里兹出击失误，法纳肯笑纳大礼。补时阶段卢卡库替补破门锁定胜局。',
+    goals: [
+      { time: '9\'', player: '德凯特拉雷 (De Ketelaere)', team: 'away' },
+      { time: '31\'', player: '蒂尔曼 (Tillman)', team: 'home' },
+      { time: '33\'', player: '德凯特拉雷 (De Ketelaere)', team: 'away' },
+      { time: '57\'', player: '法纳肯 (Vanaken)', team: 'away' },
+      { time: '90+3\'', player: '卢卡库 (Lukaku)', team: 'away' },
+    ],
+    stats: { homePossession: 42, awayPossession: 58, homeShots: 10, awayShots: 16, homeShotsOnTarget: 3, awayShotsOnTarget: 7, homeFouls: 14, awayFouls: 10, homeCorners: 4, awayCorners: 8, homePasses: 378, awayPasses: 534 },
+  },
+  m095: {
+    matchId: 'm095',
+    summary: '惊天逆转！阿根廷3-2淘汰埃及晋级8强！埃及第15分钟和第67分钟连入两球，阿根廷0-2陷入绝境。最后14分钟罗梅罗头球、梅西贴地斩、恩佐·费尔南德斯抽射连入三球完成史诗级翻盘。39岁梅西本届8球创纪录，连续9场世界杯破门。',
+    goals: [
+      { time: '15\'', player: '埃及球员', team: 'away' },
+      { time: '67\'', player: '埃及球员', team: 'away' },
+      { time: '76\'', player: '罗梅罗 (Romero)', team: 'home' },
+      { time: '84\'', player: '梅西 (Messi)', team: 'home' },
+      { time: '90\'', player: '恩佐·费尔南德斯 (Fernandez)', team: 'home' },
+    ],
+    stats: { homePossession: 62, awayPossession: 38, homeShots: 18, awayShots: 9, homeShotsOnTarget: 8, awayShotsOnTarget: 4, homeFouls: 10, awayFouls: 16, homeCorners: 9, awayCorners: 3, homePasses: 567, awayPasses: 312 },
+  },
+  m096: {
+    matchId: 'm096',
+    summary: '瑞士点球4-3淘汰哥伦比亚晋级8强！双方120分钟互交白卷，本届淘汰赛首场0-0。点球大战中索默扑出关键点球，瑞士时隔72年再进世界杯八强，追平队史最好成绩。',
+    goals: [],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 11, awayShots: 13, homeShotsOnTarget: 3, awayShotsOnTarget: 4, homeFouls: 13, awayFouls: 15, homeCorners: 5, awayCorners: 6, homePasses: 445, awayPasses: 478 },
+  },
+  m097: {
+    matchId: 'm097',
+    summary: '法国2-0淘汰摩洛哥晋级四强！姆巴佩上半场造点却罚丢，下半场第60分钟禁区前沿兜射破门收获个人世界杯第20球。第66分钟姆巴佩做球助攻登贝莱推射再下一城。摩洛哥黑马之旅止步八强。',
+    goals: [
+      { time: '60\'', player: '姆巴佩 (Mbappe)', team: 'away' },
+      { time: '66\'', player: '登贝莱 (Dembele)', team: 'away' },
+    ],
+    stats: { homePossession: 35, awayPossession: 65, homeShots: 6, awayShots: 18, homeShotsOnTarget: 1, awayShotsOnTarget: 8, homeFouls: 14, awayFouls: 9, homeCorners: 2, awayCorners: 8, homePasses: 312, awayPasses: 556 },
+  },
+  m098: {
+    matchId: 'm098',
+    summary: '西班牙2-1逆转比利时时隔16年再进四强！第30分钟奥尔莫推射被扑、鲁伊斯补射破门。第41分钟德凯特拉雷头球扳平。第88分钟库巴西远射被替补门将拉门斯扑出脱手，梅里诺补射上演连场绝杀！',
+    goals: [
+      { time: '30\'', player: '鲁伊斯 (Ruiz)', team: 'home' },
+      { time: '41\'', player: '德凯特拉雷 (De Ketelaere)', team: 'away' },
+      { time: '88\'', player: '梅里诺 (Merino)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 15, awayShots: 9, homeShotsOnTarget: 6, awayShotsOnTarget: 4, homeFouls: 11, awayFouls: 14, homeCorners: 7, awayCorners: 3, homePasses: 534, awayPasses: 398 },
+  },
+  m099: {
+    matchId: 'm099',
+    summary: '英格兰加时2-1逆转挪威晋级四强！谢尔德鲁普第36分钟世界波破门助挪威领先。上半场补时阶段贝林厄姆推射扳平。加时赛第93分钟罗杰斯远射被扑，贝林厄姆跟进补射完成双响！贝林厄姆本届6球追平英格兰球员单届纪录。',
+    goals: [
+      { time: '36\'', player: '谢尔德鲁普 (Thorsby)', team: 'home' },
+      { time: '45+2\'', player: '贝林厄姆 (Bellingham)', team: 'away' },
+      { time: '93\'', player: '贝林厄姆 (Bellingham)', team: 'away' },
+    ],
+    stats: { homePossession: 44, awayPossession: 56, homeShots: 10, awayShots: 16, homeShotsOnTarget: 4, awayShotsOnTarget: 7, homeFouls: 15, awayFouls: 11, homeCorners: 4, awayCorners: 7, homePasses: 389, awayPasses: 501 },
+  },
+  m100: {
+    matchId: 'm100',
+    summary: '阿根廷3-1加时淘汰瑞士挺进四强！麦卡利斯特第10分钟头球破门，恩多耶第67分钟小角度低射扳平。加时赛第112分钟阿尔瓦雷斯绝杀破门，随后阿尔马达射门被扑、劳塔罗补射锁定胜局。梅西本届8球继续领跑射手榜。',
+    goals: [
+      { time: '10\'', player: '麦卡利斯特 (Mac Allister)', team: 'home' },
+      { time: '67\'', player: '恩多耶 (Ndoye)', team: 'away' },
+      { time: '112\'', player: '阿尔瓦雷斯 (Alvarez)', team: 'home' },
+      { time: '120\'', player: '劳塔罗 (Martinez)', team: 'home' },
+    ],
+    stats: { homePossession: 58, awayPossession: 42, homeShots: 16, awayShots: 10, homeShotsOnTarget: 7, awayShotsOnTarget: 4, homeFouls: 12, awayFouls: 16, homeCorners: 8, awayCorners: 3, homePasses: 512, awayPasses: 367 },
+  },
+  m101: {
+    matchId: 'm101',
+    summary: '西班牙2-0完胜法国晋级决赛！第22分钟迪涅禁区内手球送点，奥亚萨瓦尔操刀命中。第30分钟萨利巴无对抗伤退，拉克鲁瓦替补登场。第58分钟波罗利用法国防线重组后的混乱单刀破门锁定胜局。法国全场0次绝对得分机会，姆巴佩上半场仅15次触球。西班牙连续两届大赛半决赛击败法国！',
+    goals: [
+      { time: '22\'', player: '奥亚萨瓦尔 (Oyarzabal)', team: 'away', note: '点球' },
+      { time: '58\'', player: '波罗 (Porro)', team: 'away' },
+    ],
+    stats: { homePossession: 49, awayPossession: 51, homeShots: 10, awayShots: 14, homeShotsOnTarget: 3, awayShotsOnTarget: 6, homeFouls: 13, awayFouls: 8, homeCorners: 3, awayCorners: 6, homePasses: 423, awayPasses: 478 },
+  },
+  m102: {
+    matchId: 'm102',
+    summary: '阿根廷2-1惊天逆转英格兰晋级决赛！第55分钟戈登为英格兰打破僵局。第85分钟梅西助攻恩佐·费尔南德斯弧线球扳平。补时第2分钟梅西左侧传中，替补登场的劳塔罗后点头球破门完成绝杀！梅西两场半决赛3次助攻，39岁仍主宰比赛。阿根廷七战全胜挺进决赛，将与西班牙争夺冠军！',
+    goals: [
+      { time: '55\'', player: '戈登 (Gordon)', team: 'home' },
+      { time: '85\'', player: '恩佐·费尔南德斯 (Fernandez)', team: 'away', note: '梅西助攻' },
+      { time: '90+2\'', player: '劳塔罗 (Martinez)', team: 'away', note: '梅西助攻' },
+    ],
+    stats: { homePossession: 36, awayPossession: 64, homeShots: 3, awayShots: 12, homeShotsOnTarget: 2, awayShotsOnTarget: 5, homeFouls: 11, awayFouls: 13, homeCorners: 1, awayCorners: 6, homePasses: 312, awayPasses: 567 },
+  },
+  m103: {
+    matchId: 'm103',
+    summary: '史诗级10球大战！英格兰6-4击败法国斩获季军。上半场赖斯远射破门+角球助攻孔萨，萨卡梅开二度，半场英格兰4-0领先。下半场姆巴佩连入两球掀起反击，巴尔科拉单刀扳至3-4。萨卡点射戴帽5-3。补时阶段登贝莱兜射4-5，贝林厄姆最后时刻单骑闯关锁定6-4！世界杯单场两位数进球自1982年来首次。德尚执教法国14年谢幕。',
+    goals: [
+      { time: '3\'', player: '赖斯 (Rice)', team: 'away' },
+      { time: '18\'', player: '孔萨 (Guéhi)', team: 'away' },
+      { time: '37\'', player: '萨卡 (Saka)', team: 'away' },
+      { time: '45+1\'', player: '萨卡 (Saka)', team: 'away' },
+      { time: '48\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+      { time: '54\'', player: '巴尔科拉 (Barcola)', team: 'home' },
+      { time: '66\'', player: '姆巴佩 (Mbappe)', team: 'home' },
+      { time: '87\'', player: '萨卡 (Saka)', team: 'away', note: '点球' },
+      { time: '90+\'', player: '登贝莱 (Dembele)', team: 'home' },
+      { time: '90+4\'', player: '贝林厄姆 (Bellingham)', team: 'away' },
+    ],
+    stats: { homePossession: 48, awayPossession: 52, homeShots: 14, awayShots: 16, homeShotsOnTarget: 8, awayShotsOnTarget: 9, homeFouls: 12, awayFouls: 10, homeCorners: 4, awayCorners: 7, homePasses: 398, awayPasses: 445 },
+  },
+  m104: {
+    matchId: 'm104',
+    summary: '西班牙1-0加时绝杀阿根廷，第二次夺得世界杯冠军！上半场西班牙65%控球但未能破门，利桑德罗·马丁内斯第44分钟伤退。下半场阿根廷更被动，罗梅罗伤退，全场阿根廷0射门（1966年以来决赛上半场最少）。补时阶段恩佐累积黄牌被罚下。加时赛第106分钟，费兰·托雷斯接到尼科·威廉斯头球摆渡后爆射破门绝杀！罗德里荣膺金球奖，梅西银球奖，姆巴佩金靴奖。',
+    goals: [
+      { time: '106\'', player: '费兰·托雷斯 (Ferran Torres)', team: 'home', note: '绝杀' },
+    ],
+    stats: { homePossession: 65, awayPossession: 35, homeShots: 15, awayShots: 0, homeShotsOnTarget: 12, awayShotsOnTarget: 0, homeFouls: 8, awayFouls: 14, homeCorners: 6, awayCorners: 1, homePasses: 567, awayPasses: 312 },
   },
 };
 

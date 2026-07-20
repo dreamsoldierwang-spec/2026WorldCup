@@ -3,8 +3,12 @@ import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 
 const navItems = [
-  { path: '/', label: '淘汰赛', icon: '⚔️' },
+  { path: '/final-result', label: '冠军', icon: '🏆' },
   { path: '/home', label: '首页', icon: '🏠' },
+  { path: '/knockout', label: '淘汰赛', icon: '⚔️' },
+  { path: '/semi-preview', label: '半决赛', icon: '🔬' },
+  { path: '/third-place', label: '季军赛', icon: '🥉' },
+  { path: '/final', label: '前瞻', icon: '🔮' },
   { path: '/groups', label: '分组', icon: '📋' },
   { path: '/teams', label: '球队', icon: '⚽' },
   { path: '/schedule', label: '赛程', icon: '📅' },
@@ -26,10 +30,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <span className="text-3xl">⚽</span>
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
+            <span className="text-2xl">⚽</span>
             <div>
-              <h1 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+              <h1 className="text-sm font-bold text-gray-900 dark:text-white leading-tight">
                 2026 世界杯
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400 leading-tight">
@@ -38,21 +42,21 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop Nav - 单行不换行 */}
+          <div className="hidden md:flex items-center gap-0.5 flex-nowrap">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 px-2 py-2 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                     isActive
                       ? 'bg-wc-green text-white'
                       : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                   }`}
                 >
-                  <span>{item.icon}</span>
+                  <span className="text-sm">{item.icon}</span>
                   <span>{item.label}</span>
                 </Link>
               );

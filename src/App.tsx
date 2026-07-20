@@ -14,6 +14,10 @@ import Scorers from './pages/Scorers';
 import News from './pages/News';
 import Standings from './pages/Standings';
 import Knockout from './pages/Knockout';
+import SemiFinalPreview from './pages/SemiFinalPreview';
+import FinalPage from './pages/FinalPage';
+import ThirdPlacePage from './pages/ThirdPlacePage';
+import FinalResult from './pages/FinalResult';
 
 export default function App() {
   return (
@@ -22,7 +26,7 @@ export default function App() {
         <Navbar />
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Knockout />} />
+            <Route path="/" element={<FinalResult />} />
             <Route path="/home" element={<Home />} />
             <Route path="/groups" element={<Groups />} />
             <Route path="/groups/:groupId" element={<GroupDetail />} />
@@ -37,6 +41,10 @@ export default function App() {
             <Route path="/news" element={<News />} />
             <Route path="/standings" element={<Standings />} />
             <Route path="/knockout" element={<Knockout />} />
+            <Route path="/semi-preview" element={<SemiFinalPreview />} />
+            <Route path="/final" element={<FinalPage />} />
+            <Route path="/third-place" element={<ThirdPlacePage />} />
+            <Route path="/final-result" element={<FinalResult />} />
           </Routes>
         </main>
         <Footer />
