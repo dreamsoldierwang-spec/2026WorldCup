@@ -50,10 +50,10 @@ export default function Records() {
     <div className="page-container animate-fade-in">
       <div className="flex items-center gap-3 mb-2">
         <Trophy size={28} className="text-wc-gold" />
-        <h1 className="section-title mb-0">历史纪录</h1>
+        <h1 className="section-title mb-0">历史 & 本届纪录</h1>
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-        世界杯历史上的经典数据与纪录
+        2026世界杯落幕，经典数据与新纪录全收录
       </p>
 
       {/* Category Tabs — touch-scrollable */}
